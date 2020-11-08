@@ -14,8 +14,8 @@ class Owner extends Model
     /**
      * @return mixed
      */
-    public function machinery()
+    public function machines()
     {
-        return $this->$this->hasMany(Machines::class);
+        return $this->hasMany(Machines::class);
     }
 }

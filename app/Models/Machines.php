@@ -14,7 +14,7 @@ class Machines extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function owner()
+    public function owners()
     {
         return $this->belongsTo(Owner::class);
     }
