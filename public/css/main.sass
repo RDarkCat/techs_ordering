@@ -1,0 +1,180 @@
+*
+    margin: 0 
+    padding: 0 
+p,div,span,td,h3,h4,h2,h1
+    color: #333333
+    font-size: 16px
+body,button,p,a,div,span,td,table
+    font-family: 'Roboto', sans-serif
+.container
+    width: 1150px
+    margin: 0 auto
+    border-left: 1px solid black
+    border-right: 1px solid black
+    height: 100px
+    padding: 30px 0
+    box-sizing: border-box
+// header block
+header
+    height: 80px
+    width: 100%
+    position: fixed
+    top: 0
+
+    // background-color: #080080
+.header
+    &_inside 
+        display: flex
+        width: 80%
+        height: 100%
+        margin: 0 auto
+        justify-content: center
+        align-items: center
+        font-size: 18px 
+        z-index: 100
+
+        // border: 2px solid black
+        box-sizing: border-box
+    &__city 
+        width: 15%
+        display: flex
+        padding-left: 20px
+        box-sizing: border-box
+        color: #fff
+        // background-color: red
+    &__logo
+        width: 10%
+        height: 100%
+        position: relative
+        // background-color: blue
+        display: flex
+        justify-content: center
+        &__img
+            width: 90%
+            height: 110px
+            position: absolute
+            top: 10px
+            background-color: grey
+            display: flex
+            justify-content: center
+            align-items: center
+    &__nav
+        width: 50%
+        display: flex
+        justify-content: space-around
+        padding-left: 40px
+        align-items: center
+        // background-color: grey
+        a 
+            text-decoration: none
+            color: #fff
+            transition: .2s
+            box-sizing: border-box
+            &:hover
+                color: #d4d4d4
+                border-bottom: 1px solid #d4d4d4
+                transform: scale(1.05)
+
+    &__logIn
+        width: 25%
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        // border-left: 1px solid lightgrey
+        color: #fff
+        // background-color: green
+.logIn__auth
+    width: 95%
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    align-items: center
+
+// Slider block
+.slider
+    display: flex
+    width: 100%
+    height: 700px
+.black-back
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0,0.2)
+    display: flex
+    justify-content: center
+    align-items: center
+    padding-top: 100px
+    box-sizing: border-box
+.slider-content
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 80%
+    height: 300px
+    h2 
+        color: #ffffff
+        font-size: 50pt
+        font-weight: bold
+        text-transform: uppercase
+
+// Main block
+main 
+    width: 100%
+    height: 800px
+    background-color: #ffffff
+// orders 
+.services_orders 
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    h3 
+        font-size: 24pt
+        margin-bottom: 20px
+    &__types
+        display: flex
+        flex-wrap: wrap
+        flex-basis: 33.3%
+        justify-content: center
+.types__item
+    display: flex
+    flex-direction: column
+    padding: 15px 10px
+    box-sizing: border-box
+    width: 33.3%
+    height: 300px
+    border: 1px solid #e0e0e0
+    border-collapse: collapse
+    img 
+        width: 55%
+        display: block
+        margin: 0 auto
+        height: 120px
+        background-color: #fff
+    p
+        margin: 5px
+        &:first-of-type
+            font-size: 18px
+            color: #0070c0
+            font-weight: bold
+    button 
+        width: 60%
+        margin: 0 auto
+        margin-top: 15px
+        border: 0
+        margin-top: 20px
+        height: 45px
+        font-size: 14px
+        background-color: #0070c0
+        color: #fff
+        cursor: pointer
+        transition: .2s
+        &:hover
+            background-color: #fff
+            color: #0070c0
+            box-shadow: 0px 0px 5px 1px #0070c0
+            transform: scale(1.1)
+
+
+
