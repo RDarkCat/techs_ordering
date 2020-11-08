@@ -17,6 +17,7 @@ class CreateMachinesTable extends Migration
             $table->id();
             $table->string("name");
             $table->integer('type')->default(0);
+            $table->integer("place_id");
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateMachinesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('machineries');
+        Schema::dropIfExists('machines');
     }
 }
