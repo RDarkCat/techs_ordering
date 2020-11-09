@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MachineController;
+use App\Http\Controllers\MachineTypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [MachineController::class, 'machinesFullInformation'])->name('HomePage');
+Route::get('/machine_types/{type_id}', [MachineTypeController::class, 'getMachinesByType'])
+    ->name('machinesTypes.getMachinesByType'); // клик на категорию
+Route::resource('/machines', MachineController::class);
+Route::resource('/machines_types', MachineTypeController::class);
