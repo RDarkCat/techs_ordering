@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMachineTypeTable extends Migration
+class RemovePlaceIdFromMachinesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateMachineTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('machine_type', function (Blueprint $table) {
-            $table->id();
-            $table->string("name")->unique();
+        Schema::table('machines', function (Blueprint $table) {
+            $table->dropColumn('place_id');
         });
     }
 
@@ -26,6 +25,8 @@ class CreateMachineTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('machine_type');
+        Schema::table('machines', function (Blueprint $table) {
+            $table->integer("place_id");
+        });
     }
 }

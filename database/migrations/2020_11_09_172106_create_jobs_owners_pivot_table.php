@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMachinesTable extends Migration
+class CreateJobsOwnersPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateMachinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('machines', function (Blueprint $table) {
+        Schema::create('jobs_owners', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('type')->default(0);
-            $table->integer('place_id');
+            $table->bigInteger('job_id')->unsigned();
+            $table->bigInteger('owner_id')->unsigned();
             $table->timestamps();
+            
+            $table->foreign('job_id')->references('id')->on('jobs');
+            $table->foreign('owner_id')->references('id')->on('owners');
         });
     }
 
@@ -29,6 +31,6 @@ class CreateMachinesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('machines');
+        Schema::dropIfExists('jobs_owners');
     }
 }
