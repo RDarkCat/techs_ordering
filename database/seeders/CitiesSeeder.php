@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class UsersSeeder extends Seeder
+class CitiesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert($this->getData());
+        DB::table('cities')->insert($this->getData());
     }
 
     private function getData(): array {
@@ -22,12 +22,9 @@ class UsersSeeder extends Seeder
         $faker = \Faker\Factory::create('ru_RU');
 
         $data = [];
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $data[] = [
-                'lastName' => $faker->lastName,
-                'firstName' => $faker->firstName,
-                'email' => $faker->email,
-                'password' => $faker->password
+                'title' => $faker->city
             ];
         }
 

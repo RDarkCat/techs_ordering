@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\CitiesController;
+use App\Http\Controllers\MachinesController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +18,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [IndexController::class, 'index'])->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('cities')->group(function () {
+    Route::get('/', [CitiesController::class, 'index'])->name('cities');
+    Route::get('/{cities}', [CitiesController::class, 'show'])->name('showCity');
 });
+
+Route::prefix('machines')->group(function () {
+    Route::get('/', [MachinesController::class, 'index'])->name('machines');
+    Route::get('/{machines}', [MachinesController::class, 'show'])->name('showMachine');
+});
+
+Route::get('/users', [UsersController::class, 'index'])->name('users');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');

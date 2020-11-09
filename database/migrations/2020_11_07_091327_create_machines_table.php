@@ -15,9 +15,9 @@ class CreateMachinesTable extends Migration
     {
         Schema::create('machines', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->integer('type')->default(0);
-            $table->integer("place_id");
+            $table->string("title");
+            $table->text("description");
+            $table->integer("price");
             $table->timestamps();
         });
     }
