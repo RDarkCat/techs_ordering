@@ -12,31 +12,9 @@
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     </head>
     <body>
-        <header>
-            <div class="header_inside">
-                <div class="header__city">
-                    <u>Moscow</u>
-                </div>
-                <div class="header__logo">
-                    <div class="header__logo__img">
-                        LOGO
-                    </div>
-                </div>
-                <div class="header__nav">
-                    <a href="#">Главная</a>
-                    <a href="#">Заказать</a>
-                    <a href="#">Аренда</a>
-                    <a href="#">Контакты</a>
-                </div>
-                <div class="header__logIn">
-                    <div class="logIn__auth">
-                        gg
-                    </div>
-                </div>
-            </div>
-        </header>
+        @include('parts/header')
         <style>
-            .slider{background: url(img/headPhoto.jpg); background-size: cover;background-position: center;background-attachment: fixed;}
+            .slider{background: url(https://via.placeholder.com/2200.png); background-size: cover;background-position: center;background-attachment: fixed;}
         </style>
         <div class="slider">
             <div class="black-back">
@@ -55,74 +33,131 @@
                     </h3>
                     <div class="services_orders__types">
                         <div class="types__item">
-                            <img src="img/tracktor.png" alt="">
-                            <p>
-                                Трактор
-                            </p>
-                            <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                            <button>Заказать</button>
+                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <div class="item_info">
+                                <p>
+                                    Трактор
+                                </p>
+                                <button>Заказать</button>
+                            </div>
                         </div>
                         <div class="types__item">
+                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <div class="item_info">
+                                <p>
+                                    Экскаватор
+                                </p>
+                                <button>Заказать</button>
+                            </div>
+                        </div>
+                        <div class="types__item">
+                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <div class="item_info">
+                                <p>
+                                    Трактор
+                                </p>
+                                <button>Заказать</button>
+                            </div>
+                        </div>
+                        <div class="types__item">
+                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <div class="item_info">
+                                <p>
+                                    Экскаватор
+                                </p>
+                                <button>Заказать</button>
+                            </div>
+                        </div>
+                        <div class="types__item">
+                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <div class="item_info">
+                                <p>
+                                    Трактор
+                                </p>
+                                <button>Заказать</button>
+                            </div>
+                        </div>
+                        <div class="types__item">
+                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <div class="item_info">
+                                <p>
+                                    Экскаватор
+                                </p>
+                                <button>Заказать</button>
+                            </div>
+                        </div>
+                        <div class="types__item">
+                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <div class="item_info">
+                                <p>
+                                    Трактор
+                                </p>
+                                <button>Заказать</button>
+                            </div>
+                        </div>
+                        {{-- <div class="types__item">
                             <img src="img/excavator.png" alt="">
-                            <p>
-                                Экскаватор
-                            </p>
-                            <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                            <button>Заказать</button>
+                            <div class="item_info">
+                                <p>
+                                    Экскаватор
+                                </p>
+                                <button>Заказать</button>
+                            </div>
+                        </div> --}}
+                    </div>
+                </div>
+            
+                <div class="equipment_rent">
+
+                    <h3>
+                        Аренда оборудования
+                    </h3>
+                    <div class="services_orders__types">
+                        <div class="types__item">
+                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <div class="item_info">
+                                <p>
+                                    Бетономешалка
+                                </p>
+                                <button>Заказать</button>
+                            </div>
                         </div>
                         <div class="types__item">
-                            <img src="img/tracktor.png" alt="">
-                            <p>
-                                Трактор
-                            </p>
-                            <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                            <button>Заказать</button>
+                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <div class="item_info">
+                                <p>
+                                    Перфоратор
+                                </p>
+                                <button>Заказать</button>
+                            </div>
                         </div>
                         <div class="types__item">
-                            <img src="img/tracktor.png" alt="">
-                            <p>
-                                Трактор
-                            </p>
-                            <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                            <button>Заказать</button>
+                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <div class="item_info">
+                                <p>
+                                    Электрогенератор
+                                </p>
+                                <button>Заказать</button>
+                            </div>
                         </div>
                         <div class="types__item">
-                            <img src="img/tracktor.png" alt="">
-                            <p>
-                                Трактор
-                            </p>
-                            <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                            <button>Заказать</button>
-                        </div>
-                        <div class="types__item">
-                            <img src="img/tracktor.png" alt="">
-                            <p>
-                                Трактор
-                            </p>
-                            <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                            <button>Заказать</button>
+                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <div class="item_info">
+                                <p>
+                                    Компрессор
+                                </p>
+                                <button>Заказать</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="equipment_rent">
-                    <h3>
-
-                    </h3>
-                    
+            </div>
+            <div class="full-width bg-lgrey">
+                <div class="container">
+                    @include('parts/about')
                 </div>
             </div>
+            @include('parts/footer')
         </main>
     </body>
 </html>

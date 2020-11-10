@@ -4,20 +4,45 @@
 p,div,span,td,h3,h4,h2,h1
     color: #333333
     font-size: 16px
+    line-height: 1.5em
 body,button,p,a,div,span,td,table
     font-family: 'Roboto', sans-serif
+// list 
+.list-bullet 
+  list-style: none
+  padding: 0 15px
+.list-bullet li 
+  padding: 5px 0px 5px 25px
+  line-height: 22px
+.list-bullet li::before 
+  content: " › "
+  color: #df523f
+  margin-right: 7px
+  font-weight: bold
+  margin: 0px 6px 0px -15px
+  font-size: 16px
+.pos-relative
+    position: relative
 .container
     width: 1150px
     margin: 0 auto
-    border-left: 1px solid black
-    border-right: 1px solid black
-    height: 100px
+    // border-left: 1px solid black
+    // border-right: 1px solid black
     padding: 30px 0
     box-sizing: border-box
+    h3 
+        font-size: 24px
+        margin-top: 70px
+.full-width 
+    width: 100%
+    text-align: center
+.bg-lgrey
+    background-color: #f0f0f0
 // header block
 header
     height: 80px
     width: 100%
+    background-color: rgba(0,0,0,0.4)
     position: fixed
     top: 0
 
@@ -90,6 +115,21 @@ header
     display: flex
     justify-content: center
     align-items: center
+    a 
+        text-decoration: none
+        display: flex 
+        width: 220px
+        height: 45px
+        font-size: 16px
+        border-radius: 5px
+        justify-content: center
+        align-items: center
+        color: #ffffff
+        background-color: #0070c0
+        transition: .2s
+        &:hover
+            transform: scale(1.05)
+            box-shadow: 0px 0px 5px 1px #fff
 
 // Slider block
 .slider
@@ -135,36 +175,38 @@ main
     &__types
         display: flex
         flex-wrap: wrap
-        flex-basis: 33.3%
+        width: 100%
         justify-content: center
 .types__item
     display: flex
-    flex-direction: column
     padding: 15px 10px
     box-sizing: border-box
-    width: 33.3%
-    height: 300px
+    width: 25%
+    height: 120px
     border: 1px solid #e0e0e0
     border-collapse: collapse
     img 
-        width: 55%
+        // width: 55%
         display: block
-        margin: 0 auto
-        height: 120px
+        margin: 0 10px
+        height: 60px
         background-color: #fff
+.item_info
+    display: flex
+    width: 100%
+    flex-direction: column
     p
         margin: 5px
-        &:first-of-type
-            font-size: 18px
-            color: #0070c0
-            font-weight: bold
+        font-size: 18px
+        color: #333333
+        font-weight: bold
     button 
-        width: 60%
+        width: 90%
         margin: 0 auto
         margin-top: 15px
         border: 0
-        margin-top: 20px
-        height: 45px
+        margin-top: 5px
+        height: 35px
         font-size: 14px
         background-color: #0070c0
         color: #fff
@@ -176,5 +218,113 @@ main
             box-shadow: 0px 0px 5px 1px #0070c0
             transform: scale(1.1)
 
+// equipment
+.equipment_rent
+    margin: 15px 0
+    @extend .services_orders 
+    h3 
+        font-size: 24pt
+        margin-bottom: 20px
+// about block 
+.about-service 
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    width: 80%
+    margin: 0 auto
+    h3 
+        font-size: 20px 
+        margin: 15px 0
+    p 
+        text-align: justify
+// footer
+footer 
+    display: flex
+    width: 100%
+    height: 60px
+    color: #fff
+    justify-content: center
+    align-items: center
+    background-color: #535353
 
+//ads block 
+.adverts-block
+    width: 100%
+    display: flex
+    margin-top: 100px
+    // background-color: green
+.adverts-list
+    width: 75%
+    margin: 0 auto
+    &__item
+        display: flex
+        width: 95%
+        margin: 25px auto
+        height: 250px
+        padding: 20px
+        box-sizing: border-box
+        // border: 1px solid black
+        border-radius: 5px
+        box-shadow: 0px 0px 10px 1px #444444
+.item__img
+    width: 290px
+    background-color: grey
+.item__descript
+    padding: 0 20px
+    box-sizing: border-box
+    display: flex 
+    flex-direction: column
+    align-items: flex-start
+    h4 
+        margin-bottom: 10px
+        font-size: 18px
+    p
+        text-align: justify
+        margin: 5px 0
+    button
+        border: 0 
+        width: 200px
+        height: 45px
+        margin-top: 10px
+        font-size: 16px
+        background-color: #0070c0
+        color: #fff
+        cursor: pointer
+        transition: .1s
+        &:hover
+            background-color: #fff
+            color: #0070c0
+            box-shadow: 0px 0px 5px 1px #0070c0
+
+
+.sidebar
+    width: 25%
+    border-left: 1px solid black
+.sidebar-filter
+    width: 90%
+    margin: 0 auto
+    height: 500px
+    border-radius: 5px
+    background-color: #f0f0f0
+    h4 
+        padding: 15px 0
+        font-size: 16px
+    form 
+        display: flex 
+        flex-direction: column
+        width: 80%
+        margin: 0 auto
+        select 
+            width: 100%
+            margin: 5px auto
+            height: 30px
+            font-size: 16px
+        label
+            margin-left: 4px 
+            font-size: 12px
+        input[type="radio"]
+            margin-left: 8px
+.radio-owner
+    display: flex 
+    align-items: center
 
