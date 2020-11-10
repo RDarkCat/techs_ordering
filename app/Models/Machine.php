@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Machines extends Model
+class Machine extends Model
 {
     use HasFactory;
 
@@ -17,5 +17,10 @@ class Machines extends Model
     public function owners()
     {
         return $this->belongsTo(Owner::class);
+    }
+
+    public function machineType()
+    {
+        return $this->belongsTo(MachineType::class);
     }
 }
