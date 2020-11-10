@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/ads', function() {
+    return view('adsList');
+});
 Route::get('/', [MachineController::class, 'machinesFullInformation'])->name('HomePage');
 Route::get('/machine_types/{type_id}', [MachineTypeController::class, 'getMachinesByType'])
     ->name('machinesTypes.getMachinesByType'); // клик на категорию

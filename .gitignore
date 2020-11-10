@@ -28,3 +28,8 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+
+public/css/*.css.map
+.DS_Store
+**/.DS_Store
+package-lock.json
