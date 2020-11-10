@@ -16,6 +16,6 @@ class Machines extends Model
      */
     public function owners()
     {
-        return $this->belongsTo(Owner::class);
+        return $this->belongsTo(Owners::class);
     }
 }

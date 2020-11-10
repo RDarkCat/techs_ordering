@@ -15,9 +15,9 @@ class CreateOwnersTable extends Migration
     {
         Schema::create('owners', function (Blueprint $table) {
             $table->id();
-            $table->string("name")->unique();
-            $table->string("surname");
-            $table->text("description")->nullable();
+            $table->string('name');
+            $table->string('surname');
+            $table->text('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

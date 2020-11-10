@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMachinesTable extends Migration
+class AlterTableMachines extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateMachinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('machines', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->integer('type')->default(0);
-            $table->integer('place_id');
-            $table->timestamps();
+        Schema::table('machines', function (Blueprint $table) {
+            $table->dropColumn('name');
+            $table->dropColumn('price_per_hour');
+            $table->string("title");
+            $table->text("description");
+            $table->integer("price");
         });
     }
 
@@ -29,6 +29,6 @@ class CreateMachinesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('machines');
+        //
     }
 }

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\City;
+use App\Models\Cities;
 use Illuminate\Http\Request;
 
 class CitiesController extends Controller
 {
     public function index() {
 
-        $cities = City::query()
+        $cities = Cities::query()
             ->simplePaginate(10);
 
         return view('cities.index')->with('cities', $cities);
@@ -17,7 +17,7 @@ class CitiesController extends Controller
 
     public function show($id)
     {
-        $city = City::query()->find($id);
+        $city = Cities::query()->find($id);
 
         if (!empty($city)) {
             return view('cities.one')->with('city', $city);
