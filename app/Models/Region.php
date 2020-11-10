@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cities extends Model
+class Region extends Model
 {
     use HasFactory;
 
-    public function regions()
+    public $timestamp = false;
+
+    public function cities()
     {
-        return $this->belongsToMany(Regions::class);
+        return $this->belongsToMany(city::class);
     }
 }

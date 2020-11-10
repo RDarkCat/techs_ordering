@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Regions;
+use App\Models\Region;
 use Illuminate\Http\Request;
 
 class RegionsController extends Controller
 {
     public function index() {
 
-        $regions = Regions::query()
+        $regions = Region::query()
             ->simplePaginate(10);
 
         return view('regions.index')->with('regions', $regions);
@@ -17,7 +17,7 @@ class RegionsController extends Controller
 
     public function show($id)
     {
-        $region = Regions::query()->find($id);
+        $region = Region::query()->find($id);
 
         if (!empty($region)) {
             return view('regions.one')->with('region', $region);

@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Owners extends Model
+class Machine extends Model
 {
     use HasFactory;
 
     protected $timestamp = false;
 
     /**
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function machines()
+    public function owners()
     {
-        return $this->hasMany(Machines::class);
+        return $this->belongsTo(Owner::class);
     }
 }

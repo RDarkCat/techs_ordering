@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Owners')
+@section('title', 'Owner')
 
 @section('content')
     @forelse($owners as $item)

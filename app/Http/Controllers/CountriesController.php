@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Countries;
+use App\Models\Country;
 use Illuminate\Http\Request;
 
 class CountriesController extends Controller
 {
     public function index() {
 
-        $countries = Countries::query()
+        $countries = Country::query()
             ->simplePaginate(10);
 
         return view('countries.index')->with('countries', $countries);
@@ -17,7 +17,7 @@ class CountriesController extends Controller
 
     public function show($id)
     {
-        $country = Countries::query()->find($id);
+        $country = Country::query()->find($id);
 
         if (!empty($country)) {
             return view('countries.one')->with('country', $country);

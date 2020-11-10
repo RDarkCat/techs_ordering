@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Regions')
+@section('title', 'Region')
 
 @section('content')
     @forelse($regions as $item)

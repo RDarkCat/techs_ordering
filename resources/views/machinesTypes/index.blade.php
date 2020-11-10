@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'MachinesTypes')
+@section('title', 'MachineType')
 
 @section('content')
     @forelse($machinesTypes as $item)
