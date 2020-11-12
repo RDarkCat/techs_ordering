@@ -4,8 +4,7 @@
 
 @section('content')
     @forelse($machines as $item)
-        <h2><a href="{{ route('showMachine', $item) }}">{{ $item->title }}</a></h2>
-
+{{ $item->title }}
         <div>
             {{ $item->description }}
         </div>
@@ -15,5 +14,5 @@
         Empty
     @endforelse
 
-    {{ $machines->links() }}
+{{--    {{ $machines->links() }}--}}
 @endsection

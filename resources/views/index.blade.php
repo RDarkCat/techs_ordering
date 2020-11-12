@@ -8,8 +8,8 @@
     <hr>
 
     @forelse($machines as $item)
-        <h2><a href="{{ route('showMachine', $item) }}">{{ $item->title }}</a></h2>
-
+{{--        <h2><a href="{{ route('machines.show', $item) }}">{{ $item->title }}</a></h2>--}}
+        {{ $item->title }}
         <div>
             {{ $item->description }}
         </div>
