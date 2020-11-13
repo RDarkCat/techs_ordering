@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Machine;
 
 class ItemController extends Controller
 {
@@ -13,7 +14,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        $machines = Machine::all();
+        return view('adsList', ['machines' => $machines]);
     }
 
     /**

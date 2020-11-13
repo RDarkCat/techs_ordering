@@ -14,66 +14,28 @@
         <div class="container">
             <div class="adverts-block">
                 <div class="adverts-list">
+                	@foreach($machines as $machine)
                     <div class="adverts-list__item">
                         <div class="item__img">
                             <img src="../img/excavator.png" alt="">
                         </div>
                         <div class="item__descript">
                             <h4>
-                                Название 554433
+                                Название: {{ $machine->name }}
                             </h4>
                             <p>
-                                Описание Lorem ipsum dolor sit amet, tio sint conseur, aliquid laboriosam.
+                                Описание: {{ $machine->description }}
                             </p>
                             <p>
                                 <b>
-                                    Цена: <span></span>
+                                    Цена: <span>{{ $machine->price }}</span>
                                 </b>
                             </p>
                             <button>Заказать</button>
 
                         </div>
                     </div>
-                    <div class="adverts-list__item">
-                        <div class="item__img">
-                            <img src="../img/excavator.png" alt="">
-                        </div>
-                        <div class="item__descript">
-                            <h4>
-                                Название 554433
-                            </h4>
-                            <p>
-                                Описание Lorem ipsum dolor sit amet, tio sint conseur, aliquid laboriosam.
-                            </p>
-                            <p>
-                                <b>
-                                    Цена: <span></span>
-                                </b>
-                            </p>
-                            <button>Заказать</button>
-
-                        </div>
-                    </div>
-                    <div class="adverts-list__item">
-                        <div class="item__img">
-                            <img src="https://via.placeholder.com/260x210.png" alt="">
-                        </div>
-                        <div class="item__descript">
-                            <h4>
-                                Название 554433
-                            </h4>
-                            <p>
-                                Описание Lorem ipsum dolor sit amet, tio sint conseur, aliquid laboriosam.
-                            </p>
-                            <p>
-                                <b>
-                                    Цена: <span></span>
-                                </b>
-                            </p>
-                            <button>Заказать</button>
-
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="sidebar">
                     <div class="sidebar-filter">
