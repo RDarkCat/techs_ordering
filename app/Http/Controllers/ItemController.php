@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Machine;
+use App\Models\Region;
 
 class ItemController extends Controller
 {
@@ -12,10 +13,12 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        $machines = Machine::all();
-        return view('adsList', ['machines' => $machines]);
+        $machines = Machine::paginate(3);
+        $regions = Region::all();
+        return view('adsList', ['machines' => $machines, 'regions' => $regions]);
     }
 
     /**
@@ -36,7 +39,7 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //return view('adsListItem', );
     }
 
     /**

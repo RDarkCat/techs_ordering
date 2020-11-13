@@ -21,7 +21,6 @@ class CreateMediaTable extends Migration
             $table->json('metadata');
 
             $table->timestamps();
-            $table->foreign('machine_type_id')->references('id')->on('machines_types');
         });
     }
 

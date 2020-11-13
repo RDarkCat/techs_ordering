@@ -14,10 +14,6 @@ class CreateSettlementsTable extends Migration
     public function up()
     {
         Schema::create('settlements', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->charset = 'utf8mb4';
-            $table->collation = 'utf8mb4_unicode_ci';
-
             $table->id();
             $table->foreignId('region_id');
             $table->string('title')->comment('Название населенного пункта')

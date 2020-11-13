@@ -17,18 +17,18 @@
                 	@foreach($machines as $machine)
                     <div class="adverts-list__item">
                         <div class="item__img">
-                            <img src="../img/excavator.png" alt="">
+                            <img src="@if ($loop->index % rand(1, 3) == 0) ../img/excavator.png @else ../img/tracktor.png @endif" alt="">
                         </div>
                         <div class="item__descript">
                             <h4>
-                                Название: {{ $machine->name }}
+                                Название: {{ $machine['name'] }}
                             </h4>
                             <p>
-                                Описание: {{ $machine->description }}
+                                Описание: {{ $machine['description'] }}
                             </p>
                             <p>
                                 <b>
-                                    Цена: <span>{{ $machine->price }}</span>
+                                    Цена: <span>{{ $machine['price'] }}</span>
                                 </b>
                             </p>
                             <button>Заказать</button>
@@ -36,7 +36,11 @@
                         </div>
                     </div>
                     @endforeach
+                    <p>
+                    {{ $machines->links("pagination::bootstrap-4") }}
+                    </p>
                 </div>
+                
                 <div class="sidebar">
                     <div class="sidebar-filter">
                         <h4>
@@ -53,10 +57,10 @@
                                 <option value="">Погрузчики</option>
                             </select>
                             <select name="" id="">
-                                <option value="">Московская область</option>
-                                <option value="">Москва</option>
-                            </select>
-                            
+                            	@foreach($regions as $region)
+                                	<option value="">{{ $region['title'] }}</option>
+                                @endforeach
+                            </select>                            
                             <div class="radio-owner">
                                 <input type="radio" name="owner" id="all" value="all" checked><label for="all">Все</label>
                                 <input type="radio" name="owner" id="owner" value="owner"><label for="owner">Частник</label>

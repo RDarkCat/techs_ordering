@@ -24,8 +24,8 @@ class MachinesSeeder extends Seeder
         $data = [];
         for ($i = 0; $i < 100; $i++) {
             $data[] = [
-                'title' => $faker->word,
-                'description' => $faker->realText(200,2),
+                'name' => $faker->word,
+                'description' => $faker->realText(100,2),
                 'price' => $faker->randomFloat(6, 1)
             ];
         }

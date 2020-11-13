@@ -22,9 +22,10 @@ class RegionsSeeder extends Seeder
         $faker = \Faker\Factory::create('ru_RU');
 
         $data = [];
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $data[] = [
-                'title' => $faker->city
+                'title' => $faker->city,
+                'country_id' => random_int(0, 9)
             ];
         }
 

@@ -14,10 +14,6 @@ class CreateMovementTypesTable extends Migration
     public function up()
     {
         Schema::create('movement_types', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->charset = 'utf8mb4';
-            $table->collation = 'utf8mb4_unicode_ci';
-
             $table->id();
 
             $table->string('title')->comment('Способ передвижения')

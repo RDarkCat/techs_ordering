@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="header__nav">
-            <a href="/">Главная</a>
+            <a href="/home">Главная</a>
             <a href="/ads">Заказать</a>
             <a href="#">О сервисе</a>
             <a href="#">Контакты</a>
