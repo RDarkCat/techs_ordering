@@ -16,7 +16,7 @@
                 <div class="adverts-list">
                     <div class="adverts-list__item">
                         <div class="item__img">
-                            <img src="https://via.placeholder.com/260x210.png" alt="">
+                            <img src="../img/excavator.png" alt="">
                         </div>
                         <div class="item__descript">
                             <h4>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="adverts-list__item">
                         <div class="item__img">
-                            <img src="https://via.placeholder.com/260x210.png" alt="">
+                            <img src="../img/excavator.png" alt="">
                         </div>
                         <div class="item__descript">
                             <h4>

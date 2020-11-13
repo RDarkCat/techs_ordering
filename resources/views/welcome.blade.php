@@ -33,7 +33,7 @@
                     </h3>
                     <div class="services_orders__types">
                         <div class="types__item">
-                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <img src="../img/excavator.png" alt="">
                             <div class="item_info">
                                 <p>
                                     Трактор
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <div class="types__item">
-                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <img src="../img/excavator.png" alt="">
                             <div class="item_info">
                                 <p>
                                     Экскаватор
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                         <div class="types__item">
-                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <img src="../img/excavator.png" alt="">
                             <div class="item_info">
                                 <p>
                                     Трактор
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                         <div class="types__item">
-                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <img src="../img/tracktor.png" alt="">
                             <div class="item_info">
                                 <p>
                                     Экскаватор
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="types__item">
-                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <img src="../img/tracktor.png" alt="">
                             <div class="item_info">
                                 <p>
                                     Трактор
@@ -78,7 +78,7 @@
                             </div>
                         </div>
                         <div class="types__item">
-                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <img src="../img/tracktor.png" alt="">
                             <div class="item_info">
                                 <p>
                                     Экскаватор
@@ -87,7 +87,7 @@
                             </div>
                         </div>
                         <div class="types__item">
-                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <img src="../img/tracktor.png" alt="">
                             <div class="item_info">
                                 <p>
                                     Трактор
@@ -96,7 +96,7 @@
                             </div>
                         </div>
                         {{-- <div class="types__item">
-                            <img src="img/excavator.png" alt="">
+                            <img src="../img/tracktor.png" alt="">
                             <div class="item_info">
                                 <p>
                                     Экскаватор
@@ -114,7 +114,7 @@
                     </h3>
                     <div class="services_orders__types">
                         <div class="types__item">
-                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <img src="../img/tracktor.png" alt="">
                             <div class="item_info">
                                 <p>
                                     Бетономешалка
@@ -123,7 +123,7 @@
                             </div>
                         </div>
                         <div class="types__item">
-                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <img src="../img/tracktor.png" alt="">
                             <div class="item_info">
                                 <p>
                                     Перфоратор
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <div class="types__item">
-                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <img src="../img/tracktor.png" alt="">
                             <div class="item_info">
                                 <p>
                                     Электрогенератор
@@ -141,7 +141,7 @@
                             </div>
                         </div>
                         <div class="types__item">
-                            <img src="https://via.placeholder.com/60.png" alt="">
+                            <img src="../img/tracktor.png" alt="">
                             <div class="item_info">
                                 <p>
                                     Компрессор
