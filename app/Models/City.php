@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class City extends Model
+class city extends Model
 {
     use HasFactory;
-
-    public $timestamp = false;
 
     public function regions()
     {

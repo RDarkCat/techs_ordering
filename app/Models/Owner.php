@@ -16,6 +16,6 @@ class Owner extends Model
      */
     public function machines()
     {
-        return $this->hasMany(Machines::class);
+        return $this->hasMany(Machine::class);
     }
 }

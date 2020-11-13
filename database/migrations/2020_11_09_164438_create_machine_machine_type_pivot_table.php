@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMachinesTable extends Migration
+class CreateMachineMachineTypePivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateMachinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('machines', function (Blueprint $table) {
+        Schema::create('machine_machine_type', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('type')->default(0);
-            $table->integer('place_id');
+            $table->bigInteger('machine_id')->unsigned();
+            $table->bigInteger('machine_type_id')->unsigned();
             $table->timestamps();
+            $table->foreign('machine_id')->references('id')->on('machines');
             $table->foreign('machine_type_id')->references('id')->on('machines_types');
         });
     }
@@ -30,6 +30,6 @@ class CreateMachinesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('machines');
+        Schema::dropIfExists('machine_machine_type');
     }
 }

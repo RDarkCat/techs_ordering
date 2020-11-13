@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddPhoneFieldToOwnerTable extends Migration
+class AlterTableMachineType extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddPhoneFieldToOwnerTable extends Migration
      */
     public function up()
     {
-        Schema::table('owners', function (Blueprint $table) {
-            $table->string('phone');
+        Schema::table('machine_type', function (Blueprint $table) {
+            $table->dropColumn('name');
+            $table->string("title");
         });
     }
 
@@ -25,8 +26,6 @@ class AddPhoneFieldToOwnerTable extends Migration
      */
     public function down()
     {
-        Schema::table('owners', function (Blueprint $table) {
-            $table->dropColumn('phone');
-        });
+        //
     }
 }
