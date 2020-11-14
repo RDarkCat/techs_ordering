@@ -26,6 +26,8 @@ class AlterTableMediaAddFk extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('media', function (Blueprint $table) {
+            $table->dropForeign('media_item_id_foreign');
+        });
     }
 }

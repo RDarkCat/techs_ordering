@@ -14,28 +14,23 @@ class CreateCharacteristicsTable extends Migration
     public function up()
     {
         Schema::create('characteristics', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('item_id');
 
-            $table->text('description')->comment('Описание');
-            $table->integer('length')->comment('Длинна')
-                ->index()->default(null);
-            $table->integer('height')->comment('Высота')
-                ->index()->default(null);
-            $table->integer('width')->comment('Ширина')
-                ->index()->default(null);
-            $table->integer('mass')->comment('Масса')
-                ->index()->default(null);
-            $table->integer('power_watt')->comment('Мощьность в Ватт')
-                ->index()->default(null);
-            $table->integer('power_hp')->comment('Мощьность в лошадиных силах')
-                ->index()->default(null);
-            $table->integer('power_kg')->comment('Грозоподъёмность')
-                ->index()->default(null);
-            $table->integer('price_ph')->comment('Цена в час')
-                ->index()->default(null);
-            $table->integer('prise_pd')->comment('Цена в сутки')
-                ->index()->default(null);
+            $table->text('description');
+            $table->integer('length')
+                ->index()->nullable();
+            $table->integer('height')
+                ->index()->nullable();
+            $table->integer('width')
+                ->index()->nullable();
+            $table->integer('mass')
+                ->index()->nullable();
+            $table->integer('power_watt')
+                ->index()->nullable();
+            $table->integer('horse_power')
+                ->index()->nullable();
+            $table->integer('lifting_capacity')
+                ->index()->nullable();
 
             $table->timestamps();
         });

@@ -15,13 +15,10 @@ class CreateDimensionsTable extends Migration
     {
         Schema::create('dimensions', function (Blueprint $table) {
             $table->id();
-
-            $table->string('title')->comment('Габариты')
+            $table->string('dimension')
                 ->index();
-            $table->text('description')->comment('Описание')
-                ->default(null);
-
-            $table->timestamps();
+            $table->text('description')
+            ->nullable();
         });
     }
 

@@ -26,6 +26,8 @@ class AlterTableRegionsAddFk extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('regions', function (Blueprint $table) {
+            $table->dropForeign('regions_country_id_foreign');
+        });
     }
 }

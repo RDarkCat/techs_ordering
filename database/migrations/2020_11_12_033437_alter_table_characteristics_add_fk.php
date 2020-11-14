@@ -27,6 +27,8 @@ class AlterTableCharacteristicsAddFk extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('characteristics', function (Blueprint $table) {
+            $table->dropForeign('characteristics_item_id_foreign');
+        });
     }
 }

@@ -24,7 +24,8 @@ class CitiesSeeder extends Seeder
         $data = [];
         for ($i = 0; $i < 100; $i++) {
             $data[] = [
-                'title' => $faker->city
+                'title' => $faker->city,
+                'region_id' => rand(1, 100)
             ];
         }
 

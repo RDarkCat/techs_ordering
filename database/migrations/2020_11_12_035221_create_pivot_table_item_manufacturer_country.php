@@ -21,8 +21,6 @@ class CreatePivotTableItemManufacturerCountry extends Migration
                 ->references('id')->on('items');
             $table->foreign('manufacturer_country_id')
                 ->references('id')->on('manufacturer_countries');
-
-            $table->timestamps();
         });
     }
 
@@ -33,6 +31,10 @@ class CreatePivotTableItemManufacturerCountry extends Migration
      */
     public function down()
     {
+        Schema::table('item_manufacturer_country', function (Blueprint $table) {
+            $table->dropForeign('item_manufacturer_country_item_id_foreign');
+            $table->dropForeign('item_manufacturer_country_manufacturer_country_id_foreign');
+        });
         Schema::dropIfExists('item_manufacturer_country');
     }
 }

@@ -15,13 +15,10 @@ class CreateEnginesTable extends Migration
     {
         Schema::create('engines', function (Blueprint $table) {
             $table->id();
-
-            $table->string('title')->comment('Тип двигателя')
+            $table->string('type')
                 ->index();
-            $table->text('description')->comment('Описание')
-                ->default(null);
-
-            $table->timestamps();
+            $table->text('description')
+                ->nullable();
         });
     }
 

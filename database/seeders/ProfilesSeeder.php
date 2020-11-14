@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class OwnersSeeder extends Seeder
+class ProfilesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class OwnersSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('owners')->insert($this->getData());
+        DB::table('profiles')->insert($this->getData());
     }
 
     private function getData(): array {
@@ -24,9 +24,12 @@ class OwnersSeeder extends Seeder
         $data = [];
         for ($i = 0; $i < 10; $i++) {
             $data[] = [
-                'name' => $faker->firstName,
-                'surname' => $faker->lastName,
-                'phone' => $faker->phoneNumber
+                'user_id' => rand(1, 10),
+                'first_name' => $faker->firstName,
+                'last_name' => $faker->lastName,
+                'phone' => $faker->phoneNumber,
+                'address' => $faker->address,
+                'description' => $faker->realText(10, 2)
             ];
         }
 

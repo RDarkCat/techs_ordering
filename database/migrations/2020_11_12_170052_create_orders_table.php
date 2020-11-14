@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMovementTypesTable extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateMovementTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('movement_types', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
-
-            $table->string('title')->comment('Способ передвижения')
-                ->index();
-            $table->text('description')->comment('Описание')
-                ->default(null);
+            $table->unsignedBigInteger('user_id');
 
             $table->timestamps();
+
+            $table->index('user_id');
         });
     }
 
@@ -32,6 +30,6 @@ class CreateMovementTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('movment_types');
+        Schema::dropIfExists('orders');
     }
 }

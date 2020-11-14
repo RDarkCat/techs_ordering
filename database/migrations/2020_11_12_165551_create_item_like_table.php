@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePivotTableItemUser extends Migration
+class CreateItemLikeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class CreatePivotTableItemUser extends Migration
      */
     public function up()
     {
-        Schema::create('item_user', function (Blueprint $table) {
+        Schema::create('item_like', function (Blueprint $table) {
+            $table->id();
+            $table->boolean('like');
             $table->foreignId('item_id');
-            $table->foreignId('user_id');
+            $table->foreignId('user_id_from');
+            $table->timestamps();
 
             $table->foreign('item_id')
                 ->references('id')->on('items');
-            $table->foreign('user_id')
+            $table->foreign('user_id_from')
                 ->references('id')->on('users');
         });
     }
@@ -31,10 +34,10 @@ class CreatePivotTableItemUser extends Migration
      */
     public function down()
     {
-        Schema::table('item_user', function (Blueprint $table) {
-            $table->dropForeign('item_user_item_id_foreign');
-            $table->dropForeign('item_user_user_id_foreign');
+        Schema::table('item_like', function (Blueprint $table) {
+            $table->dropForeign('item_like_item_id_foreign');
+            $table->dropForeign('item_like_user_id_from_foreign');
         });
-        Schema::dropIfExists('item_user');
+        Schema::dropIfExists('item_like');
     }
 }

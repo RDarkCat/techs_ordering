@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class MachinesSeeder extends Seeder
+class Categories extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class MachinesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('machines')->insert($this->getData());
+        DB::table('categories')->insert($this->getData());
     }
 
     private function getData(): array {
@@ -22,11 +22,9 @@ class MachinesSeeder extends Seeder
         $faker = \Faker\Factory::create('ru_RU');
 
         $data = [];
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             $data[] = [
-                'name' => $faker->word,
-                'description' => $faker->realText(100,2),
-                'price' => $faker->randomFloat(6, 1)
+                'name' => $faker->word
             ];
         }
 
