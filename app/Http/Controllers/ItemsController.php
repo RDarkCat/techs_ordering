@@ -10,7 +10,7 @@ class ItemsController extends Controller
 {
     public function index() {
 
-        
+
         $items = Item::with('characteristic')
             ->simplePaginate(5);
 
@@ -28,7 +28,7 @@ class ItemsController extends Controller
 
     public function show($id)
     {
-        $item = Item::with('characteristic')->find($id);        
+        $item = Item::with('characteristic')->find($id);
 
         if (!empty($item)) {
             return view('items.one')->with('item', $item);

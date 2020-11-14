@@ -40,7 +40,7 @@
                     {{ $items->links() }}
                     </p>
                 </div>
-                
+
                 <div class="sidebar">
                     <div class="sidebar-filter">
                         <h4>
@@ -60,7 +60,7 @@
                             	@foreach($regions as $region)
                                 	<option value="">{{ $region->name }}</option>
                                 @endforeach
-                            </select>                            
+                            </select>
                             <div class="radio-owner">
                                 <input type="radio" name="owner" id="all" value="all" checked><label for="all">Все</label>
                                 <input type="radio" name="owner" id="owner" value="owner"><label for="owner">Частник</label>
