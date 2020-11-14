@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 </head>
+
 <body>
     @include('parts/header')
     <div class="full-width">
         <div class="container">
             <div class="adverts-block">
                 <div class="adverts-list">
-                	@foreach($items as $item)
+                    @foreach($items as $item)
                     <div class="adverts-list__item">
                         <div class="item__img">
                             <img src="@if ($loop->index % rand(1, 3) == 0) ../img/excavator.png @else ../img/tracktor.png @endif" alt="">
@@ -31,16 +33,18 @@
                                     Цена: <span>{{ $item['price'] }}</span>
                                 </b>
                             </p>
-                            <button>Заказать</button>
-
+                            <form>
+                                <input type="hidden" name="item_id" value="{{ $item['id'] }}">
+                                <button formaction="{{ route('orders.create') }}">Заказать</button>
+                            </form>
                         </div>
                     </div>
                     @endforeach
                     <p>
-                    {{ $items->links() }}
+                        {{ $items->links() }}
                     </p>
                 </div>
-                
+
                 <div class="sidebar">
                     <div class="sidebar-filter">
                         <h4>
@@ -57,10 +61,10 @@
                                 <option value="">Погрузчики</option>
                             </select>
                             <select name="" id="">
-                            	@foreach($regions as $region)
-                                	<option value="">{{ $region['name'] }}</option>
+                                @foreach($regions as $region)
+                                <option value="">{{ $region['name'] }}</option>
                                 @endforeach
-                            </select>                            
+                            </select>
                             <div class="radio-owner">
                                 <input type="radio" name="owner" id="all" value="all" checked><label for="all">Все</label>
                                 <input type="radio" name="owner" id="owner" value="owner"><label for="owner">Частник</label>
@@ -74,4 +78,5 @@
     </div>
     @include('parts/footer')
 </body>
+
 </html>
