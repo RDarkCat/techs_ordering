@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Machine;
+use App\Models\Item;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function index() {
 
-        $machines = Machine::all()->random(3);
+        $items = Item::all()->random(3);
 
-        return view('index')->with('machines', $machines);
+        return view('index')->with('items', $items);
     }
 }

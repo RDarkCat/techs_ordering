@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\MachinesController;
+use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
@@ -20,9 +20,9 @@ use App\Http\Controllers\ItemController;
 */
 Route::get('/', [IndexController::class, 'index'])->name('home');
 
-Route::prefix('items')->as('machines.')->group(function () {
-    Route::get('/', [MachinesController::class, 'index'])->name('index');
-    Route::get('/{machines}', [MachinesController::class, 'show'])->name('show');
+Route::prefix('items')->as('items.')->group(function () {
+    Route::get('/', [ItemsController::class, 'index'])->name('index');
+    Route::get('/{items}', [ItemsController::class, 'show'])->name('show');
 });
 
 Route::get('/users', [UsersController::class, 'index'])->name('users');

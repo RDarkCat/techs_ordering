@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Machine;
+use App\Models\Item;
 use App\Models\Region;
 
 class ItemController extends Controller
@@ -16,7 +16,7 @@ class ItemController extends Controller
 
     public function index()
     {
-        $machines = Machine::paginate(3);
+        $machines = Item::paginate(3);
         $regions = Region::all();
         return view('adsList', ['machines' => $machines, 'regions' => $regions]);
     }

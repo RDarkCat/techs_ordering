@@ -14,22 +14,8 @@ class RegionsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('regions')->insert($this->getData());
-    }
-
-    private function getData(): array {
-
-        $faker = \Faker\Factory::create('ru_RU');
-
-        $data = [];
-        for ($i = 0; $i < 100; $i++) {
-            $data[] = [
-                'title' => $faker->city,
-                'country_id' => rand(1, 10)
-
-            ];
-        }
-
-        return $data;
+        $path = database_path('seeders/sql/regions.sql');
+        $sql = file_get_contents($path);
+        DB::unprepared($sql);
     }
 }

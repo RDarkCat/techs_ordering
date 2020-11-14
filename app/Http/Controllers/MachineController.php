@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Machine;
+use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +15,7 @@ class MachineController extends Controller
      */
     public function index()
     {
-        $machines = Machine::all();
+        $machines = Item::all();
     }
 
     /**

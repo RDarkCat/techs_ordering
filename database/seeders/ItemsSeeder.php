@@ -14,25 +14,8 @@ class ItemsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('items')->insert($this->getData());
-    }
-
-    private function getData(): array {
-
-        $faker = \Faker\Factory::create('ru_RU');
-
-        $data = [];
-        for ($i = 0; $i < 100; $i++) {
-            $data[] = [
-
-                'name' => $faker->word,
-                'description' => $faker->realText(100,2),
-                'price' => $faker->randomFloat(6, 1),
-                'settlement_id' => 1,
-                'title' => $faker->word
-            ];
-        }
-
-        return $data;
+        $path = database_path('seeders/sql/items.sql');
+        $sql = file_get_contents($path);
+        DB::unprepared($sql);
     }
 }
