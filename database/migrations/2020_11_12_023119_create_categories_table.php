@@ -14,19 +14,12 @@ class CreateCategoriesTable extends Migration
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->charset = 'utf8mb4';
-            $table->collation = 'utf8mb4_unicode_ci';
-
             $table->id();
-            $table->unsignedBigInteger('parent_id')->comment('Идентификатор родительской категории')
+            $table->unsignedBigInteger('parent_id')
                 ->default(null);
-            $table->string('title')->comment('Название категории')
+            $table->string('name')
                 ->index();
-            $table->text('description')->comment('Описание')
-            ;
-
-            $table->timestamps();
+            $table->text('description');
         });
     }
 

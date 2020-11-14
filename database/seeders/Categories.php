@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class MachinesTypes extends Seeder
+class Categories extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class MachinesTypes extends Seeder
      */
     public function run()
     {
-        DB::table('machines_types')->insert($this->getData());
+        DB::table('categories')->insert($this->getData());
     }
 
     private function getData(): array {
@@ -24,7 +24,7 @@ class MachinesTypes extends Seeder
         $data = [];
         for ($i = 0; $i < 20; $i++) {
             $data[] = [
-                'title' => $faker->word
+                'name' => $faker->word
             ];
         }
 

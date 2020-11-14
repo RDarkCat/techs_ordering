@@ -14,19 +14,16 @@ class CreateProfilesTable extends Migration
     public function up()
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->charset = 'utf8mb4';
-            $table->collation = 'utf8mb4_unicode_ci';
-
             $table->foreignId('user_id');
-            $table->string('firstName');
-            $table->string('lastName');
+            $table->tinyInteger('role_id')
+                ->nullable();
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('phone');
             $table->text('address');
 
-            $table->enum('role', ['user', 'owner', 'company', 'admin'])
-                ->default('user');
-            $table->text('description')->default(null);
+            $table->text('description')
+                ->nullable();
 
             $table->timestamps();
         });

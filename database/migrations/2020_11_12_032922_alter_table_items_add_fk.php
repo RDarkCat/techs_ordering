@@ -26,6 +26,8 @@ class AlterTableItemsAddFk extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('items', function (Blueprint $table) {
+            $table->dropForeign('items_settlement_id_foreign');
+        });
     }
 }

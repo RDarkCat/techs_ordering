@@ -19,8 +19,6 @@ class CreateMediaTable extends Migration
             $table->string('filename');
             $table->enum('file_type', ['img', 'video']);
             $table->json('metadata');
-
-            $table->timestamps();
         });
     }
 

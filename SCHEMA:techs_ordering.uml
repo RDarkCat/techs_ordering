@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>aab6015f-8c92-4d80-a4eb-eff19744a448.SCHEMA:techs_ordering</OriginalElement>
+  <nodes>
+    <node x="1229.75" y="605.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.items</node>
+    <node x="2027.25" y="983.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_manufacturer_country</node>
+    <node x="212.0" y="1268.0">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.password_resets</node>
+    <node x="2351.25" y="983.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_category</node>
+    <node x="1027.25" y="868.0">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.characteristics</node>
+    <node x="1867.0236363636363" y="605.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.application_scopes</node>
+    <node x="1242.75" y="373.0">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.settlements</node>
+    <node x="306.25" y="983.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_type</node>
+    <node x="17.25" y="983.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_movement_type</node>
+    <node x="763.75" y="605.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.engines</node>
+    <node x="1263.25" y="0.0">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.countries</node>
+    <node x="2762.7536363636364" y="571.0">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.users</node>
+    <node x="1470.25" y="983.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_dimension</node>
+    <node x="1239.25" y="175.0">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.regions</node>
+    <node x="795.25" y="983.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_engine</node>
+    <node x="271.25" y="605.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.types</node>
+    <node x="0.0" y="605.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.movement_types</node>
+    <node x="2169.5236363636363" y="605.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.manufacturer_countries</node>
+    <node x="524.25" y="983.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_manufacturer</node>
+    <node x="502.5" y="605.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.manufacturers</node>
+    <node x="2594.25" y="983.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_user</node>
+    <node x="1245.25" y="948.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.media</node>
+    <node x="2830.5236363636363" y="926.0">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.profiles</node>
+    <node x="1725.25" y="983.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_application_scope</node>
+    <node x="1580.2736363636363" y="605.5">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.dimensions</node>
+    <node x="2431.2736363636363" y="594.0">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.categories</node>
+    <node x="0.0" y="1268.0">aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.migrations</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_type" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.types">
+      <point x="-49.5" y="-62.0" />
+      <point x="0.0" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_manufacturer_country" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.manufacturer_countries">
+      <point x="76.0" y="-62.0" />
+      <point x="2255.25" y="848.0" />
+      <point x="2273.5236363636363" y="848.0" />
+      <point x="0.0" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_movement_type" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.movement_types">
+      <point x="-67.25" y="-62.0" />
+      <point x="0.0" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_category" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.categories">
+      <point x="55.75" y="-62.0" />
+      <point x="2518.5" y="848.0" />
+      <point x="2536.7736363636363" y="848.0" />
+      <point x="0.0" y="85.5" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_manufacturer_country" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.items">
+      <point x="-76.0" y="-62.0" />
+      <point x="2103.25" y="828.0" />
+      <point x="1412.1136363636363" y="828.0" />
+      <point x="64.36363636363626" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.items" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.settlements">
+      <point x="0.0" y="-74.0" />
+      <point x="0.0" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_dimension" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.items">
+      <point x="-58.75" y="-62.0" />
+      <point x="1529.0" y="848.0" />
+      <point x="1369.2045454545455" y="848.0" />
+      <point x="21.454545454545496" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_application_scope" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.application_scopes">
+      <point x="70.5" y="-62.0" />
+      <point x="1936.75" y="848.0" />
+      <point x="1955.0236363636363" y="848.0" />
+      <point x="0.0" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.characteristics" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.items">
+      <point x="0.0" y="-177.5" />
+      <point x="1126.25" y="848.0" />
+      <point x="1326.2954545454545" y="848.0" />
+      <point x="-21.454545454545496" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_user" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.users">
+      <point x="49.5" y="-62.0" />
+      <point x="2742.75" y="848.0" />
+      <point x="2815.5036363636364" y="848.0" />
+      <point x="-52.75" y="108.5" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_engine" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.engines">
+      <point x="-53.0" y="-62.0" />
+      <point x="0.0" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.settlements" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.regions">
+      <point x="0.0" y="-74.0" />
+      <point x="0.0" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_type" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.items">
+      <point x="49.5" y="-62.0" />
+      <point x="454.75" y="818.0" />
+      <point x="1261.9318181818182" y="818.0" />
+      <point x="-85.81818181818176" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.profiles" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.users">
+      <point x="0.0" y="-119.5" />
+      <point x="2980.0236363636363" y="848.0" />
+      <point x="2921.0036363636364" y="848.0" />
+      <point x="52.75" y="108.5" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_manufacturer" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.manufacturers">
+      <point x="-62.75" y="-62.0" />
+      <point x="0.0" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_manufacturer" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.items">
+      <point x="62.75" y="-62.0" />
+      <point x="712.5" y="828.0" />
+      <point x="1283.3863636363637" y="828.0" />
+      <point x="-64.36363636363626" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_movement_type" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.items">
+      <point x="67.25" y="-62.0" />
+      <point x="219.0" y="808.0" />
+      <point x="1240.4772727272727" y="808.0" />
+      <point x="-107.27272727272725" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_user" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.items">
+      <point x="-49.5" y="-62.0" />
+      <point x="2643.75" y="808.0" />
+      <point x="1455.0227272727273" y="808.0" />
+      <point x="107.27272727272725" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.media" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.items">
+      <point x="0.0" y="-97.0" />
+      <point x="0.0" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_application_scope" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.items">
+      <point x="-70.5" y="-62.0" />
+      <point x="1795.75" y="838.0" />
+      <point x="1390.659090909091" y="838.0" />
+      <point x="42.90909090909099" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_engine" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.items">
+      <point x="53.0" y="-62.0" />
+      <point x="954.25" y="838.0" />
+      <point x="1304.840909090909" y="838.0" />
+      <point x="-42.90909090909099" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_dimension" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.dimensions">
+      <point x="58.75" y="-62.0" />
+      <point x="1646.5" y="848.0" />
+      <point x="1664.7736363636363" y="848.0" />
+      <point x="0.0" y="74.0" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.regions" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.countries">
+      <point x="0.0" y="-74.0" />
+      <point x="0.0" y="62.5" />
+    </edge>
+    <edge source="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.item_category" target="aab6015f-8c92-4d80-a4eb-eff19744a448.TABLE:techs_ordering.items">
+      <point x="-55.75" y="-62.0" />
+      <point x="2407.0" y="818.0" />
+      <point x="1433.5681818181818" y="818.0" />
+      <point x="85.81818181818176" y="74.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.36190476190476195" x="1565.0" y="684.9999999999999" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+

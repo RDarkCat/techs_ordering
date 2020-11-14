@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePivotTableItemUser extends Migration
+class CreatePivotTableCommentUser extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreatePivotTableItemUser extends Migration
      */
     public function up()
     {
-        Schema::create('item_user', function (Blueprint $table) {
-            $table->foreignId('item_id');
+        Schema::create('comment_user', function (Blueprint $table) {
+            $table->foreignId('comment_id');
             $table->foreignId('user_id');
 
-            $table->foreign('item_id')
-                ->references('id')->on('items');
+            $table->foreign('comment_id')
+                ->references('id')->on('comments');
             $table->foreign('user_id')
                 ->references('id')->on('users');
         });
@@ -31,10 +31,10 @@ class CreatePivotTableItemUser extends Migration
      */
     public function down()
     {
-        Schema::table('item_user', function (Blueprint $table) {
-            $table->dropForeign('item_user_item_id_foreign');
-            $table->dropForeign('item_user_user_id_foreign');
+        Schema::table('comment_user', function (Blueprint $table) {
+            $table->dropForeign('comment_user_comment_id_foreign');
+            $table->dropForeign('comment_user_user_id_foreign');
         });
-        Schema::dropIfExists('item_user');
+        Schema::dropIfExists('comment_user');
     }
 }

@@ -26,6 +26,8 @@ class AlterTableProfilesAddFk extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('profiles', function (Blueprint $table) {
+            $table->dropForeign('profiles_user_id_foreign');
+        });
     }
 }

@@ -14,18 +14,11 @@ class CreateDimensionsTable extends Migration
     public function up()
     {
         Schema::create('dimensions', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->charset = 'utf8mb4';
-            $table->collation = 'utf8mb4_unicode_ci';
-
             $table->id();
-
             $table->string('title')->comment('Габариты')
                 ->index();
             $table->text('description')->comment('Описание')
                 ->default(null);
-
-            $table->timestamps();
         });
     }
 

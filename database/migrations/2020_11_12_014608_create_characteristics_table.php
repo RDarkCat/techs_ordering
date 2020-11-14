@@ -14,11 +14,6 @@ class CreateCharacteristicsTable extends Migration
     public function up()
     {
         Schema::create('characteristics', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->charset = 'utf8mb4';
-            $table->collation = 'utf8mb4_unicode_ci';
-
-            $table->id();
             $table->foreignId('item_id');
 
             $table->text('description')->comment('Описание');
@@ -35,10 +30,6 @@ class CreateCharacteristicsTable extends Migration
             $table->integer('power_hp')->comment('Мощьность в лошадиных силах')
                 ->index()->default(null);
             $table->integer('power_kg')->comment('Грозоподъёмность')
-                ->index()->default(null);
-            $table->integer('price_ph')->comment('Цена в час')
-                ->index()->default(null);
-            $table->integer('prise_pd')->comment('Цена в сутки')
                 ->index()->default(null);
 
             $table->timestamps();

@@ -21,8 +21,6 @@ class CreatePivotTableItemCategory extends Migration
                 ->references('id')->on('items');
             $table->foreign('category_id')
                 ->references('id')->on('categories');
-
-            $table->timestamps();
         });
     }
 
@@ -33,6 +31,10 @@ class CreatePivotTableItemCategory extends Migration
      */
     public function down()
     {
+        Schema::table('item_category', function (Blueprint $table) {
+            $table->dropForeign('item_category_item_id_foreign');
+            $table->dropForeign('item_category_category_id_foreign');
+        });
         Schema::dropIfExists('item_category');
     }
 }

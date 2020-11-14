@@ -21,8 +21,6 @@ class CreatePivotTableItemType extends Migration
                 ->references('id')->on('items');
             $table->foreign('type_id')
                 ->references('id')->on('types');
-
-            $table->timestamps();
         });
     }
 
@@ -33,6 +31,10 @@ class CreatePivotTableItemType extends Migration
      */
     public function down()
     {
+        Schema::table('item_type', function (Blueprint $table) {
+            $table->dropForeign('item_type_item_id_foreign');
+            $table->dropForeign('item_type_type_id_foreign');
+        });
         Schema::dropIfExists('item_type');
     }
 }

@@ -21,8 +21,6 @@ class CreatePivotTableItemApplicationScope extends Migration
                 ->references('id')->on('items');
             $table->foreign('application_scope_id')
                 ->references('id')->on('application_scopes');
-
-            $table->timestamps();
         });
     }
 
@@ -33,6 +31,10 @@ class CreatePivotTableItemApplicationScope extends Migration
      */
     public function down()
     {
+        Schema::table('item_application_scope', function (Blueprint $table) {
+            $table->dropForeign('item_application_scope_application_scope_id_foreign');
+            $table->dropForeign('item_application_scope_item_id_foreign');
+        });
         Schema::dropIfExists('item_application_scope');
     }
 }

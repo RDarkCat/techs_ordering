@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePivotTableItemEngine extends Migration
+class CreatePivotTableCommentItem extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreatePivotTableItemEngine extends Migration
      */
     public function up()
     {
-        Schema::create('item_engine', function (Blueprint $table) {
+        Schema::create('comment_item', function (Blueprint $table) {
             $table->foreignId('item_id');
-            $table->foreignId('engine_id');
+            $table->foreignId('comment_id');
 
             $table->foreign('item_id')
                 ->references('id')->on('items');
-            $table->foreign('engine_id')
-                ->references('id')->on('engines');
+            $table->foreign('comment_id')
+                ->references('id')->on('comments');
         });
     }
 
@@ -31,10 +31,10 @@ class CreatePivotTableItemEngine extends Migration
      */
     public function down()
     {
-        Schema::table('item_engine', function (Blueprint $table) {
-            $table->dropForeign('item_engine_item_id_foreign');
-            $table->dropForeign('item_engine_engine_id_foreign');
+        Schema::table('comment_item', function (Blueprint $table) {
+            $table->dropForeign('comment_item_item_id_foreign');
+            $table->dropForeign('comment_item_comment_id_foreign');
         });
-        Schema::dropIfExists('item_engine');
+        Schema::dropIfExists('comment_item');
     }
 }

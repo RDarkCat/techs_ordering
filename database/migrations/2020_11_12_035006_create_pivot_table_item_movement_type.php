@@ -21,8 +21,6 @@ class CreatePivotTableItemMovementType extends Migration
                 ->references('id')->on('items');
             $table->foreign('movement_type_id')
                 ->references('id')->on('movement_types');
-
-            $table->timestamps();
         });
     }
 
@@ -33,6 +31,10 @@ class CreatePivotTableItemMovementType extends Migration
      */
     public function down()
     {
+        Schema::table('item_movement_type', function (Blueprint $table) {
+            $table->dropForeign('item_movement_type_item_id_foreign');
+            $table->dropForeign('item_movement_type_movement_type_id_foreign');
+        });
         Schema::dropIfExists('item_movement_type');
     }
 }

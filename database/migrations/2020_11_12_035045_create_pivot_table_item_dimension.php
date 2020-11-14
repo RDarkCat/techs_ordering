@@ -21,8 +21,6 @@ class CreatePivotTableItemDimension extends Migration
                 ->references('id')->on('items');
             $table->foreign('dimension_id')
                 ->references('id')->on('dimensions');
-
-            $table->timestamps();
         });
     }
 
@@ -33,6 +31,10 @@ class CreatePivotTableItemDimension extends Migration
      */
     public function down()
     {
+        Schema::table('item_dimension', function (Blueprint $table) {
+            $table->dropForeign('item_dimension_item_id_foreign');
+            $table->dropForeign('item_dimension_dimension_id_foreign');
+        });
         Schema::dropIfExists('item_dimension');
     }
 }
