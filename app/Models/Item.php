@@ -11,4 +11,9 @@ class Item extends Model
 
     protected $timestamp = false;
 
+    
+    public function characteristic()
+    {
+        return $this->hasOne(Characteristic::class);
+    }
 }

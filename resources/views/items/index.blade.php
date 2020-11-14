@@ -21,14 +21,14 @@
                         </div>
                         <div class="item__descript">
                             <h4>
-                                Название: {{ $item['name'] }}
+                                Название: {{ $item->name }}
                             </h4>
                             <p>
-                                Описание: {{ $item['description'] }}
+                                Описание: {{ $item->characteristic->description }}
                             </p>
                             <p>
                                 <b>
-                                    Цена: <span>{{ $item['price'] }}</span>
+                                    Цена: <span>{{ $item->price }}</span>
                                 </b>
                             </p>
                             <button>Заказать</button>
@@ -58,7 +58,7 @@
                             </select>
                             <select name="" id="">
                             	@foreach($regions as $region)
-                                	<option value="">{{ $region['name'] }}</option>
+                                	<option value="">{{ $region->name }}</option>
                                 @endforeach
                             </select>                            
                             <div class="radio-owner">

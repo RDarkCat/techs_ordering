@@ -10,9 +10,10 @@ class ItemsController extends Controller
 {
     public function index() {
 
-        $items = Item::query()
-            ->simplePaginate(5);
         
+        $items = Item::with('characteristic')
+            ->simplePaginate(5);
+
         $regions = Region::all();
 
         return view('items.index')->with([
