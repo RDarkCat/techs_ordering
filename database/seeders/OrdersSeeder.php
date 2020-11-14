@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Order;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class OrdersSeeder extends Seeder
 {
@@ -14,8 +14,8 @@ class OrdersSeeder extends Seeder
      */
     public function run()
     {
-        $path = database_path('seeders/sql/orders.sql');
-        $sql = file_get_contents($path);
-        DB::unprepared($sql);
+        Order::factory()
+            ->times(40)
+            ->create();
     }
 }
