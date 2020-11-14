@@ -15,6 +15,10 @@ class ItemsController extends Controller
         return view('items.index')->with('items', $items);
     }
 
+    public function byCategory() {
+
+    }
+
     public function show($id)
     {
         $item = Item::query()->find($id);

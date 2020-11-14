@@ -1,11 +1,10 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ItemController;
 
 
 /*
@@ -33,7 +32,7 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/home', function () {
     return view('welcome');
 });
-Route::get('/ads', [ItemController::class, 'index']);
+Route::get('/ads', [ItemsController::class, 'index']);
 //Route::get('/', [MachineController::class, 'machinesFullInformation'])->name('HomePage');
 // Route::get('/machine_types/{type_id}', [MachineTypeController::class, 'getMachinesByType'])
 // ->name('machinesTypes.getMachinesByType'); // клик на категорию
