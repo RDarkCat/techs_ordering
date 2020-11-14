@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,9 @@ Route::get('/home', function () {
     return view('welcome');
 });
 Route::get('/ads', [ItemsController::class, 'index']);
+
+Route::resource('orders', OrderController::class);
+
 //Route::get('/', [MachineController::class, 'machinesFullInformation'])->name('HomePage');
 // Route::get('/machine_types/{type_id}', [MachineTypeController::class, 'getMachinesByType'])
 // ->name('machinesTypes.getMachinesByType'); // клик на категорию
