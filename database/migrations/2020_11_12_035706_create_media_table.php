@@ -17,7 +17,6 @@ class CreateMediaTable extends Migration
             $table->id();
             $table->foreignId('item_id');
             $table->string('filename');
-            $table->enum('file_type', ['img', 'video']);
             $table->json('metadata');
         });
     }

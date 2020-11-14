@@ -17,8 +17,7 @@ class CreateUserLikeTable extends Migration
             $table->id();
             $table->boolean('like');
             $table->foreignId('user_id');
-            $table->foreignId('user_id_from')
-                ->comment('Кто поставил оценку');
+            $table->foreignId('user_id_from');
             $table->timestamps();
 
             $table->foreign('user_id')

@@ -16,7 +16,7 @@ class CreateSettlementsTable extends Migration
         Schema::create('settlements', function (Blueprint $table) {
             $table->id();
             $table->foreignId('region_id');
-            $table->string('title')->comment('Название населенного пункта')
+            $table->string('name')
                 ->index();
         });
     }

@@ -15,7 +15,7 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->foreignId('user_id');
-            $table->tinyInteger('role_id')
+            $table->string('role')
                 ->nullable();
             $table->string('first_name');
             $table->string('last_name');

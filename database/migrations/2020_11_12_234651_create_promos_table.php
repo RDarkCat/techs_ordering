@@ -16,11 +16,12 @@ class CreatePromosTable extends Migration
         Schema::create('promos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('item_id');
-            $table->enum('status', ['open', 'close'])->default('open');
+            $table->boolean('status')
+                ->nullable();
             $table->integer('price_per_hour')
-                ->index()->default(null);
+                ->nullable()->index();
             $table->integer('prise_per_day')
-                ->index()->default(null);
+                ->nullable()->index();
             $table->timestamps();
 
             $table->foreign('item_id')

@@ -22,7 +22,7 @@ class CreateDiscountsTable extends Migration
             $table->foreignId('user_id');
             $table->foreignId('item_id');
             $table->float('discount')
-                ->comment('Величина скидки от 0.0 до 1.0');
+                ->comment('0.0 - 1.0');
             $table->dateTime('started_at');
             $table->dateTime('finished_at');
             $table->timestamps();

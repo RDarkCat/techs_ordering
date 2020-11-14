@@ -15,10 +15,10 @@ class CreateTypesTable extends Migration
     {
         Schema::create('types', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->comment('Название типа машины')
+            $table->string('name')
                 ->index();
-            $table->text('description')->comment('Описание')
-                ->default(null);
+            $table->text('description')
+                ->nullable();
         });
     }
 
