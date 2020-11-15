@@ -20,7 +20,7 @@ class CreatePromosTable extends Migration
                 ->nullable();
             $table->integer('price_per_hour')
                 ->nullable()->index();
-            $table->integer('prise_per_day')
+            $table->integer('price_per_day')
                 ->nullable()->index();
             $table->timestamps();
 

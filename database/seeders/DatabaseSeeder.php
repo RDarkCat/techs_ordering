@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RegionsSeeder::class);
         $this->call(SettlementsSeeder::class);
         $this->call(ItemsSeeder::class);
+        $this->call(CharacteristicsSeeder::class);
         $this->call(ManufacturersSeeder::class);
         $this->call(ItemManufacturerSeeder::class);
         $this->call(ItemUserSeeder::class);
@@ -27,6 +28,6 @@ class DatabaseSeeder extends Seeder
         $this->call(OrderItemSeeder::class);
         $this->call(CategoriesSeeder::class);
         $this->call(ItemCategorySeeder::class);
-
+        $this->call(CharacteristicsSeeder::class);
     }
 }

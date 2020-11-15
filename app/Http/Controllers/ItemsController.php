@@ -10,9 +10,10 @@ class ItemsController extends Controller
 {
     public function index() {
 
-        $items = Item::query()
+
+        $items = Item::with('characteristic')
             ->simplePaginate(5);
-        
+
         $regions = Region::all();
 
         return view('items.index')->with([
@@ -27,10 +28,10 @@ class ItemsController extends Controller
 
     public function show($id)
     {
-        $item = Item::query()->find($id);
+        $item = Item::with('characteristic')->find($id);
 
         if (!empty($item)) {
-            return view('item.one')->with('item', $item);
+            return view('items.one')->with('item', $item);
         } else {
             return redirect()->route('items.index');
         }
