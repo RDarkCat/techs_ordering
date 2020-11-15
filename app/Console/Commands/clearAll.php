@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use Composer\Composer;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 
@@ -12,7 +13,7 @@ class clearAll extends Command
      *
      * @var string
      */
-    protected $signature = 'clear:all';
+    protected $signature = 'cl';
 
     /**
      * The console command description.
