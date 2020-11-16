@@ -30,13 +30,13 @@ class OrderController extends Controller
             redirect('home');
         }
 
-        return view('newOrder', ['item_id' => $item_id]);
+        return view('newOrder', ['promo_id' => $item_id]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\StoreOrder  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreOrder $request)

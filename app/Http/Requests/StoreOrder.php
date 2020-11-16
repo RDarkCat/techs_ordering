@@ -28,7 +28,7 @@ class StoreOrder extends FormRequest
             'delivery_address' => 'required|string|max:65535',
             'contact_phone' => 'required|string|max:50',
             'comment' => 'string|nullable|max:65535',
-            'item_id' => 'required|integer|min:1|exists:items,id',
+            'promo_id' => 'required|integer|min:1|exists:items,id',
             'user_id' => 'integer|nullable|min:1|exists:users,id'
         ];
     }

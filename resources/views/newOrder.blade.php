@@ -7,7 +7,7 @@
 
 <hr>
 
-<form action="{{ route('orders.store', ['item_id' => $item_id]) }}" method="POST">
+<form action="{{ route('orders.store', ['promo_id' => $promo_id]) }}" method="POST">
     <div class="form-group">
         @csrf
         @if($errors->has('contact_phone'))
