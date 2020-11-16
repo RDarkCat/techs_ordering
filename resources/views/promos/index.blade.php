@@ -16,27 +16,38 @@
         <div class="container">
             <div class="adverts-block">
                 <div class="adverts-list">
-                    @foreach($items as $item)
+                    @foreach($promos as $promo)
+
                     <div class="adverts-list__item">
                         <div class="item__img">
                             <img src="@if ($loop->index % rand(1, 3) == 0) ../img/excavator.png @else ../img/tracktor.png @endif" alt="">
                         </div>
                         <div class="item__descript">
                             <h4>
-                                Название: {{ $item->name }}
+                                Название: <a href="{{ route('promos.show', $promo) }}">{{ $promo->item->name }}</a>
                             </h4>
                             <p>
-                                Описание: {{ $item->characteristic->description }}
+                                Описание: {{ $promo->item->characteristic->description }}
                             </p>
-{{--                            <form>--}}
-{{--                                <input type="hidden" name="item_id" value="{{ $item['id'] }}">--}}
-{{--                                <button formaction="{{ route('orders.create') }}">Заказать</button>--}}
-{{--                            </form>--}}
+                            <p>
+                                <b>
+                                    Цена в час: <span>{{ $promo->price_per_hour }}</span>
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Цена в день: <span>{{ $promo->price_per_day }}</span>
+                                </b>
+                            </p>
+                            <form>
+                                <input type="hidden" name="item_id" value="{{ $promo['id'] }}">
+                                <button formaction="{{ route('orders.create') }}">Заказать</button>
+                            </form>
                         </div>
                     </div>
                     @endforeach
                     <p>
-                        {{ $items->links() }}
+                        {{ $promos->links() }}
                     </p>
                 </div>
 

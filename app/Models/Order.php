@@ -14,7 +14,7 @@ class Order extends Model
         'delivery_address',
         'contact_phone',
         'user_id',
-        'item_id',
+        'promo_id',
         'comment'
     ];
 }

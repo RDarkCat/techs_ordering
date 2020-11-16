@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Order;
+use App\Models\Promo;
 use Illuminate\Database\Seeder;
 
-class OrdersSeeder extends Seeder
+class PromosSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,8 +14,8 @@ class OrdersSeeder extends Seeder
      */
     public function run()
     {
-        Order::factory()
-            ->times(40)
+        Promo::factory()
+            ->times(100)
             ->create();
     }
 }

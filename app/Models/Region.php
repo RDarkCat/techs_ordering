@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Region extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
-        'country_id'
+        'country_id',
+        'name'
     ];
-    
-    
+
+
     public function country($param) {
         return $this->hasOne(Country::class);
     }

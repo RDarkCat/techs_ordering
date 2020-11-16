@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
-use App\Http\Requests\StoreOrder;
-use App\Models\Order;
+use App\Http\Controllers\Controller;
+use App\Models\Promo;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class PromoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,36 +23,29 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $item_id = $request->input('item_id');
-        if (!$item_id) {
-            redirect('home');
-        }
-
-        return view('newOrder', ['promo_id' => $item_id]);
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\StoreOrder  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreOrder $request)
+    public function store(Request $request)
     {
-        $parameters = $request->input();
-        Order::create($parameters);
-        return redirect(route('home'))->with('success_text', 'Ваш заказ принят');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Promo  $promo
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Promo $promo)
     {
         //
     }
@@ -60,10 +53,10 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Promo  $promo
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Promo $promo)
     {
         //
     }
@@ -72,10 +65,10 @@ class OrderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Promo  $promo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Promo $promo)
     {
         //
     }
@@ -83,10 +76,10 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Promo  $promo
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Promo $promo)
     {
         //
     }

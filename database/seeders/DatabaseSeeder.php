@@ -20,10 +20,10 @@ class DatabaseSeeder extends Seeder
         $this->call(RegionsSeeder::class);
         $this->call(SettlementsSeeder::class);
         $this->call(ItemsSeeder::class);
-        $this->call(CharacteristicsSeeder::class);
         $this->call(ManufacturersSeeder::class);
         $this->call(ItemManufacturerSeeder::class);
         $this->call(ItemUserSeeder::class);
+        $this->call(PromosSeeder::class);
         $this->call(OrdersSeeder::class);
         $this->call(OrderItemSeeder::class);
         $this->call(CategoriesSeeder::class);

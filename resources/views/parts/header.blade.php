@@ -9,8 +9,10 @@
             </div>
         </div>
         <div class="header__nav">
-            <a href="/home">Главная</a>
+            <a href="{{ route('home') }}">Главная</a>
             <a href="/ads">Заказать</a>
+            <a href="{{ route('items.index') }}">items</a>
+            <a href="{{ route('promos.index') }}">promos</a>
             <a href="#">О сервисе</a>
             <a href="#">Контакты</a>
         </div>
