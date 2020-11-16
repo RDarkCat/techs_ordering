@@ -31,7 +31,10 @@
                                     Цена: <span>{{ $item->price }}</span>
                                 </b>
                             </p>
-                            <button>Заказать</button>
+                            <form>
+                                <input type="hidden" name="item_id" value="{{ $item['id'] }}">
+                                <button formaction="{{ route('orders.create') }}">Заказать</button>
+                            </form>
 
                         </div>
                     </div>
