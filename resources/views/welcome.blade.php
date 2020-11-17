@@ -157,6 +157,11 @@
                     @include('parts/about')
                 </div>
             </div>
+            <div class="full-width">
+                <div class="container">
+                    @include('parts/askform')
+                </div>
+            </div>
             @include('parts/footer')
         </main>
     </body>

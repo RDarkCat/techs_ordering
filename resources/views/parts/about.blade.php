@@ -1,18 +1,95 @@
 <div class="about-service">
-    <h3>Как работает сервис?</h3>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis aspernatur id doloremque repudiandae assumenda ab minus, rerum at cupiditate ea error ipsum, modi quae accusamus, nemo dolor natus blanditiis. Laudantium?
-        Sequi dolorem perspiciatis suscipit dicta aperiam omnis neque autem recusandae deserunt aspernatur repellat rerum iste possimus veritatis ipsam nihil impedit dolorum repudiandae, ducimus dolor amet odit minus sed? Eius, obcaecati?
-        Amet iste placeat quisquam. Minima neque corrupti qui quis! Placeat facilis, ratione distinctio est ipsam quae, sunt quisquam, eveniet incidunt facere delectus excepturi! Inventore earum quasi distinctio accusantium nihil nulla.
-        Veniam quae veritatis illum. Mollitia enim in, hic praesentium, expedita fugiat sit officia rem ipsam laborum ab ipsum harum labore commodi corporis modi maxime. Deserunt doloribus in pariatur consequatur architecto.
-        Voluptates at quos, facilis tempore accusantium numquam maxime aliquid reiciendis, distinctio officia veniam commodi sit dolorem voluptate soluta nesciunt. Reprehenderit perferendis voluptate itaque est aperiam atque recusandae dolorum quam soluta.
-        Dolore dicta praesentium aperiam quos qui ipsum quas aliquid expedita culpa possimus maxime inventore officiis quam corrupti consectetur facere doloribus deserunt dolorem, perferendis officia reiciendis incidunt! Assumenda omnis aspernatur nostrum.
-    </p>
-    <h3>Приемущества сервиса: </h3>
-    <ul class="list-bullet">
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-    </ul>
+    <h3>
+        Как работает сервис?
+    </h3>
+    <div class="service-description">
+        <div class="description-item">
+            <div class="description-item_img">
+                <img src="img/choose.png" alt="">
+            </div>
+            <div class="description-item_text">
+                <p>
+                    Выбери объявление
+                </p>
+            </div>
+        </div>
+        <img src="img/arrow.png" height="50" alt="arrow">
+        <div class="description-item">
+            <div class="description-item_img">
+                <img src="img/partner.png" alt="">
+            </div>
+            <div class="description-item_text">
+                <p>
+                    Договорись о времени 
+                </p>
+            </div>
+        </div>
+        <img src="img/arrow.png" height="50" alt="arrow">
+        <div class="description-item">
+            <div class="description-item_img">
+                <img src="img/build.png" alt="">
+            </div>
+            <div class="description-item_text">
+                <p>
+                    Строй
+                </p>
+            </div>
+        </div>
+    </div>
+    <h3>
+        Преимущества сервиса
+    </h3>
+    <div class="service-description">
+        <div class="description-item">
+            <div class="description-item_img">
+                <img src="img/clock.png" alt="">
+            </div>
+            <div class="description-item_head">
+                <p>
+                    <b>
+                        Быстро
+                    </b>
+                </p>
+            </div>
+            <div class="description-item_text">
+                <p>
+                    Большой выбор техники и инструментов. <br> Легкий и понятный поиск по объявлениям
+                </p>
+            </div>
+        </div>
+        <div class="description-item">
+            <div class="description-item_img">
+                <img src="img/chat.png" alt="">
+            </div>
+            <div class="description-item_head">
+                <p>
+                    <b>
+                        Удобно
+                    </b>
+                </p>
+            </div>
+            <div class="description-item_text">
+                <p>
+                    Удобный способ общения с предоставителем услуг. <br> Не нужно возиться с договорами
+                </p>
+            </div>
+        </div>
+        <div class="description-item">
+            <div class="description-item_img">
+                <img src="img/price.png" alt="">
+            </div>
+            <div class="description-item_head">
+                <p>
+                    <b>
+                        Дешево
+                    </b>
+                </p>
+            </div>
+            <div class="description-item_text">
+                <p>
+                    Нет никаких коммисий компаний. <br> Дешевле, чем купить 
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
