@@ -20,17 +20,15 @@ class CreateOrdersTable extends Migration
                 ->comment('Количество заказываемой техники');
             $table->text('delivery_address');
             $table->string('contact_phone', 50);
-            $table->foreignId('user_id')
-                ->nullable()
-                ->constrained()
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-            $table->foreignId('item_id')
-                ->constrained()
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('promo_id');
             $table->text('comment')
                 ->nullable();
+
+            $table->foreign('user_id')
+                ->references('id')->on('users');
+            $table->foreign('promo_id')
+                ->references('id')->on('promos');
         });
     }
 
@@ -41,6 +39,11 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
+        Schema::table('orders', function (Blueprint $table) {
+            $table->dropForeign('orders_user_id_foreign');
+            $table->dropForeign('orders_promo_id_foreign');
+        });
+
         Schema::dropIfExists('orders');
     }
 }

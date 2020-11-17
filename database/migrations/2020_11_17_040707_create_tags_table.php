@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateApplicationScopesTable extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateApplicationScopesTable extends Migration
      */
     public function up()
     {
-        Schema::create('application_scopes', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            $table->string('name')
-                ->index();
+            $table->string('name');
+            $table->foreignId('parent_id')
+                ->nullable();
             $table->text('description')
                 ->nullable();
         });
@@ -29,6 +30,6 @@ class CreateApplicationScopesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('application_scopes');
+        Schema::dropIfExists('tags');
     }
 }

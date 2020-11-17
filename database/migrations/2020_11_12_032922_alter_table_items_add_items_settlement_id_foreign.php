@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterTableRegionsAddFk extends Migration
+class AlterTableItemsAddItemsSettlementIdForeign extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AlterTableRegionsAddFk extends Migration
      */
     public function up()
     {
-        Schema::table('regions', function (Blueprint $table) {
-            $table->foreign('country_id')
-                ->references('id')->on('countries');
+        Schema::table('items', function (Blueprint $table) {
+            $table->foreign('settlement_id')
+                ->references('id')->on('settlements');
         });
     }
 
@@ -26,8 +26,8 @@ class AlterTableRegionsAddFk extends Migration
      */
     public function down()
     {
-        Schema::table('regions', function (Blueprint $table) {
-            $table->dropForeign('regions_country_id_foreign');
+        Schema::table('items', function (Blueprint $table) {
+            $table->dropForeign('items_settlement_id_foreign');
         });
     }
 }
