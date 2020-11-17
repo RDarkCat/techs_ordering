@@ -16,8 +16,8 @@ class CreateUserLikeTable extends Migration
         Schema::create('user_like', function (Blueprint $table) {
             $table->id();
             $table->boolean('like');
-            $table->foreignId('user_id');
-            $table->foreignId('user_id_from');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id_from');
             $table->timestamps();
 
             $table->foreign('user_id')

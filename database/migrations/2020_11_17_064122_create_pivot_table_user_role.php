@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePivotTableCommentUser extends Migration
+class CreatePivotTableUserRole extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreatePivotTableCommentUser extends Migration
      */
     public function up()
     {
-        Schema::create('comment_user', function (Blueprint $table) {
-            $table->unsignedBigInteger('comment_id');
+        Schema::create('user_role', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('role_id');
 
-            $table->foreign('comment_id')
-                ->references('id')->on('comments');
             $table->foreign('user_id')
                 ->references('id')->on('users');
+            $table->foreign('role_id')
+                ->references('id')->on('roles');
         });
     }
 
@@ -31,10 +31,10 @@ class CreatePivotTableCommentUser extends Migration
      */
     public function down()
     {
-        Schema::table('comment_user', function (Blueprint $table) {
-            $table->dropForeign('comment_user_comment_id_foreign');
-            $table->dropForeign('comment_user_user_id_foreign');
+        Schema::table('user_role', function (Blueprint $table) {
+            $table->dropForeign('user_role_user_id_foreign');
+            $table->dropForeign('user_role_role_id_foreign');
         });
-        Schema::dropIfExists('comment_user');
+        Schema::dropIfExists('user_role');
     }
 }

@@ -14,8 +14,8 @@ class CreatePivotTableItemUser extends Migration
     public function up()
     {
         Schema::create('item_user', function (Blueprint $table) {
-            $table->foreignId('item_id');
-            $table->foreignId('user_id');
+            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('user_id');
 
             $table->foreign('item_id')
                 ->references('id')->on('items');

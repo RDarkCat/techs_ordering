@@ -14,8 +14,8 @@ class CreatePivotTableItemCategory extends Migration
     public function up()
     {
         Schema::create('item_category', function (Blueprint $table) {
-            $table->foreignId('item_id');
-            $table->foreignId('category_id');
+            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('category_id');
 
             $table->foreign('item_id')
                 ->references('id')->on('items');

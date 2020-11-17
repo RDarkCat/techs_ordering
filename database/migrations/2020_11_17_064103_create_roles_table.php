@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterTableMediaAddFk extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class AlterTableMediaAddFk extends Migration
      */
     public function up()
     {
-        Schema::table('media', function (Blueprint $table) {
-            $table->foreign('item_id')
-                ->references('id')->on('items');
+        Schema::create('roles', function (Blueprint $table) {
+            $table->id();
+            $table->string('role')
+                ->index()
+                ->default('user');
         });
     }
 
@@ -26,8 +28,6 @@ class AlterTableMediaAddFk extends Migration
      */
     public function down()
     {
-        Schema::table('media', function (Blueprint $table) {
-            $table->dropForeign('media_item_id_foreign');
-        });
+        Schema::dropIfExists('roles');
     }
 }

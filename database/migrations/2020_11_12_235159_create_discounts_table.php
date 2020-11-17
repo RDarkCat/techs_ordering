@@ -19,8 +19,8 @@ class CreateDiscountsTable extends Migration
     {
         Schema::create('discounts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('item_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('item_id');
             $table->float('discount')
                 ->comment('0.0 - 1.0');
             $table->dateTime('started_at');
