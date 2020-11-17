@@ -14,18 +14,19 @@ class CreateProfilesTable extends Migration
     public function up()
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->foreignId('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('role')
                 ->nullable();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('phone');
             $table->text('address');
-
             $table->text('description')
                 ->nullable();
-
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')->on('users');
         });
     }
 
@@ -36,6 +37,9 @@ class CreateProfilesTable extends Migration
      */
     public function down()
     {
+        Schema::table('profiles', function (Blueprint $table) {
+            $table->dropForeign('profiles_user_id_foreign');
+        });
         Schema::dropIfExists('profiles');
     }
 }

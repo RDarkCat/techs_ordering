@@ -9,10 +9,13 @@ class Item extends Model
 {
     use HasFactory;
 
-    protected $timestamp = false;
-
     public function characteristic()
     {
         return $this->hasOne(Characteristic::class);
+    }
+
+    public function tags()
+    {
+        return$this->belongsToMany(Tag::class);
     }
 }

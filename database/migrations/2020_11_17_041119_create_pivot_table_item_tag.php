@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterTableCharacteristicsAddFk extends Migration
+class CreatePivotTableItemTag extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class AlterTableCharacteristicsAddFk extends Migration
      */
     public function up()
     {
-        Schema::table('characteristics', function (Blueprint $table) {
+        Schema::create('item_tag', function (Blueprint $table) {
+            $table->foreignId('item_id');
+            $table->foreignId('tag_id');
+
             $table->foreign('item_id')
-                ->references('id')
-                ->on('items');
+                ->references('id')->on('items');
+            $table->foreign('tag_id')
+                ->references('id')->on('tags');
         });
     }
 
@@ -27,8 +31,6 @@ class AlterTableCharacteristicsAddFk extends Migration
      */
     public function down()
     {
-        Schema::table('characteristics', function (Blueprint $table) {
-            $table->dropForeign('characteristics_item_id_foreign');
-        });
+        Schema::dropIfExists('closure_table_item_tag');
     }
 }

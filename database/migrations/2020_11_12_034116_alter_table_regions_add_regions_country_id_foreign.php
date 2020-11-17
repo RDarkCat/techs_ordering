@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTypesTable extends Migration
+class AlterTableRegionsAddRegionsCountryIdForeign extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('types', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')
-                ->index();
-            $table->text('description')
-                ->nullable();
+        Schema::table('regions', function (Blueprint $table) {
+            $table->foreign('country_id')
+                ->references('id')->on('countries');
         });
     }
 
@@ -29,6 +26,8 @@ class CreateTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('types');
+        Schema::table('regions', function (Blueprint $table) {
+            $table->dropForeign('regions_country_id_foreign');
+        });
     }
 }
