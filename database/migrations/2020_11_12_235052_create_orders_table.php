@@ -20,7 +20,11 @@ class CreateOrdersTable extends Migration
                 ->comment('Количество заказываемой техники');
             $table->text('delivery_address');
             $table->string('contact_phone', 50);
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')
+                ->nullable();
+            /*
+             * TODO убрать nullable
+             */
             $table->unsignedBigInteger('promo_id');
             $table->text('comment')
                 ->nullable();
