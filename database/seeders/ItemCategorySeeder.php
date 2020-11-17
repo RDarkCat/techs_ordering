@@ -14,8 +14,9 @@ class ItemCategorySeeder extends Seeder
      */
     public function run()
     {
-        $path = database_path('seeders/sql/item_category.sql');
-        $sql = file_get_contents($path);
-        DB::unprepared($sql);
+        DB::table('item_category')->insert([
+            'item_id' => rand(1, 100),
+            'category_id' => rand(1, 83)
+        ]);
     }
 }

@@ -14,8 +14,8 @@ class CreatePivotTableItemTag extends Migration
     public function up()
     {
         Schema::create('item_tag', function (Blueprint $table) {
-            $table->foreignId('item_id');
-            $table->foreignId('tag_id');
+            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('tag_id');
 
             $table->foreign('item_id')
                 ->references('id')->on('items');
@@ -31,6 +31,10 @@ class CreatePivotTableItemTag extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('closure_table_item_tag');
+        Schema::table('item_tag', function (Blueprint $table) {
+            $table->dropForeign('item_tag_item_id_foreign');
+            $table->dropForeign('item_tag_tag_id_foreign');
+        });
+        Schema::dropIfExists('item_tag');
     }
 }

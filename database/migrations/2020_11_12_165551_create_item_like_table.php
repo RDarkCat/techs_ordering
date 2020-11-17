@@ -16,8 +16,8 @@ class CreateItemLikeTable extends Migration
         Schema::create('item_like', function (Blueprint $table) {
             $table->id();
             $table->boolean('like');
-            $table->foreignId('item_id');
-            $table->foreignId('user_id_from');
+            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('user_id_from');
             $table->timestamps();
 
             $table->foreign('item_id')

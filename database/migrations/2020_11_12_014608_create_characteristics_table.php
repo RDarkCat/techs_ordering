@@ -14,7 +14,7 @@ class CreateCharacteristicsTable extends Migration
     public function up()
     {
         Schema::create('characteristics', function (Blueprint $table) {
-            $table->foreignId('item_id');
+            $table->unsignedBigInteger('item_id');
 
             $table->text('description');
             $table->integer('length')

@@ -14,8 +14,8 @@ class CreatePivotTableCommentItem extends Migration
     public function up()
     {
         Schema::create('comment_item', function (Blueprint $table) {
-            $table->foreignId('item_id');
-            $table->foreignId('comment_id');
+            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('comment_id');
 
             $table->foreign('item_id')
                 ->references('id')->on('items');

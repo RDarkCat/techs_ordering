@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class ItemTegSeeder extends Seeder
+class ItemTagSeeder extends Seeder
 {
     /**
      * Run the database seeds.

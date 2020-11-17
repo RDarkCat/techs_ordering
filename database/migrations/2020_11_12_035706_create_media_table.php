@@ -15,9 +15,12 @@ class CreateMediaTable extends Migration
     {
         Schema::create('media', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('item_id');
+            $table->unsignedBigInteger('item_id');
             $table->string('filename');
             $table->json('metadata');
+
+            $table->foreign('item_id')
+                ->references('id')->on('items');
         });
     }
 
@@ -28,6 +31,9 @@ class CreateMediaTable extends Migration
      */
     public function down()
     {
+        Schema::table('media', function (Blueprint $table) {
+            $table->dropForeign('media_item_id_foreign');
+        });
         Schema::dropIfExists('media');
     }
 }

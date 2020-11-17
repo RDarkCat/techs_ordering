@@ -28,7 +28,7 @@ class OrderFactory extends Factory
             'delivery_address' => $this->faker->address(),
             'contact_phone' => $this->faker->tollFreePhoneNumber(),
             'user_id' => $this->faker->numberBetween($min = 1, $max = 10),
-            'promo_id' => $this->faker->numberBetween($min = 1, $max = 100),
+            'promo_id' => $this->faker->numberBetween($min = 1, $max = 20),
             'comment' => $this->faker->text()
         ];
     }

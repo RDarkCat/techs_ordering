@@ -15,7 +15,7 @@ class CreatePromosTable extends Migration
     {
         Schema::create('promos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('item_id');
+            $table->unsignedBigInteger('item_id');
             $table->boolean('status')
                 ->nullable();
             $table->integer('price_per_hour')

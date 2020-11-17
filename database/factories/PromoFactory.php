@@ -22,7 +22,7 @@ class PromoFactory extends Factory
     public function definition()
     {
         return [
-            'item_id' => rand(1, 1000),
+            'item_id' => rand(1, 100),
             'status' => $this->faker->boolean,
             'price_per_hour' => $this->faker->randomDigitNotNull,
             'price_per_day' => $this->faker->randomDigitNotNull

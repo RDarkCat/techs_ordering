@@ -15,7 +15,7 @@ class CreateRegionsTable extends Migration
     {
         Schema::create('regions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('country_id');
+            $table->unsignedBigInteger('country_id');
             $table->string('name')
                 ->index();
         });
