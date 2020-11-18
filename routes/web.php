@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [IndexController::class, 'index'])->name('home');
 
+Route::resource('items', ItemsController::class)->except(['index', 'show']);
 Route::prefix('items')->as('items.')->group(function () {
     Route::get('/', [ItemsController::class, 'index'])->name('index');
     Route::get('/{items}', [ItemsController::class, 'show'])->name('show');
@@ -31,14 +32,9 @@ Route::prefix('promos')->as('promos.')->group(function () {
     Route::get('/{promos}', [PromoController::class, 'show'])->name('show');
 });
 
-
-
-
 Route::get('/users', [UsersController::class, 'index'])->name('users');
 
-
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-
 
 Route::get('/ads', [ItemsController::class, 'index']);
 
