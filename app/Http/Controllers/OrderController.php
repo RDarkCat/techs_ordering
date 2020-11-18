@@ -42,7 +42,11 @@ class OrderController extends Controller
     public function store(StoreOrder $request)
     {
         $parameters = $request->input();
-        Order::create($parameters);
+        // Order::create($parameters); TODO вернуть, когда будет готова регистрация
+        $order = new Order();
+        $order->fill($parameters);
+        $order->user_id = 1;
+        $order->save();
         return redirect(route('home'))->with('success_text', 'Ваш заказ принят');
     }
 
