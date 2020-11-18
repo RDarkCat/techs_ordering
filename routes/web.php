@@ -29,6 +29,7 @@ Route::prefix('items')->as('items.')->group(function () {
 Route::prefix('promos')->as('promos.')->group(function () {
     Route::get('/', [PromoController::class, 'index'])->name('index');
     Route::get('/{promos}', [PromoController::class, 'show'])->name('show');
+    Route::post('/search/categories', [PromoController::class, 'byCategory'])->name('search');
 });
 
 
