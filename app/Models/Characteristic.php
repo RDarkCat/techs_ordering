@@ -10,4 +10,21 @@ class Characteristic extends Model
     use HasFactory;
 
     protected $timestamp = true;
+
+    protected $fillable = [
+        'item_id',
+        'description',
+        'length',
+        'height',
+        'width',
+        'mass',
+        'power_watt',
+        'horse_power',
+        'lifting_capacity'
+    ];
+
+    public function item()
+    {
+        return $this->belongsTo(Item::class);
+    }
 }
