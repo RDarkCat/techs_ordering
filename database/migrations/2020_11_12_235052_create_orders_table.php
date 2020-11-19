@@ -25,6 +25,7 @@ class CreateOrdersTable extends Migration
             /*
              * TODO убрать nullable
              */
+             
             $table->unsignedBigInteger('promo_id');
             $table->text('comment')
                 ->nullable();
