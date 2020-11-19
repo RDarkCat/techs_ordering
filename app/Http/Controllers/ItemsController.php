@@ -54,8 +54,7 @@ class ItemsController extends Controller
         $item = Item::create($parameters);
         $item->characteristic()->create($parameters);
 
-        foreach($parameters['tag_ids'] as $tag_id)
-        {
+        foreach ($parameters['tag_ids'] as $tag_id) {
             $item->tags()->attach($tag_id);
         }
 
@@ -82,7 +81,7 @@ class ItemsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
-    {  
+    {
         $user_id = $request->input('user_id');
         if (!$user_id) {
             redirect('home');
@@ -98,10 +97,37 @@ class ItemsController extends Controller
         ]);
     }
 
-    public function itemsOfUser(int $user_id)
+    public function usersItems(Request $request)
     {
+        // $user_id = $request->input('user_id');
+        $user_id = 1;
+
+        if (!$user_id) {
+            return redirect()->route('home');
+        }
+
         $user = User::find($user_id);
-        $items = $user->items();
-        dd($user);
+        $items = $user->items()->simplePaginate(5);
+        $regions = Region::all();
+        return view('items.index', [
+            'items' => $items,
+            'regions' => $regions
+            ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    public function delete($id)
+    {
+
     }
 }
