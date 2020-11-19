@@ -30,7 +30,7 @@ class OrderController extends Controller
             redirect('home');
         }
 
-        return view('newOrder', ['promo_id' => $item_id]);
+        return view('orders.newOrder', ['promo_id' => $item_id]);
     }
 
     /**
