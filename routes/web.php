@@ -20,11 +20,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [IndexController::class, 'index'])->name('home');
-
 Route::resource('items', ItemsController::class)->except(['index', 'show']);
 Route::prefix('items')->as('items.')->group(function () {
+    Route::get('/usersItems', [ItemsController::class, 'usersItems'])->name('usersItems');
+    Route::get('/delete/{item_id}', [ItemsController::class, 'delete'])->name('delete');
     Route::get('/', [ItemsController::class, 'index'])->name('index');
     Route::get('/{items}', [ItemsController::class, 'show'])->name('show');
+    
 });
 
 Route::prefix('promos')->as('promos.')->group(function () {
@@ -39,6 +41,10 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/ads', [ItemsController::class, 'index']);
 
 Route::resource('orders', OrderController::class);
+
+Route::get('/demo_lessor', function(){
+    return view('lessorProfileDemo');
+})->name('demo_lessor'); // временный роут
 
 //Route::get('/', [MachineController::class, 'machinesFullInformation'])->name('HomePage');
 // Route::get('/machine_types/{type_id}', [MachineTypeController::class, 'getMachinesByType'])
