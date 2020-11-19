@@ -23,15 +23,15 @@
                         </div>
                         <div class="item__descript">
                             <h4>
-                                Название: {{ $item->name }}
+                                Название: <a href="{{ route('items.show', $item) }}">{{ $item->name }}</a>
                             </h4>
                             <p>
                                 Описание: {{ $item->characteristic->description }}
                             </p>
-{{--                            <form>--}}
-{{--                                <input type="hidden" name="item_id" value="{{ $item['id'] }}">--}}
-{{--                                <button formaction="{{ route('orders.create') }}">Заказать</button>--}}
-{{--                            </form>--}}
+                            {{-- <form>--}}
+                            {{-- <input type="hidden" name="item_id" value="{{ $item['id'] }}">--}}
+                            {{-- <button formaction="{{ route('orders.create') }}">Заказать</button>--}}
+                            {{-- </form>--}}
                         </div>
                     </div>
                     @endforeach
@@ -56,8 +56,8 @@
                                 <option value="">Погрузчики</option>
                             </select>
                             <select name="" id="">
-                            	@foreach($regions as $region)
-                                	<option value="">{{ $region->name }}</option>
+                                @foreach($regions as $region)
+                                <option value="">{{ $region->name }}</option>
                                 @endforeach
                             </select>
                             <div class="radio-owner">
