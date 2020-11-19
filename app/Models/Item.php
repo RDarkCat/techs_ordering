@@ -30,4 +30,9 @@ class Item extends Model
     {
         return $this->hasMany(Media::class);
     }
+
+    public function settlement()
+    {
+        return $this->belongsTo(Settlement::class);
+    }
 }
