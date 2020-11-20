@@ -13,6 +13,7 @@
             <a href="/ads">Заказать</a>
             <a href="{{ route('items.index') }}">items</a>
             <a href="{{ route('promos.index') }}">promos</a>
+            <a href="{{ route('demo_lessor') }}">Кабинет арендодателя</a>
             <a href="#">О сервисе</a>
             <a href="#">Контакты</a>
         </div>
