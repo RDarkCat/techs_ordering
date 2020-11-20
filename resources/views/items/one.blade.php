@@ -5,6 +5,9 @@
 @section('content')
 
 <h1>{{ $item->name }}</h1>
+@if(true)
+<div><a href="{{ route('items.edit', ['item' => $item->id]) }}">Изменить</a> / <a href="{{ route('items.delete', ['item_id' => $item->id]) }}">Удалить</a></div>
+@endif
 <div>Описание: {{ $item->characteristic->description }}</div>
 <div>Длина: {{ $item->characteristic->length }}</div>
 <div>Высота: {{ $item->characteristic->height }}</div>
