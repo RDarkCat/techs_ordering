@@ -11,6 +11,8 @@ class Characteristic extends Model
 
     protected $timestamp = true;
 
+    protected $primaryKey = 'item_id';
+
     protected $fillable = [
         'item_id',
         'description',
