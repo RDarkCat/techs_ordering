@@ -51,26 +51,13 @@ class ItemsController extends Controller
     public function store(Request $request)
     {
         $parameters = $request->input();
+        $user_id = $parameters['user_id'];
+        if (!$user_id) {
+            redirect('home');
+        }
+
         $item = Item::create($parameters);
-        $item->characteristic()->create($parameters);
-
-        foreach ($parameters['tag_ids'] as $tag_id) {
-            $item->tags()->attach($tag_id);
-        }
-
-        foreach ($request->file() as $images) {
-            foreach ($images as $image) {
-                $path = $image->store('items_files');
-                $media = new Media();
-                $media->item_id = $item->id;
-                $media->filename = $path;
-
-                $metadata = '{"name":"' . $image->getClientOriginalName() . '", "extension" :"' . $image->extension() . '"}';
-                $media->metadata = $metadata;
-
-                $media->save();
-            }
-        }
+        $item->saveRelations($parameters, $request->file(), $user_id);
 
         return redirect(route('items.show', ['items' => $item->id]));
     }
@@ -112,7 +99,7 @@ class ItemsController extends Controller
         return view('items.index', [
             'items' => $items,
             'regions' => $regions
-            ]);
+        ]);
     }
 
     /**
@@ -123,11 +110,36 @@ class ItemsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Item::with('characteristic')->find($id);
+        $settlements = Settlement::orderBy('name')->get();
+        $tags = Tag::all();
+        $tags->groupBy('parent_id');
+
+        return view('items.edit', [
+            'item' => $item,
+            'settlements' => $settlements,
+            'tags' => $tags
+        ]);
     }
 
-    public function delete($id)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Item $item)
     {
+        $parameters = $request->input();
+        $item->fill($parameters);
+        $item->save();
+        $item->saveRelations($parameters, $request->file());
 
+        return redirect(route('items.show', ['items' => $item->id]));
+    }
+
+    public function delete(Item $item)
+    {
     }
 }
