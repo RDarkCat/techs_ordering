@@ -56,19 +56,20 @@
                         <h4>
                             Поиск техники
                         </h4>
-                        <form action="">
+                        <form action="{{ route('promos.search') }}" method="POST">
+                        	@csrf
                             <select name="" id="">
                                 <option value="">Аренда спецтехники</option>
                                 <option value="">Аренда инструментов</option>
                             </select>
-                            <select name="" id="">
-                                <option value="">Все</option>
-                                <option value="">Тракторы</option>
-                                <option value="">Погрузчики</option>
-                            </select>
-                            <select name="" id="">
+                            <select name="category" id="category">
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+    							@endforeach
+    						</select>
+                            <select name="region" id="region">
                             	@foreach($regions as $region)
-                                	<option value="">{{ $region->name }}</option>
+                                	<option value="{{ $region->id }}">{{ $region->name }}</option>
                                 @endforeach
                             </select>
                             <div class="radio-owner">
@@ -76,6 +77,7 @@
                                 <input type="radio" name="owner" id="owner" value="owner"><label for="owner">Частник</label>
                                 <input type="radio" name="owner" id="company" value="company"><label for="company">Компания</label>
                             </div>
+                            <button type="submit">Поиск</button>
                         </form>
                     </div>
                 </div>
