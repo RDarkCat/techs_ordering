@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Item;
 use App\Models\Promo;
 use App\Models\Category;
 use App\Models\Region;
@@ -29,12 +28,21 @@ class PromoController extends Controller
 
     public function byCategory(Request $request)
     {
-        $items = Item::with('category')->find($request->only(['category']))->first();
-
-        dd($items, Promo::where('item_id', '=', $items->id));
+        $promos = Promo::where('status', true)->where('item_id', function ($query) use ($request) {
+            $query->select('item_id')
+            ->from('items as i')
+            ->join('item_category as ic', 'i.id', '=', 'ic.item_id')
+            ->join('categories as c', 'c.id', '=', 'ic.category_id')
+            ->where('c.id', $request->only(['category']));
+        })->simplePaginate(5);
+        
+        $regions = Region::all();
+        $categories = Category::all();
         
         return view('promos.index')->with([
-            'promos' => $items,
+            'regions' => $regions,
+            'promos' => $promos,
+            'categories' => $categories
         ]);
     }
 
@@ -51,3 +59,4 @@ class PromoController extends Controller
         }
     }
 }
+

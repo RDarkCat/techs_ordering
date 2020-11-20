@@ -11,6 +11,6 @@ class Category extends Model
 
     public function item()
     {
-        return $this->belongsToMany(Item::class, 'item_category', 'item_id');
+        return $this->belongsToMany(Item::class, 'item_category');
     }
 }
