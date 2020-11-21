@@ -108,7 +108,7 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(int $id)
     {
         $item = Item::with('characteristic')->find($id);
         $settlements = Settlement::orderBy('name')->get();
@@ -139,7 +139,10 @@ class ItemsController extends Controller
         return redirect(route('items.show', ['items' => $item->id]));
     }
 
-    public function delete(Item $item)
+    public function delete(int $id)
     {
+        $item = Item::find($id);
+        $item->delete();
+        return redirect()->route('items.usersItems');
     }
 }
