@@ -7,7 +7,7 @@ import 'buefy/dist/buefy.css';
 import VueAxios from 'vue-axios';
 import store from './store';
 import router from './routes/routes';
-import App from './App'
+import App from './App.vue'
 // import { Form, HasError, AlertError } from 'vform'
 // window.Form = Form;
 
