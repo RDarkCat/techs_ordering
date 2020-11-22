@@ -6,7 +6,11 @@
 
 <h1>{{ $item->name }}</h1>
 @if(true)
-<div><a href="{{ route('items.edit', ['item' => $item->id]) }}">Изменить</a> / <a href="{{ route('items.delete', ['item_id' => $item->id]) }}">Удалить</a></div>
+<div><a href="{{ route('items.edit', ['item' => $item->id]) }}">Изменить</a> / <form action="{{ route('items.delete', ['item_id' => $item->id]) }}" method="post">
+        @csrf
+        <a href="#" onclick="parentNode.submit();">Удалить</a>
+    </form>
+</div>
 @endif
 <div>Описание: {{ $item->characteristic->description }}</div>
 <div>Длина: {{ $item->characteristic->length }}</div>
