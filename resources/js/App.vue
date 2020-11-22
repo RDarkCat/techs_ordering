@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Feader />
+        <Header />
         <hr>
         <router-view />
         <hr>
@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Header from './views/components/Header';
-import Footer from './views/components/Footer';
+import Header from './views/components/Header.vue';
+import Footer from './views/components/Footer.vue';
 
 export default {
     name: "App",
