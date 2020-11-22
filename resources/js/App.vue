@@ -1,10 +1,10 @@
 <template>
     <div>
-        <header />
+        <Feader />
         <hr>
         <router-view />
         <hr>
-        <footer />
+        <Footer />
     </div>
 </template>
 

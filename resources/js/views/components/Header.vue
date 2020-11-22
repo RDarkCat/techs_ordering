@@ -15,7 +15,7 @@
 import Navigation from "./Navigation";
 
 export default {
-    name: "header",
+    name: "Header",
     components: {
         Navigation
     }
