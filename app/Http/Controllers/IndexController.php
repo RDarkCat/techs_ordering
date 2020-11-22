@@ -11,6 +11,7 @@ class IndexController extends Controller
 
         $items = Item::all()->random(3);
 
-        return view('welcome')->with('items', $items);
+        return view('api');
+        //return view('welcome')->with('items', $items);
     }
 }
