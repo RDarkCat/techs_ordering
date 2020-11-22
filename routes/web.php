@@ -23,6 +23,9 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('{any}', [IndexController::class, 'index'])
 //    ->where('any' , ".*");
+Route::get('api_test', function () {
+    return view('api');
+})->name('api_test');
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::resource('items', ItemsController::class)->except(['index', 'show']);

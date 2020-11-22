@@ -8,25 +8,25 @@ import store from '../store';
 
 const LoginPage = () =>
     import(/* webpack-chunk-name: "LoginPage" */
-        '../views/pages/Auth/Login.vue');
+        '../views/pages/Auth/Login');
 const AccountPage = () =>
     import(/* webpack-chunk-name: "AccountPage" */
-        '../views/pages/Account.vue');
+        '../views/pages/Account');
 const RegistrationPage = () =>
     import(/* webpack-chunk-name: "RegistrationPage" */
-        '../views/pages/Auth/Register.vue');
+        '../views/pages/Auth/Register');
 const HomePage = () =>
     import(/* webpack-chunk-name: "HomePage" */
-        '../views/pages/Home.vue');
+        '../views/pages/Home');
 const PromosPage = () =>
     import(/* webpack-chunk-name: "PromosPage" */
-        '../views/pages/Promos.vue');
+        '../views/pages/Promos');
 const AboutPage = () =>
     import(/* webpack-chunk-name: "AboutPage" */
-        '../views/pages/About.vue');
+        '../views/pages/About');
 const PageNotFound = () =>
     import(/* webpack-chunk-name: "PageNotFound" */
-        '../views/pages/404.vue')
+        '../views/pages/404')
 
 export default new VueRouter({
     mode: 'history',
