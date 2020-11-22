@@ -14,8 +14,7 @@
             <a href="{{ route('items.index') }}">items</a>
             <a href="{{ route('promos.index') }}">promos</a>
             <a href="{{ route('demo_lessor') }}">Кабинет арендодателя</a>
-            <a href="#">О сервисе</a>
-            <a href="#">Контакты</a>
+            <a href="{{ route('api_test') }}">api_test</a>
         </div>
         <div class="header__logIn">
             <div class="logIn__auth">
@@ -61,7 +60,7 @@
             let geoInfo;
             geoInfo = getGeoInfoFromCookies();
 
-            if (geoInfo === undefined) {    
+            if (geoInfo === undefined) {
                 await getGeoInfoViaAPI().then((result) => {
                     geoInfo = result;
                 });
