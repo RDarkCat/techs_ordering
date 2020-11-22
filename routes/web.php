@@ -23,7 +23,7 @@ Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::resource('items', ItemsController::class)->except(['index', 'show']);
 Route::prefix('items')->as('items.')->group(function () {
     Route::get('/usersItems', [ItemsController::class, 'usersItems'])->name('usersItems');
-    Route::get('/delete/{item_id}', [ItemsController::class, 'delete'])->name('delete');
+    Route::post('/delete/{item_id}', [ItemsController::class, 'delete'])->name('delete');
     Route::get('/', [ItemsController::class, 'index'])->name('index');
     Route::get('/{items}', [ItemsController::class, 'show'])->name('show');
     
