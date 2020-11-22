@@ -1,3 +1,4 @@
+require('./bootstrap');
 window.Vue = require('vue');
 
 import Axios from "axios";
@@ -7,6 +8,8 @@ import VueAxios from 'vue-axios';
 import store from './store';
 import router from './routes/routes';
 import App from './App'
+// import { Form, HasError, AlertError } from 'vform'
+// window.Form = Form;
 
 require('./store/subscriber');
 

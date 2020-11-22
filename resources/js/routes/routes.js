@@ -6,13 +6,27 @@ Vue.use(VueRouter);
 import Vue from 'vue';
 import store from '../store';
 
-const LoginPage         = () => import('../views/pages/Auth/Login');
-const AccountPage       = () => import('../views/pages/Account');
-const RegistrationPage  = () => import('../views/pages/Auth/Register');
-const HomePage          = () => import('../views/pages/Home');
-const PromosPage     = () => import('../views/pages/Promos');
-const AboutPage         = () => import('../views/pages/About');
-const PageNotFound      = () => import('../views/pages/404')
+const LoginPage = () =>
+    import(/* webpack-chunk-name: "LoginPage" */
+        '../views/pages/Auth/Login');
+const AccountPage = () =>
+    import(/* webpack-chunk-name: "AccountPage" */
+        '../views/pages/Account');
+const RegistrationPage = () =>
+    import(/* webpack-chunk-name: "RegistrationPage" */
+        '../views/pages/Auth/Register');
+const HomePage = () =>
+    import(/* webpack-chunk-name: "HomePage" */
+        '../views/pages/Home');
+const PromosPage = () =>
+    import(/* webpack-chunk-name: "PromosPage" */
+        '../views/pages/Promos');
+const AboutPage = () =>
+    import(/* webpack-chunk-name: "AboutPage" */
+        '../views/pages/About');
+const PageNotFound = () =>
+    import(/* webpack-chunk-name: "PageNotFound" */
+        '../views/pages/404')
 
 export default new VueRouter({
     mode: 'history',
