@@ -1,41 +1,30 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Item;
-use App\Models\Media;
-use App\Models\Region;
 use App\Models\Settlement;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class ItemsController extends Controller
+class ItemController extends Controller
 {
     public function index()
     {
 
-
         $items = Item::with('characteristic')
             ->simplePaginate(5);
 
-        $regions = Region::all();
-
-        return view('items.index')->with([
-            'items' => $items,
-            'regions' => $regions
-        ]);
+        return response()->json($items);
     }
 
     public function show($id)
     {
         $item = Item::with('characteristic')->find($id);
 
-        if (!empty($item)) {
-            return view('items.one')->with('item', $item);
-        } else {
-            return redirect()->route('items.index');
-        }
+        return response()->json($item);        
     }
 
     /**
@@ -48,6 +37,7 @@ class ItemsController extends Controller
     {
         $parameters = $request->input();
         $user_id = $parameters['user_id'];
+
         if (!$user_id) {
             redirect('home');
         }
@@ -55,7 +45,7 @@ class ItemsController extends Controller
         $item = Item::create($parameters);
         $item->saveRelations($parameters, $request->file(), $user_id);
 
-        return redirect(route('items.show', ['items' => $item->id]));
+        return response()->json($item->id);
     }
 
     /**
@@ -66,15 +56,16 @@ class ItemsController extends Controller
     public function create(Request $request)
     {
         $user_id = $request->input('user_id');
+
         if (!$user_id) {
-            redirect('home');
+            return response()->json([], 404);
         }
 
         $settlements = Settlement::orderBy('name')->get();
         $tags = Tag::all();
         $tags->groupBy('parent_id');
 
-        return view('items.new', [
+        return response()->json([
             'settlements' => $settlements,
             'tags' => $tags
         ]);
@@ -86,16 +77,13 @@ class ItemsController extends Controller
         $user_id = 1;
 
         if (!$user_id) {
-            return redirect()->route('home');
+            return response()->json([], 404);
         }
 
         $user = User::find($user_id);
         $items = $user->items()->simplePaginate(5);
-        $regions = Region::all();
-        return view('items.index', [
-            'items' => $items,
-            'regions' => $regions
-        ]);
+        
+        return response()->json($items);
     }
 
     /**
@@ -104,14 +92,14 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(int $id)
+    public function edit($id)
     {
         $item = Item::with('characteristic')->find($id);
         $settlements = Settlement::orderBy('name')->get();
         $tags = Tag::all();
         $tags->groupBy('parent_id');
 
-        return view('items.edit', [
+        return response()->json([
             'item' => $item,
             'settlements' => $settlements,
             'tags' => $tags
@@ -132,13 +120,10 @@ class ItemsController extends Controller
         $item->save();
         $item->saveRelations($parameters, $request->file());
 
-        return redirect(route('items.show', ['items' => $item->id]));
+        return response()->json(['items' => $item->id]);
     }
 
-    public function delete(int $id)
+    public function delete(Item $item)
     {
-        $item = Item::find($id);
-        $item->delete();
-        return redirect()->route('items.usersItems');
     }
 }
