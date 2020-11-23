@@ -24,7 +24,6 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::prefix('auth')->as('auth.')->namespace('Auth')->group(function () {
-//Route::group(['prefix' => 'auth', 'namespace' =>  'Auth'], function () {
     Route::post('login', [LoginController::class, 'index']);
     Route::post('register', [RegisterController::class, 'index']);
     Route::post('logout', [LogoutController::class, 'index']);
@@ -34,5 +33,5 @@ Route::prefix('auth')->as('auth.')->namespace('Auth')->group(function () {
 
 Route::prefix('promos')->as('promos.')->group(function () {
     Route::get('/', [PromoController::class, 'index'])->name('index');
-    Route::get('/{promos}', [PromoController::class, 'show'])->name('show');
+    Route::get('/show/{id}', [PromoController::class, 'show'])->name('show');
 });

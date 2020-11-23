@@ -17,7 +17,7 @@ class PromoController extends Controller
             ->where('status', true)
             ->simplePaginate(5);
 
-        return response()->json($promos);
+        return response()->json($promos, 200);
     }
 
     public function byCategory(Request $request)
@@ -44,12 +44,13 @@ class PromoController extends Controller
     {
         $promo = Promo::with('item')
             ->with('item.characteristic')
+            ->where('status', true)
             ->find($id);
 
         if (!empty($promo)) {
-            return view('promos.one')->with('promo', $promo);
+            return response()->json($promo, 200);
         } else {
-            return redirect()->route('promos.index');
+            return response(null, 404);
         }
     }
 }

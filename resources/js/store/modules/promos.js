@@ -36,13 +36,15 @@ export default {
     ,
     actions: {
         async responsePromo ({ commit }, id) {
-            let response = await axios.get('/promos/show/' + id);
+            let response = await axios.
+            get('/promos/show/' + id);
 
             commit('SET_PROMO', response.data);
         },
 
-        async responsePromos ({ commit }, page = null) {
-            let response = await axios.get('/promos', page);
+        async responsePromos ({ commit }) {
+            let response = await axios.
+                get('/promos/');
 
             commit('SET_PROMOS', response.data);
         }
