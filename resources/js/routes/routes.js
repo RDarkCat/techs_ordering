@@ -21,6 +21,9 @@ const HomePage = () =>
 const PromosPage = () =>
     import(/* webpack-chunk-name: "PromosPage" */
         '../views/pages/Promos');
+const PromoPage = () =>
+    import(/* webpack-chunk-name: "PromoPage" */
+        '../views/pages/Promo');
 const AboutPage = () =>
     import(/* webpack-chunk-name: "AboutPage" */
         '../views/pages/About');
@@ -83,6 +86,11 @@ export default new VueRouter({
             name: 'promos',
             path: '/promos',
             component: PromosPage,
+        },
+        {
+            name: 'promo',
+            path: '/promo/show/:id',
+            component: PromoPage,
         },
         {
             name: 'about',
