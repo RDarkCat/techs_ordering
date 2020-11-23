@@ -19,7 +19,7 @@
                 <li>
                     <router-link
                         :to="{
-                        name: 'login'
+                        name: 'LoginPage'
                     }"
                     >
                         Login
@@ -57,12 +57,12 @@
             <li>
                 <router-link
                     :to="{
-                        name: 'test'
+                        name: 'categories'
                     }"
                 >
-                    Test
+                    Categories
                 </router-link>
-            </li><!--Link to:test-->
+            </li><!--Link to:categories-->
         </ul>
     </nav>
 </template>

@@ -38,7 +38,7 @@
 <script>
 import { mapActions } from 'vuex';
 export default {
-    name: 'registration',
+    name: 'RegistrationPage',
     data () {
         return {
             form: {

@@ -23,7 +23,7 @@
 <script>
 import { mapActions } from 'vuex';
 export default {
-    name: "login",
+    name: "LoginPage",
     components: {
 
     },

@@ -1,12 +1,12 @@
 <template>
     <div>
-        Account
+        Categories
     </div>
 </template>
 
 <script>
 export default {
-    name: "account"
+    name: "CategoriesListPage"
 }
 </script>
 

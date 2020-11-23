@@ -8,31 +8,32 @@ import store from '../store';
 
 const LoginPage = () =>
     import(/* webpack-chunk-name: "LoginPage" */
-        '../views/pages/Auth/Login');
-const AccountPage = () =>
-    import(/* webpack-chunk-name: "AccountPage" */
-        '../views/pages/Account');
+        '../views/components/pages/Auth/LoginPage');
 const RegistrationPage = () =>
     import(/* webpack-chunk-name: "RegistrationPage" */
-        '../views/pages/Auth/Register');
+        '../views/components/pages/Auth/RegistrationPage');
+const AccountPage = () =>
+    import(/* webpack-chunk-name: "AccountPage" */
+        '../views/components/pages/User/AccountPage');
+
 const HomePage = () =>
     import(/* webpack-chunk-name: "HomePage" */
-        '../views/pages/Home');
-const PromosPage = () =>
-    import(/* webpack-chunk-name: "PromosPage" */
-        '../views/pages/Promos');
-const PromoPage = () =>
-    import(/* webpack-chunk-name: "PromoPage" */
-        '../views/pages/Promo');
+        '../views/components/pages/HomePage');
+const PromosListPage = () =>
+    import(/* webpack-chunk-name: "PromosListPage" */
+        '../views/components/pages/Promos/PromosListPage');
+const PromoByIdPage = () =>
+    import(/* webpack-chunk-name: "PromoByIdPage" */
+        '../views/components/pages/Promos/PromoByIdPage');
 const AboutPage = () =>
     import(/* webpack-chunk-name: "AboutPage" */
-        '../views/pages/About');
+        '../views/components/pages/About/AboutPage');
 const PageNotFound = () =>
     import(/* webpack-chunk-name: "PageNotFound" */
-        '../views/pages/404')
-const TestPage = () =>
-    import(/* webpack-chunk-name: "TestPage" */
-        '../views/pages/Test')
+        '../views/components/pages/404/404')
+const CategoriesListPage = () =>
+    import(/* webpack-chunk-name: "CategoriesListPage" */
+        '../views/components/pages/Categories/CategoriesListPage')
 
 export default new VueRouter({
     mode: 'history',
@@ -52,7 +53,7 @@ export default new VueRouter({
             component: HomePage,
         },
         {
-            name: 'login',
+            name: 'LoginPage',
             path: '/auth/login',
             component: LoginPage,
             beforeEnter: (to, from, next) => {
@@ -85,12 +86,12 @@ export default new VueRouter({
         {
             name: 'promos',
             path: '/promos',
-            component: PromosPage,
+            component: PromosListPage,
         },
         {
             name: 'promo',
             path: '/promo/show/:id',
-            component: PromoPage,
+            component: PromoByIdPage,
         },
         {
             name: 'about',
@@ -98,9 +99,9 @@ export default new VueRouter({
             component: AboutPage,
         },
         {
-            name: 'test',
-            path: '/test',
-            component: TestPage,
+            name: 'categories',
+            path: '/categories',
+            component: CategoriesListPage,
         }
 
     ],

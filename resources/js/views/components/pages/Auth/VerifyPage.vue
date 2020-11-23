@@ -1,11 +1,13 @@
 <template>
-    <div>
-        <p>Page not found</p>
-    </div>
+
 </template>
 
 <script>
 export default {
-
+    name: "VerifyPage"
 }
 </script>
+
+<style scoped>
+
+</style>

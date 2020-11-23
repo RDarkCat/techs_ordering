@@ -3,6 +3,7 @@ import Vuex from "vuex";
 
 import auth from "./modules/auth";
 import promos from "./modules/promos";
+import categories from "./modules/categories";
 
 Vue.use(Vuex);
 
@@ -23,7 +24,8 @@ export default new Vuex.Store({
     },
     modules: {
         auth,
-        promos
+        promos,
+        categories
     },
 });
 

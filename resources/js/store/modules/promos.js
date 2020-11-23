@@ -14,7 +14,8 @@ export default {
             // per_page: int
             // prev_page_url: str
             // to: int
-        ]
+        ],
+        categories: null
     },
     getters: {
         getPromo (state) {
@@ -44,7 +45,7 @@ export default {
 
         async responsePromos ({ commit }) {
             let response = await axios.
-                get('/promos/');
+                get('/promos');
 
             commit('SET_PROMOS', response.data);
         }
