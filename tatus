@@ -1,0 +1,52 @@
+[33mcommit fd2213bcad242efbefa3f43e7159e2f647d5f6ed[m[33m ([m[1;36mHEAD -> [m[1;32mgallaguz[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/gallaguz[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Gallaguz <gallaguz@gmail.com>
+Date:   Mon Nov 23 00:49:49 2020 +0300
+
+    .gitignore + /public/js/*.js
+
+[33mcommit 1f09e70233f76dfb973a28d3668169bbd7a20a01[m
+Merge: 1e3ec28 ea63615
+Author: RDarkCat <45436866+RDarkCat@users.noreply.github.com>
+Date:   Sun Nov 22 21:19:45 2020 +0300
+
+    Merge pull request #17 from RDarkCat/gallaguz_marge_main
+    
+    Gallaguz marge main
+
+[33mcommit ea6361510a4be8da4465af0850d7ad032da8f765[m[33m ([m[1;31morigin/gallaguz_marge_main[m[33m)[m
+Author: Gallaguz <gallaguz@gmail.com>
+Date:   Sun Nov 22 21:14:56 2020 +0300
+
+    last
+
+[33mcommit 9783dbb84a9b90bbf5ee90765c6d17d2ee0f5558[m
+Merge: b26ac5c 6abf850
+Author: Gallaguz <gallaguz@gmail.com>
+Date:   Sun Nov 22 20:52:38 2020 +0300
+
+    пытаюсь слить
+
+[33mcommit b26ac5ccc25143bdbfc2f3bac94b92f2bdf9c335[m
+Author: Gallaguz <gallaguz@gmail.com>
+Date:   Sun Nov 22 20:35:07 2020 +0300
+
+    .
+
+[33mcommit 0b97409dd147018d31caf24be3b7cf3547622884[m
+Merge: 71b096d 1e3ec28
+Author: Gallaguz <gallaguz@gmail.com>
+Date:   Sun Nov 22 20:32:23 2020 +0300
+
+    Merge branch 'main' of https://github.com/RDarkCat/techs_ordering into main
+
+[33mcommit 6abf85059afae354f6a0e8d30d939521022a6fd7[m[33m ([m[1;31morigin/gallaguz_api[m[33m)[m
+Author: Gallaguz <gallaguz@gmail.com>
+Date:   Sun Nov 22 20:25:59 2020 +0300
+
+    add *.vue ext
+
+[33mcommit f8162edbba84037e74d2681cb1547545d866d0d5[m
+Author: Gallaguz <gallaguz@gmail.com>
+Date:   Sun Nov 22 18:27:00 2020 +0300
+
+    .gitgnor

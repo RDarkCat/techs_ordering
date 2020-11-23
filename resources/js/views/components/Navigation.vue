@@ -53,6 +53,15 @@
                     About
                 </router-link>
             </li>
+            <li>
+                <router-link
+                    :to="{
+                        name: 'test'
+                    }"
+                >
+                    Test
+                </router-link>
+            </li>
         </ul>
 
     </nav>

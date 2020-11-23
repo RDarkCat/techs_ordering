@@ -21,7 +21,7 @@ export default {
         }),
         promos () {
             this.responsePromos().then(() => {
-                console.log (this.getPromos);
+                //console.log (this.getPromos);
             }).catch(() => {
                 //console.log('failed');
             });

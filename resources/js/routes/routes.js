@@ -27,6 +27,9 @@ const AboutPage = () =>
 const PageNotFound = () =>
     import(/* webpack-chunk-name: "PageNotFound" */
         '../views/pages/404')
+const TestPage = () =>
+    import(/* webpack-chunk-name: "TestPage" */
+        '../views/pages/Test')
 
 export default new VueRouter({
     mode: 'history',
@@ -85,6 +88,12 @@ export default new VueRouter({
             name: 'about',
             path: '/about',
             component: AboutPage,
+        },
+        {
+            name: 'test',
+            path: '/test',
+            component: TestPage,
         }
+
     ],
 });
