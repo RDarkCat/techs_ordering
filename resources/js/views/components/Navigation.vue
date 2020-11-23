@@ -12,8 +12,8 @@
                     </router-link>
                     -
                     <a href="#" @click.prevents="logOut">Logout</a>
-                </li>
-            </template>
+                </li><!--Account-->
+            </template><!--Link to:account-->
 
             <template v-else>
                 <li>
@@ -24,7 +24,7 @@
                     >
                         Login
                     </router-link>
-                </li>
+                </li><!--Login-->
                 <li>
                     <router-link
                         :to="{
@@ -33,8 +33,9 @@
                     >
                         Registration
                     </router-link>
-                </li>
-            </template>
+                </li><!--Registration-->
+            </template><!--Link to:login/registration-->
+
             <li>
                 <router-link
                     :to="{
@@ -43,7 +44,7 @@
                 >
                     Promos
                 </router-link>
-            </li>
+            </li><!--Link to:promos-->
             <li>
                 <router-link
                     :to="{
@@ -52,7 +53,7 @@
                 >
                     About
                 </router-link>
-            </li>
+            </li><!--Link to:about-->
             <li>
                 <router-link
                     :to="{
@@ -61,9 +62,8 @@
                 >
                     Test
                 </router-link>
-            </li>
+            </li><!--Link to:test-->
         </ul>
-
     </nav>
 </template>
 
