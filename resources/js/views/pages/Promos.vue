@@ -1,7 +1,9 @@
 <template>
     <div>
         <p v-for="promo in getPromos.data">
-            {{ promo.item.name }}
+            <router-link :to="`/promo/show/${ promo.item.id }`">
+                {{ promo.item.name }}
+            </router-link>
         </p>
     </div>
 </template>

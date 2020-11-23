@@ -21,12 +21,18 @@ const HomePage = () =>
 const PromosPage = () =>
     import(/* webpack-chunk-name: "PromosPage" */
         '../views/pages/Promos');
+const PromoPage = () =>
+    import(/* webpack-chunk-name: "PromoPage" */
+        '../views/pages/Promo');
 const AboutPage = () =>
     import(/* webpack-chunk-name: "AboutPage" */
         '../views/pages/About');
 const PageNotFound = () =>
     import(/* webpack-chunk-name: "PageNotFound" */
         '../views/pages/404')
+const TestPage = () =>
+    import(/* webpack-chunk-name: "TestPage" */
+        '../views/pages/Test')
 
 export default new VueRouter({
     mode: 'history',
@@ -82,9 +88,20 @@ export default new VueRouter({
             component: PromosPage,
         },
         {
+            name: 'promo',
+            path: '/promo/show/:id',
+            component: PromoPage,
+        },
+        {
             name: 'about',
             path: '/about',
             component: AboutPage,
+        },
+        {
+            name: 'test',
+            path: '/test',
+            component: TestPage,
         }
+
     ],
 });

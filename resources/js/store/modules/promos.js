@@ -4,7 +4,17 @@ export default {
     namespaced: true,
     state: {
         promo: null,
-        promos: []
+        promos: [
+            // current_page: int
+            // data: array()
+            // first_page_url: str
+            // from: int
+            // next_page_url: str
+            // path: str
+            // per_page: int
+            // prev_page_url: str
+            // to: int
+        ]
     },
     getters: {
         getPromo (state) {

@@ -21,8 +21,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//Route::get('{any}', [IndexController::class, 'index'])
-//    ->where('any' , ".*");
+//Route::get('{any}', function () {
+//    return view('api');
+//})->where('any' , ".*");
+
 Route::get('api_test', function () {
     return view('api');
 })->name('api_test');
