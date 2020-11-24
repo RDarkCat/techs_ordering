@@ -7,16 +7,19 @@
                 LOGO
             </router-link>
         </div>
-        <navigation />
+        <Auth />
+        <Navigation />
     </div>
 </template>
 
 <script>
 import Navigation from "./Navigation";
+import Auth from "./Auth/Auth";
 
 export default {
     name: "Header",
     components: {
+        Auth,
         Navigation
     }
 }

@@ -6,12 +6,6 @@ Vue.use(VueRouter);
 import Vue from 'vue';
 import store from '../store';
 
-const LoginPage = () =>
-    import(/* webpack-chunk-name: "LoginPage" */
-        '../views/components/pages/Auth/LoginPage');
-const RegistrationPage = () =>
-    import(/* webpack-chunk-name: "RegistrationPage" */
-        '../views/components/pages/Auth/RegistrationPage');
 const AccountPage = () =>
     import(/* webpack-chunk-name: "AccountPage" */
         '../views/components/pages/User/AccountPage');
@@ -53,19 +47,6 @@ export default new VueRouter({
             component: HomePage,
         },
         {
-            name: 'LoginPage',
-            path: '/auth/login',
-            component: LoginPage,
-            beforeEnter: (to, from, next) => {
-                if (store.getters['auth/authenticated']) {
-                    return next({
-                        name: 'account'
-                    });
-                }
-                next();
-            }
-        },
-        {
             name: 'account',
             path: '/account',
             component: AccountPage,
@@ -77,11 +58,6 @@ export default new VueRouter({
                 }
                 next();
             }
-        },
-        {
-            name: 'registration',
-            path: '/auth/registration',
-            component: RegistrationPage,
         },
         {
             name: 'promos',
