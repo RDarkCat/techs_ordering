@@ -32,6 +32,8 @@ Route::prefix('auth')->as('auth.')->namespace('Auth')->group(function () {
 });
 
 Route::prefix('promos')->as('promos.')->group(function () {
-    Route::get('/', [PromoController::class, 'index'])->name('index');
-    Route::get('/show/{id}', [PromoController::class, 'show'])->name('show');
+    Route::get('/', [PromoController::class, 'index']);
+    Route::get('/show/{id}', [PromoController::class, 'show']);
+    Route::get('/category/', [PromoController::class, 'byCategory']);
+    Route::get('/categories/', [PromoController::class, 'categories']);
 });

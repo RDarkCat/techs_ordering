@@ -3,25 +3,29 @@ import axios from "axios";
 export default {
     namespaced: true,
     state: {
-        categories: null
+        categories: null,
+        categoriesTree: null
     },
     getters: {
-        getCategoriesList (state) {
+        getCategories (state) {
             return state.categories
         }
     },
     mutations: {
-        SET_CATEGORIES_LIST (state, categories) {
+        SET_CATEGORIES (state, categories) {
             state.categories = categories;
         }
     }
     ,
     actions: {
-        async responseCategoriesList ({ commit }) {
+        async responseCategories ({ commit }) {
             let response = await axios.
-            get('/categories');
+            get('/promos/categories/');
 
-            commit('SET_CATEGORIES_LIST', response.data);
+            commit('SET_CATEGORIES', response.data);
+        },
+        makeCategoriesTree () {
+
         }
     }
 }

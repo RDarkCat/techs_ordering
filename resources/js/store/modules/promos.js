@@ -14,8 +14,7 @@ export default {
             // per_page: int
             // prev_page_url: str
             // to: int
-        ],
-        categories: null
+        ]
     },
     getters: {
         getPromo (state) {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Promo;
 use Illuminate\Http\Request;
 
@@ -46,7 +47,7 @@ class PromoController extends Controller
 
         return response()->json($promos);
     }
-    
+
     public function sortByPrice(Request $request)
     {
         $promos = Promo::where('status', true)
@@ -60,7 +61,7 @@ class PromoController extends Controller
 
         return response()->json($promos);
     }
-    
+
     public function show($id)
     {
         $promo = Promo::with('item')
@@ -70,6 +71,17 @@ class PromoController extends Controller
 
         if (!empty($promo)) {
             return response()->json($promo, 200);
+        } else {
+            return response(null, 404);
+        }
+    }
+
+    public function categories()
+    {
+        $categories = Category::whereNull('parent_id')->get();
+
+        if (!empty($categories)) {
+            return response()->json($categories, 200);
         } else {
             return response(null, 404);
         }
