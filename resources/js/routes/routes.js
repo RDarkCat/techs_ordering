@@ -50,14 +50,14 @@ export default new VueRouter({
             name: 'account',
             path: '/account',
             component: AccountPage,
-            beforeEnter: (to, from, next) => {
-                if (!store.getters['auth/authenticated']) {
-                    return next({
-                        name: 'login'
-                    });
-                }
-                next();
-            }
+            // beforeEnter: (to, from, next) => {
+            //     if (!store.getters['auth/authenticated']) {
+            //         return next({
+            //             name: 'login'
+            //         });
+            //     }
+            //     next();
+            // }
         },
         {
             name: 'promos',
