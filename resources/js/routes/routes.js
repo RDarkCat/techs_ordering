@@ -24,7 +24,7 @@ const AboutPage = () =>
         '../views/components/pages/About/AboutPage');
 const PageNotFound = () =>
     import(/* webpack-chunk-name: "PageNotFound" */
-        '../views/components/pages/404/404')
+        '../views/components/pages/PageNotFound/PageNotFound')
 const CategoriesPage = () =>
     import(/* webpack-chunk-name: "CategoriesPage" */
         '../views/components/pages/Categories/CategoriesPage')
@@ -34,6 +34,7 @@ export default new VueRouter({
     base: process.env.BASE_URL,
     routes: [
         {
+            name: 'PageNotFound',
             path: '*',
             component: PageNotFound
         },
@@ -50,14 +51,13 @@ export default new VueRouter({
             name: 'account',
             path: '/account',
             component: AccountPage,
-            // beforeEnter: (to, from, next) => {
-            //     if (!store.getters['auth/authenticated']) {
-            //         return next({
-            //             name: 'login'
-            //         });
-            //     }
-            //     next();
-            // }
+            beforeEnter: (to, from, next) => {
+                if (!store.getters['auth/authenticated']) {
+                    next({ name: 'PageNotFound' })
+                } else {
+                    next()
+                }
+            }
         },
         {
             name: 'promos',

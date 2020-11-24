@@ -33,7 +33,7 @@ export default {
     },
     mounted() {
         this.categories();
-        console.log(this.getCategories);
+        //console.log(this.getCategories);
     }
 }
 </script>
