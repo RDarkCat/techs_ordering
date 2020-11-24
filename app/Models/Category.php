@@ -10,11 +10,24 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = [
-        'parent_id', 'name', 'description'
+        'parent_id',
+        'name',
+        'description'
     ];
 
-    public function subCategory()
+    public $timestamps = false;
+
+    public function scopeIsLive($query)
     {
-        return $this->hasMany('Category');
+        return $query->where('live', true);
+    }
+
+    public function scopeOfSort($query, $sort)
+    {
+        foreach ($sort as $column => $direction) {
+            $query->orderBy($column, $direction);
+        }
+
+        return $query;
     }
 }

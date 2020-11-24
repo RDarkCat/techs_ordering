@@ -12,9 +12,10 @@ class ItemCategorySeeder extends Seeder
      *
      * @return void
      */
+
     public function run()
     {
-        DB::table('item_category')->insert([
+        DB::table('category_item')->insert([
             'item_id' => rand(1, 100),
             'category_id' => rand(1, 83)
         ]);

@@ -31,9 +31,9 @@ const AboutPage = () =>
 const PageNotFound = () =>
     import(/* webpack-chunk-name: "PageNotFound" */
         '../views/components/pages/404/404')
-const CategoriesListPage = () =>
-    import(/* webpack-chunk-name: "CategoriesListPage" */
-        '../views/components/pages/Categories/CategoriesListPage')
+const CategoriesPage = () =>
+    import(/* webpack-chunk-name: "CategoriesPage" */
+        '../views/components/pages/Categories/CategoriesPage')
 
 export default new VueRouter({
     mode: 'history',
@@ -101,7 +101,7 @@ export default new VueRouter({
         {
             name: 'categories',
             path: '/categories',
-            component: CategoriesListPage,
+            component: CategoriesPage,
         }
 
     ],

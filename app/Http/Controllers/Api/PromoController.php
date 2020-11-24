@@ -78,7 +78,18 @@ class PromoController extends Controller
 
     public function categories()
     {
-        $categories = Category::whereNull('parent_id')->get();
+//        $categories = Category::whereNull('parent_id')->get();
+//
+//        if (!empty($categories)) {
+//            return response()->json($categories, 200);
+//        } else {
+//            return response(null, 404);
+//        }
+
+        $categories = Category::all()
+            ->where('live', true);
+
+        $categories = $this->buildTree($categories);
 
         if (!empty($categories)) {
             return response()->json($categories, 200);
@@ -86,5 +97,20 @@ class PromoController extends Controller
             return response(null, 404);
         }
     }
+
+    public function buildTree($items)
+    {
+        $grouped = $items->groupBy('parent_id');
+
+        foreach ($items as $item) {
+            if ($grouped->has($item->id)) {
+                $item->children = $grouped[$item->id];
+            }
+        }
+
+        return $items->where('parent_id', null);
+    }
+
+
 }
 

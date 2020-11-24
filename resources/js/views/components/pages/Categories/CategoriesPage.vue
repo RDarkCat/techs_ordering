@@ -1,19 +1,19 @@
 <template>
-    <div>
-        Categories list
-        <ul v-if="getCategories">
-            <li v-for="category in getCategories">
-                {{ category.name }}
-            </li>
-        </ul>
+    <div v-if="getCategories">
+        Categories tree
+        <CategoriesList :categories="getCategories" />
     </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from "vuex";
+import CategoriesList from "./elemnts/CategoriesList";
 
 export default {
-    name: "CategoriesListPage",
+    name: "CategoriesPage",
+    components: {
+      CategoriesList
+    },
     computed: {
         ...mapGetters({
             getCategories: 'categories/getCategories'
@@ -25,7 +25,7 @@ export default {
         }),
         categories() {
             this.responseCategories().then(() => {
-
+                console.log(this.getCategories);
             }).catch(() => {
                 //console.log('failed');
             });
