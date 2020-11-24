@@ -7,7 +7,7 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-import CategoriesList from "./elemnts/CategoriesList";
+import CategoriesList from "./elements/CategoriesList";
 
 export default {
     name: "CategoriesPage",
@@ -25,7 +25,7 @@ export default {
         }),
         categories() {
             this.responseCategories().then(() => {
-                console.log(this.getCategories);
+                //console.log(this.getCategories);
             }).catch(() => {
                 //console.log('failed');
             });
