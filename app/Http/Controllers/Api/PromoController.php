@@ -78,14 +78,6 @@ class PromoController extends Controller
 
     public function categories()
     {
-//        $categories = Category::whereNull('parent_id')->get();
-//
-//        if (!empty($categories)) {
-//            return response()->json($categories, 200);
-//        } else {
-//            return response(null, 404);
-//        }
-
         $categories = Category::all()
             ->where('live', true);
 
