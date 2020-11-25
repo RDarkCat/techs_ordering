@@ -15,9 +15,26 @@ class ItemCategorySeeder extends Seeder
 
     public function run()
     {
-        DB::table('category_item')->insert([
-            'item_id' => rand(1, 100),
-            'category_id' => rand(1, 83)
-        ]);
+        $categories_ids = [];
+
+        for ($i = 14; $i <= 83; $i++) {
+            $categories_ids[] = $i;
+        }
+
+        $str = '';
+        $count = count($categories_ids);
+
+        for ($i = 1; $i <= 100; $i++) {
+            if ($i == 100) {
+                $str.= "('".$i."', '".$categories_ids[rand(1, $count-1)]."');";
+            } else {
+                $str.= "('".$i."', '".$categories_ids[rand(1, $count-1)]."'), ";
+            }
+
+        }
+
+        $sql = "INSERT INTO `category_item` (`item_id`, `category_id`) VALUES ".$str;
+
+        DB::unprepared($sql);
     }
 }

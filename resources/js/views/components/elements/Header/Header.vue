@@ -4,6 +4,7 @@
         <Location />
         <Auth />
         <Navigation />
+        <Breadcrumbs />
     </div>
 </template>
 
@@ -12,6 +13,7 @@ import Logo from "./elements/Logo";
 import Location from "./elements/Location";
 import Navigation from "./elements/Navigation";
 import Auth from "../Auth/Auth";
+import Breadcrumbs from "./elements/Breadcrumbs";
 
 export default {
     name: "Header",
@@ -19,7 +21,8 @@ export default {
         Logo,
         Location,
         Auth,
-        Navigation
+        Navigation,
+        Breadcrumbs
     }
 }
 </script>

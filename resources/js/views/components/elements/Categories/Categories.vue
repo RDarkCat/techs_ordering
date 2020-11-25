@@ -1,6 +1,5 @@
 <template>
     <div v-if="getCategories">
-        Categories tree
         <CategoriesList :categories="getCategories" />
     </div>
 </template>
@@ -10,7 +9,7 @@ import { mapActions, mapGetters } from "vuex";
 import CategoriesList from "./elements/CategoriesList";
 
 export default {
-    name: "CategoriesPage",
+    name: "Categories",
     components: {
       CategoriesList
     },

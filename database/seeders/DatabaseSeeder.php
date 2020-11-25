@@ -28,5 +28,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CharacteristicsSeeder::class);
         $this->call(PromosSeeder::class);
         $this->call(TagsSeeder::class);
+        $this->call(ItemTagSeeder::class);
     }
 }

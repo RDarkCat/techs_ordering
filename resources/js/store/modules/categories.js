@@ -23,9 +23,6 @@ export default {
             get('/promos/categories/');
 
             commit('SET_CATEGORIES', response.data);
-        },
-        makeCategoriesTree () {
-
         }
     }
 }

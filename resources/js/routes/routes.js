@@ -9,7 +9,6 @@ import store from '../store';
 const AccountPage = () =>
     import(/* webpack-chunk-name: "AccountPage" */
         '../views/components/pages/User/AccountPage');
-
 const HomePage = () =>
     import(/* webpack-chunk-name: "HomePage" */
         '../views/components/pages/HomePage');
@@ -25,9 +24,6 @@ const AboutPage = () =>
 const PageNotFound = () =>
     import(/* webpack-chunk-name: "PageNotFound" */
         '../views/components/pages/PageNotFound/PageNotFound')
-const CategoriesPage = () =>
-    import(/* webpack-chunk-name: "CategoriesPage" */
-        '../views/components/pages/Categories/CategoriesPage')
 
 export default new VueRouter({
     mode: 'history',
@@ -73,12 +69,6 @@ export default new VueRouter({
             name: 'about',
             path: '/about',
             component: AboutPage,
-        },
-        {
-            name: 'categories',
-            path: '/categories',
-            component: CategoriesPage,
         }
-
     ],
 });

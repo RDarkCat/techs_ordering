@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Promo;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class PromoController extends Controller
@@ -23,10 +24,11 @@ class PromoController extends Controller
     {
         $promos = Promo::where('status', true)->where('item_id', function ($query) use ($request) {
             $query->select('item_id')
-            ->from('items as i')
-            ->join('item_category as ic', 'i.id', '=', 'ic.item_id')
-            ->join('categories as c', 'c.id', '=', 'ic.category_id')
-            ->where('c.id', $request->only(['category']));
+                ->where('status', true)
+                ->from('items as i')
+                ->join('item_category as ic', 'i.id', '=', 'ic.item_id')
+                ->join('categories as c', 'c.id', '=', 'ic.category_id')
+                ->where('c.id', $request->only(['category']));
         })->simplePaginate(5);
 
         return response()->json($promos);
@@ -85,6 +87,20 @@ class PromoController extends Controller
 
         if (!empty($categories)) {
             return response()->json($categories, 200);
+        } else {
+            return response(null, 404);
+        }
+    }
+
+    public function tags()
+    {
+        $tags = Tag::all()
+            ->where('live', true);
+
+        $tags = $this->buildTree($tags);
+
+        if (!empty($tags)) {
+            return response()->json($tags, 200);
         } else {
             return response(null, 404);
         }

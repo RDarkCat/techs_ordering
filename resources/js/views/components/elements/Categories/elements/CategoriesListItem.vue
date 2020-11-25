@@ -15,7 +15,9 @@
 <script>
 export default {
     name: "CategoriesListItem",
-    props: ['category']
+    props: [
+        'category'
+    ]
 }
 </script>
 

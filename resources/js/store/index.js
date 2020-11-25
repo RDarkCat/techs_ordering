@@ -4,6 +4,7 @@ import Vuex from "vuex";
 import auth from "./modules/auth";
 import promos from "./modules/promos";
 import categories from "./modules/categories";
+import tags from "./modules/tags";
 
 Vue.use(Vuex);
 
@@ -25,7 +26,8 @@ export default new Vuex.Store({
     modules: {
         auth,
         promos,
-        categories
+        categories,
+        tags
     },
 });
 

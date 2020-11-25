@@ -1,10 +1,12 @@
 <template>
-
+    <div>
+        Breadcrumbs
+    </div>
 </template>
 
 <script>
 export default {
-    name: "VerifyPage"
+    name: "Breadcrumbs"
 }
 </script>
 

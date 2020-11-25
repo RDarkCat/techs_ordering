@@ -32,10 +32,10 @@
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
-import Login from "./Login";
-import Registration from "./Registration";
+import Login from "./elemnts/Login";
+import Registration from "./elemnts/Registration";
 
 export default {
     name: "Auth",
@@ -69,7 +69,7 @@ export default {
         },
         visionControl(form) {
             if (form === 'login') {
-                this.loginFormVisible=!this.loginFormVisible;
+                this.loginFormVisible = !this.loginFormVisible;
                 this.registrationFormVisible = false;
             }
             if (form === 'registration') {

@@ -19,15 +19,6 @@
                     About
                 </router-link>
             </li><!--Link to:about-->
-            <li>
-                <router-link
-                    :to="{
-                        name: 'categories'
-                    }"
-                >
-                    Categories
-                </router-link>
-            </li><!--Link to:categories-->
         </ul>
     </nav>
 </template>
