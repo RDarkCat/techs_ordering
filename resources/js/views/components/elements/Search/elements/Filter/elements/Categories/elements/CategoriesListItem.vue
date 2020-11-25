@@ -1,22 +1,26 @@
 <template>
     <li>
-        <div v-if="category.parent_id !== null">
-            <div v-on:click="clicked(category.name)">
-                {{ category.name }}
+        <div v-if="category.children">
+            <div>
+                <a href="#" v-on:click.prevent="show=!show">{{ category.name }}</a>
             </div>
         </div>
-        <div v-else>
-                {{ category.name }}
+
+        <div v-else v-on:click="clicked(category.id)">
+            {{ category.name }}
         </div>
 
-        <ul v-if="category.children">
-            <CategoriesListItem
-                is="CategoriesListItem"
-                v-for="item in category.children"
-                v-bind:category="item"
-                v-bind:key='item.id'
-            ></CategoriesListItem>
-        </ul>
+        <div v-if="show">
+            <ul v-if="category.children">
+                <CategoriesListItem
+                    is="CategoriesListItem"
+                    v-for="item in category.children"
+                    v-bind:category="item"
+                    v-bind:key='item.id'
+                ></CategoriesListItem>
+            </ul>
+        </div>
+
     </li>
 </template>
 
@@ -27,8 +31,15 @@ export default {
         'category'
     ],
     methods: {
-        clicked(data) {
-            console.log(data);
+        clicked(id) {
+            this.category_id = id;
+            console.log(this.category_id);
+        }
+    },
+    data () {
+        return {
+            category_id: null,
+            show: false
         }
     }
 }
