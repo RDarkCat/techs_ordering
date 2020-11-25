@@ -1,7 +1,9 @@
 <template>
     <div v-if="getCategories">
-        Categories:
-        <CategoriesList :categories="getCategories" />
+        <a href="#" v-on:click.prevent="vision=!vision">Categories:</a>
+        <CategoriesList
+            v-if="vision"
+            :categories="getCategories" />
 <!--        <select v-model="selected">-->
 <!--            <option disabled value="">Выберите одну из категорий</option>-->
 <!--            <option-->
@@ -25,7 +27,8 @@ export default {
     data () {
         return {
             selected: '',
-            value: null
+            vision: false,
+            category_id: null
         }
     },
     computed: {

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <hr>
         <Categories />
         <hr>
         <Tags />

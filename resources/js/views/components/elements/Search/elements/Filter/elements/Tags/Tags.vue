@@ -1,7 +1,9 @@
 <template>
     <div v-if="getTags">
-        Tags:
-        <TagsList :tags="getTags" />
+        <a href="#" v-on:click.prevent="vision=!vision">Tags:</a>
+        <TagsList
+            v-if="vision"
+            :tags="getTags" />
     </div>
 </template>
 
@@ -13,6 +15,12 @@ export default {
     name: "Tags",
     components: {
         TagsList
+    },
+    data () {
+        return {
+            tag_id: null,
+            vision: false
+        }
     },
     computed: {
         ...mapGetters({
