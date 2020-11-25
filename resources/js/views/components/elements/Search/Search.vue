@@ -2,7 +2,8 @@
     <div>
         <SearchInput />
         <hr>
-        <FilterBlock />
+        <a href="#" v-on:click.prevent="filterBlockVision=!filterBlockVision">FilterBlock</a>
+        <FilterBlock v-if="filterBlockVision" />
     </div>
 </template>
 
@@ -19,7 +20,8 @@ export default {
     },
     data() {
         return {
-            search: null
+            search: null,
+            filterBlockVision: false
         }
     }
 }
