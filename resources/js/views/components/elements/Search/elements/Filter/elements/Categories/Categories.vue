@@ -1,6 +1,16 @@
 <template>
     <div v-if="getCategories">
+        Categories:
         <CategoriesList :categories="getCategories" />
+<!--        <select v-model="selected">-->
+<!--            <option disabled value="">Выберите одну из категорий</option>-->
+<!--            <option-->
+<!--                v-for="category in getCategories"-->
+<!--                v-bind:value="category.id"-->
+<!--            >-->
+<!--                {{ category.name }}-->
+<!--            </option>-->
+<!--        </select>-->
     </div>
 </template>
 
@@ -11,6 +21,12 @@ export default {
     name: "Categories",
     components: {
         CategoriesList
+    },
+    data () {
+        return {
+            selected: '',
+            value: null
+        }
     },
     computed: {
         ...mapGetters({

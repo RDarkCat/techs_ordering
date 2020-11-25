@@ -1,10 +1,12 @@
 <template>
-
+    <div>
+        Date: up / dwn
+    </div>
 </template>
 
 <script>
 export default {
-    name: "FilteredPromosListPage"
+    name: "Dates"
 }
 </script>
 

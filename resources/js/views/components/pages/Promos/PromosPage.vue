@@ -1,26 +1,18 @@
 <template>
-    <div>
-        Promos list
-        <ul>
-            <li v-for="promo in getPromos.data">
-                <p>
-                    <router-link :to="`/promo/show/${ promo.id }`">
-                        {{ promo.item.name }}
-                    </router-link>
-                </p>
-                <p>
-                    {{ promo.item.characteristic.description }}
-                </p>
-            </li>
-        </ul>
+    <div v-if="getPromos">
+        <PromosList :promos="getPromos.data" />
     </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import PromosList from "./elements/PromosList";
 
 export default {
     name: "PromosListPage",
+    components: {
+        PromosList
+    },
     computed: {
         ...mapGetters({
             getPromos: 'promos/getPromos'

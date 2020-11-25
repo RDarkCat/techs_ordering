@@ -14,10 +14,10 @@ const HomePage = () =>
         '../views/components/pages/HomePage');
 const PromosListPage = () =>
     import(/* webpack-chunk-name: "PromosListPage" */
-        '../views/components/pages/Promos/PromosListPage');
+        '../views/components/pages/Promos/PromosPage');
 const PromoByIdPage = () =>
     import(/* webpack-chunk-name: "PromoByIdPage" */
-        '../views/components/pages/Promos/PromoByIdPage');
+        '../views/components/pages/Promos/Promo');
 const AboutPage = () =>
     import(/* webpack-chunk-name: "AboutPage" */
         '../views/components/pages/About/AboutPage');

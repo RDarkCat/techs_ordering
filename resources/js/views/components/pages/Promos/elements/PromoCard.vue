@@ -49,10 +49,7 @@ export default {
     name: "PromoCard",
     props: [
         'promo'
-    ],
-    mounted() {
-        console.log('Promo Card mounted');
-    }
+    ]
 }
 </script>
 
