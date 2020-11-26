@@ -23,7 +23,7 @@ const AboutPage = () =>
         '../views/components/pages/About/AboutPage.vue');
 const PageNotFound = () =>
     import(/* webpack-chunk-name: "PageNotFound" */
-        '../views/components/pages/PageNotFound/PageNotFound.vue')
+        '../views/components/pages/PageNotFound/PageNotFound.vue');
 
 export default new VueRouter({
     mode: 'history',
