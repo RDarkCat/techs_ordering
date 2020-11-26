@@ -38,4 +38,5 @@ Route::prefix('promos')->as('promos.')->group(function () {
     Route::get('/category/{id}', [PromoController::class, 'byCategory']);
     Route::get('/categories/', [PromoController::class, 'categories']);
     Route::get('/tags/', [PromoController::class, 'tags']);
+    Route::get('/delete/{id}', [PromoController::class, 'delete'])->name('delete');
 });

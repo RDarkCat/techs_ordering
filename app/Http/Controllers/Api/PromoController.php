@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PromoRequest;
 use App\Models\Category;
 use App\Models\Promo;
 use App\Models\Tag;
@@ -146,10 +147,10 @@ class PromoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\PromoRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PromoRequest $request)
     {
         $parameters = $request->input();
         $user = $request->user();
@@ -200,11 +201,11 @@ class PromoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\Models\Promo  $promo
+     * @param  \App\Http\Requests\PromoRequest $request
+     * @param  \App\Models\Promo $promo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Promo $promo)
+    public function update(PromoRequest $request, Promo $promo)
     {
         $parameters = $request->input();
         $promo->fill($parameters);
@@ -223,5 +224,14 @@ class PromoController extends Controller
 
         $promos = $user->promos();
         return response()->json(['promos' => $promos]);
+    }
+
+    public function delete(int $id)
+    {
+        $promo = Promo::find($id);
+        $promo->status = 0;
+        $promo->save();
+
+        return response()->json([], 200);
     }
 }
