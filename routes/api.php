@@ -40,3 +40,8 @@ Route::prefix('promos')->as('promos.')->group(function () {
     Route::get('/tags/', [PromoController::class, 'tags']);
     Route::get('/delete/{id}', [PromoController::class, 'delete'])->name('delete');
 });
+
+Route::resource('orders', OrderController::class);
+Route::prefix('orders')->as('orders.')->group(function () {
+    Route::get('/ordersOfLessor', [OrderController::class, 'ordersOfLessor'])->name('ordersOfLessor');
+});
