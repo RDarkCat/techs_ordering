@@ -15,7 +15,7 @@ class PromoController extends Controller
         $promos = Promo::with('item')
             ->with('item.characteristic')
             ->where('status', true)
-            ->simplePaginate(5);
+            ->simplePaginate(10);
 
         return response()->json($promos, 200);
     }

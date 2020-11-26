@@ -28,10 +28,10 @@
                     Масса: {{ promo.item.characteristic.mass }}
                 </li>
                 <li>
-                    Мощьность Л/С:  {{ promo.item.characteristic.horse_power }}
+                    Мощность Л/С:  {{ promo.item.characteristic.horse_power }}
                 </li>
                 <li>
-                    Мощьность Ватт: {{ promo.item.characteristic.power_wattg }}
+                    Мощность Ватт: {{ promo.item.characteristic.power_wattg }}
                 </li>
                 <li>
                     Грузоподъемность: {{ promo.item.characteristic.lifting_capacity }}
