@@ -19,4 +19,4 @@ store.dispatch('auth/attempt', localStorage.getItem('token')).then(() => {
         store,
         render: h => h(App),
     }).$mount('#app');
-})
+});

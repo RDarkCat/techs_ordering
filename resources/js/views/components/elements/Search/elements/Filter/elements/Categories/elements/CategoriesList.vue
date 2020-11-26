@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import CategoriesListItem from "./CategoriesListItem";
+import CategoriesListItem from "./CategoriesListItem.vue";
 
 export default {
     name: "CategoriesList",

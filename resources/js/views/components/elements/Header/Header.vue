@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import Logo from "./elements/Logo";
-import Location from "./elements/Location";
-import Navigation from "./elements/Navigation";
-import Auth from "../Auth/Auth";
+import Logo from "./elements/Logo.vue";
+import Location from "./elements/Location.vue";
+import Navigation from "./elements/Navigation.vue";
+import Auth from "../Auth/Auth.vue";
 
 export default {
     name: "Header",
