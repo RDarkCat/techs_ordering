@@ -6,7 +6,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
-import PromosList from "./elements/PromosList";
+import PromosList from "./elements/PromosList.vue";
 
 export default {
     name: "PromosListPage",

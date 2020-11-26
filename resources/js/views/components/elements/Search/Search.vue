@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import SearchInput from "./elements/SearchInput";
-import FilterBlock from "./elements/Filter/FilterBlock";
+import SearchInput from "./elements/SearchInput.vue";
+import FilterBlock from "./elements/Filter/FilterBlock.vue";
 
 
 export default {

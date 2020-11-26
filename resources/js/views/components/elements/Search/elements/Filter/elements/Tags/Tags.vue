@@ -9,7 +9,7 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-import TagsList from "./elements/TagsList";
+import TagsList from "./elements/TagsList.vue";
 
 export default {
     name: "Tags",

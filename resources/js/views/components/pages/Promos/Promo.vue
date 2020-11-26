@@ -7,7 +7,7 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-import PromoCard from "./elements/PromoCard";
+import PromoCard from "./elements/PromoCard.vue";
 
 export default {
     name: "PromoByIdPage",

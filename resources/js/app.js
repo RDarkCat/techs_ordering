@@ -6,7 +6,7 @@ Vue.use(VueAxios, Axios);
 
 import VueAxios from 'vue-axios';
 import store from './store';
-import router from './routes/routes';
+import router from './routes/routes.js';
 import App from './App.vue';
 
 require('./store/subscriber');
@@ -19,4 +19,4 @@ store.dispatch('auth/attempt', localStorage.getItem('token')).then(() => {
         store,
         render: h => h(App),
     }).$mount('#app');
-})
+});
