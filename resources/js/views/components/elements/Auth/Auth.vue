@@ -34,8 +34,8 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
-import Login from "./elemnts/Login";
-import Registration from "./elemnts/Registration";
+import Login from "./elemnts/Login.vue";
+import Registration from "./elemnts/Registration.vue";
 
 export default {
     name: "Auth",

@@ -16,13 +16,13 @@
 </template>
 
 <script>
-import Categories from "./elements/Categories/Categories";
-import Characteristics from "./elements/Characteristics/Characteristics";
-import Dates from "./elements/Dates";
-import Prices from "./elements/Prices";
-import Tags from "./elements/Tags/Tags";
+import Categories from "./elements/Categories/Categories.vue";
+import Characteristics from "./elements/Characteristics/Characteristics.vue";
+import Dates from "./elements/Dates.vue";
+import Prices from "./elements/Prices.vue";
+import Tags from "./elements/Tags/Tags.vue";
 
-import test from "./elements/test";
+import test from "./elements/test.vue";
 
 export default {
     name: "FilterBlock",

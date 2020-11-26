@@ -6,7 +6,7 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-import CategoriesList from "./elements/CategoriesList";
+import CategoriesList from "./elements/CategoriesList.vue";
 export default {
     name: "Categories",
     components: {

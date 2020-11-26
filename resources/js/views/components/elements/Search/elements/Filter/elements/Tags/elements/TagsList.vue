@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import TagsListItem from "./TagsListItem";
+import TagsListItem from "./TagsListItem.vue";
 
 export default {
     name: "TagsList",

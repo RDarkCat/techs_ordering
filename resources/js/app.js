@@ -9,6 +9,7 @@ import store from './store';
 import router from './routes/routes';
 import App from './App.vue';
 
+
 require('./store/subscriber');
 
 Axios.defaults.baseURL = '/api';

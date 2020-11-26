@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import PromosListItem from "./PromosListItem";
+import PromosListItem from "./PromosListItem.vue";
 
 export default {
     name: "PromosList",
