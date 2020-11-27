@@ -66,4 +66,9 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsToMany(Item::class);
     }
+    
+    public function itemsLikes()
+    {
+        return$this->belongsToMany(Item::class, 'item_likes', 'user_id_from', 'item_id');
+    }
 }

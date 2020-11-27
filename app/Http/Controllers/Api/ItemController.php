@@ -8,6 +8,7 @@ use App\Models\Settlement;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ItemController extends Controller
 {
@@ -125,5 +126,16 @@ class ItemController extends Controller
 
     public function delete(Item $item)
     {
+    }
+    
+    public function likes(Request $request)
+    {
+        $likes = DB::RAW('SELECT SUM(il.`like`) as likes, i.name
+        FROM item_like AS il
+        JOIN users AS u ON u.id = il.user_id_from
+        JOIN items AS i ON i.id = il.item_id
+        GROUP BY il.item_id');
+        
+        return response()->json($likes);
     }
 }
