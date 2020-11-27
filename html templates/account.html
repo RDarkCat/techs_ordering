@@ -114,7 +114,54 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary mt-5">Создать объявление</button>
+        <button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#promocreate">Создать объявление</button>
+
+
+        <div class="modal fade" id="promocreate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Создание Объявления</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">ФИО</label>
+                            <div class="d-flex">
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ФИО">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Логин</label>
+                            <div class="d-flex">
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Логин">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Компания</label>
+                            <div class="d-flex">
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Компания">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Пароль</label>
+                            <div class="d-flex">
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Пароль">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">закрыть</button>
+                        <button type="button" class="btn btn-primary">сохранить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="mt-5">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">

@@ -57,18 +57,9 @@
     border-bottom: 1px solid #31312f;
 }
 .round {
-    border-radius: 100px!important; /* Радиус скругления */
-    border: 3px solid green!important; /* Параметры рамки */
-    box-shadow: 0 0 7px #666; /* Параметры тени */
-}
-.circle {
-    width: 100px!important;
-    height: 100px!important;
-    border: 1px solid black!important;
-    border-radius: 100%!important;
-    display: flex!important;
-    align-items: center!important;
-    justify-content: center!important;
+    border-radius: 100px!important;
+    width: 200px;
+    height: 200px;
 }
 .text_adv{
     margin-left: 8rem!important;
