@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -8,311 +8,310 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title></title>
-  </head>
-  <body>
+</head>
+<body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav_bg non-transparent-nav">
-      <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav_bg non-transparent-nav">
+    <div class="container">
         <a class="navbar-brand" href="#">Brand</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
 
-          </ul>
-          <li class="form-inline my-2 my-lg-0">
-            <a class="nav-link" href="#">Личный кабинет</a>
-          </li>
+            </ul>
+            <li class="form-inline my-2 my-lg-0">
+                <a class="nav-link" href="#">Личный кабинет</a>
+            </li>
 
             <a href="#" class="btn btn-primary login_btn">Вход</a>
 
         </div>
-      </div>
-    </nav>
+    </div>
+</nav>
 
 
 
-    <section class=" pb-5">
-      <div class="container pt-5">
+<section class=" pb-5">
+    <div class="container pt-5">
 
         <div class="card mx-auto d-flex flex-row">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="..." style="width: 18rem;">
-          <div class="card-body">
-            <p class="card-text">Имя пользователя: <span class="text_bold">Вася Пупкин</span></p>
-            <p class="card-text">Логин пользователя: <span class="text_bold">vasya</span></p>
-            <p class="card-text">Зарегистрирован: <span class="text_bold">2 июля 2020 г.</span></p>
-            <p class="card-text">Компания: <span class="text_bold">ООО "Вася Пупкин индастриз"</span></p>
-          </div>
+            <img src="https://via.placeholder.com/300" class="card-img-top" alt="..." style="min-width: 10rem; max-width: 18rem;">
+            <div class="card-body">
+                <p class="card-text">Имя пользователя: <span class="text_bold">Вася Пупкин</span></p>
+                <p class="card-text">Логин пользователя: <span class="text_bold">vasya</span></p>
+                <p class="card-text">Зарегистрирован: <span class="text_bold">2 июля 2020 г.</span></p>
+                <p class="card-text">Компания: <span class="text_bold">ООО "Вася Пупкин индастриз"</span></p>
 
-          <button type="button" class="btn btn-primary btn_show mt-2 mr-5" data-toggle="modal" data-target="#exampleModal" style="height: 3rem;">
-            изменить профиль
-          </button>
-
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Изменение профиля</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">ФИО</label>
-                    <div class="d-flex">
-                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ФИО">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">Логин</label>
-                    <div class="d-flex">
-                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Логин">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">Компания</label>
-                    <div class="d-flex">
-                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Компания">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">Пароль</label>
-                    <div class="d-flex">
-                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Пароль">
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">закрыть</button>
-                  <button type="button" class="btn btn-primary">сохранить</button>
-                </div>
-              </div>
+                <button type="button" class="btn btn-primary mt-2 mr-5" data-toggle="modal" data-target="#exampleModal">изменить профиль</button>
             </div>
-          </div>
+
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Изменение профиля</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">ФИО</label>
+                                <div class="d-flex">
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ФИО">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Логин</label>
+                                <div class="d-flex">
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Логин">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Компания</label>
+                                <div class="d-flex">
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Компания">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Пароль</label>
+                                <div class="d-flex">
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Пароль">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">закрыть</button>
+                            <button type="button" class="btn btn-primary">сохранить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-          <button type="button" class="btn btn-primary mt-5">Создать объявление</button>
+        <button type="button" class="btn btn-primary mt-5">Создать объявление</button>
         <div class="mt-5">
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Активные объявления</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Завершенные объявления</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Еще какие-то</a>
-            </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Активные объявления</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Завершенные объявления</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Еще какие-то</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-              <div class="card mt-3">
-                <h5 class="card-header">Caterpillar 785D</h5>
-                <div class="card-body d-flex">
-                  <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
-                  <div class="ml-5 d-flex flex-column">
-                    <div class="d-flex">
-                      <div>
-                        <p class="text_small">58 л/ 1082 кВт / дизель</p>
-                        <p class="text_small">масса 84 668 кг</p>
-                      </div>
-                      <div class="ml-3">
-                        <p class="text_small">что-то</p>
-                        <p class="text_small">что-то</p>
-                      </div>
+                    <div class="card mt-3">
+                        <h5 class="card-header">Caterpillar 785D</h5>
+                        <div class="card-body d-flex">
+                            <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
+                            <div class="ml-5 d-flex flex-column">
+                                <div class="d-flex">
+                                    <div>
+                                        <p class="text_small">58 л/ 1082 кВт / дизель</p>
+                                        <p class="text_small">масса 84 668 кг</p>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text_small">что-то</p>
+                                        <p class="text_small">что-то</p>
+                                    </div>
+                                </div>
+                                <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
+                            </div>
+                            <div class="ml-auto">
+                                <p class="price">10 000 руб / сут.</p>
+                                <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
+                            </div>
+                        </div>
                     </div>
-                    <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
-                  </div>
-                  <div class="ml-auto">
-                    <p class="price">10 000 руб / сут.</p>
-                    <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
-                  </div>
-                </div>
-              </div>
 
-              <div class="card mt-3">
-                <h5 class="card-header">Caterpillar 785D</h5>
-                <div class="card-body d-flex">
-                  <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
-                  <div class="ml-5 d-flex flex-column">
-                    <div class="d-flex">
-                      <div>
-                        <p class="text_small">58 л/ 1082 кВт / дизель</p>
-                        <p class="text_small">масса 84 668 кг</p>
-                      </div>
-                      <div class="ml-3">
-                        <p class="text_small">что-то</p>
-                        <p class="text_small">что-то</p>
-                      </div>
+                    <div class="card mt-3">
+                        <h5 class="card-header">Caterpillar 785D</h5>
+                        <div class="card-body d-flex">
+                            <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
+                            <div class="ml-5 d-flex flex-column">
+                                <div class="d-flex">
+                                    <div>
+                                        <p class="text_small">58 л/ 1082 кВт / дизель</p>
+                                        <p class="text_small">масса 84 668 кг</p>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text_small">что-то</p>
+                                        <p class="text_small">что-то</p>
+                                    </div>
+                                </div>
+                                <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
+                            </div>
+                            <div class="ml-auto">
+                                <p class="price">10 000 руб / сут.</p>
+                                <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
+                            </div>
+                        </div>
                     </div>
-                    <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
-                  </div>
-                  <div class="ml-auto">
-                    <p class="price">10 000 руб / сут.</p>
-                    <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
-                  </div>
-                </div>
-              </div>
 
-              <div class="card mt-3">
-                <h5 class="card-header">Caterpillar 785D</h5>
-                <div class="card-body d-flex">
-                  <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
-                  <div class="ml-5 d-flex flex-column">
-                    <div class="d-flex">
-                      <div>
-                        <p class="text_small">58 л/ 1082 кВт / дизель</p>
-                        <p class="text_small">масса 84 668 кг</p>
-                      </div>
-                      <div class="ml-3">
-                        <p class="text_small">что-то</p>
-                        <p class="text_small">что-то</p>
-                      </div>
+                    <div class="card mt-3">
+                        <h5 class="card-header">Caterpillar 785D</h5>
+                        <div class="card-body d-flex">
+                            <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
+                            <div class="ml-5 d-flex flex-column">
+                                <div class="d-flex">
+                                    <div>
+                                        <p class="text_small">58 л/ 1082 кВт / дизель</p>
+                                        <p class="text_small">масса 84 668 кг</p>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text_small">что-то</p>
+                                        <p class="text_small">что-то</p>
+                                    </div>
+                                </div>
+                                <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
+                            </div>
+                            <div class="ml-auto">
+                                <p class="price">10 000 руб / сут.</p>
+                                <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
+                            </div>
+                        </div>
                     </div>
-                    <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
-                  </div>
-                  <div class="ml-auto">
-                    <p class="price">10 000 руб / сут.</p>
-                    <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
-                  </div>
-                </div>
-              </div>
 
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                    <div class="card mt-3">
+                        <h5 class="card-header">Caterpillar 785D</h5>
+                        <div class="card-body d-flex">
+                            <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
+                            <div class="ml-5 d-flex flex-column">
+                                <div class="d-flex">
+                                    <div>
+                                        <p class="text_small">58 л/ 1082 кВт / дизель</p>
+                                        <p class="text_small">масса 84 668 кг</p>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text_small">что-то</p>
+                                        <p class="text_small">что-то</p>
+                                    </div>
+                                </div>
+                                <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
+                            </div>
+                            <div class="ml-auto">
+                                <p class="price">10 000 руб / сут.</p>
+                                <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+                    <div class="card mt-3">
+                        <h5 class="card-header">Caterpillar 785D</h5>
+                        <div class="card-body d-flex">
+                            <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
+                            <div class="ml-5 d-flex flex-column">
+                                <div class="d-flex">
+                                    <div>
+                                        <p class="text_small">58 л/ 1082 кВт / дизель</p>
+                                        <p class="text_small">масса 84 668 кг</p>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text_small">что-то</p>
+                                        <p class="text_small">что-то</p>
+                                    </div>
+                                </div>
+                                <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
+                            </div>
+                            <div class="ml-auto">
+                                <p class="price">10 000 руб / сут.</p>
+                                <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-3">
+                        <h5 class="card-header">Caterpillar 785D</h5>
+                        <div class="card-body d-flex">
+                            <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
+                            <div class="ml-5 d-flex flex-column">
+                                <div class="d-flex">
+                                    <div>
+                                        <p class="text_small">58 л/ 1082 кВт / дизель</p>
+                                        <p class="text_small">масса 84 668 кг</p>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text_small">что-то</p>
+                                        <p class="text_small">что-то</p>
+                                    </div>
+                                </div>
+                                <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
+                            </div>
+                            <div class="ml-auto">
+                                <p class="price">10 000 руб / сут.</p>
+                                <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
-              <div class="card mt-3">
-                <h5 class="card-header">Caterpillar 785D</h5>
-                <div class="card-body d-flex">
-                  <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
-                  <div class="ml-5 d-flex flex-column">
-                    <div class="d-flex">
-                      <div>
-                        <p class="text_small">58 л/ 1082 кВт / дизель</p>
-                        <p class="text_small">масса 84 668 кг</p>
-                      </div>
-                      <div class="ml-3">
-                        <p class="text_small">что-то</p>
-                        <p class="text_small">что-то</p>
-                      </div>
-                    </div>
-                    <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
-                  </div>
-                  <div class="ml-auto">
-                    <p class="price">10 000 руб / сут.</p>
-                    <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-
-              <div class="card mt-3">
-                <h5 class="card-header">Caterpillar 785D</h5>
-                <div class="card-body d-flex">
-                  <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
-                  <div class="ml-5 d-flex flex-column">
-                    <div class="d-flex">
-                      <div>
-                        <p class="text_small">58 л/ 1082 кВт / дизель</p>
-                        <p class="text_small">масса 84 668 кг</p>
-                      </div>
-                      <div class="ml-3">
-                        <p class="text_small">что-то</p>
-                        <p class="text_small">что-то</p>
-                      </div>
-                    </div>
-                    <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
-                  </div>
-                  <div class="ml-auto">
-                    <p class="price">10 000 руб / сут.</p>
-                    <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card mt-3">
-                <h5 class="card-header">Caterpillar 785D</h5>
-                <div class="card-body d-flex">
-                  <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
-                  <div class="ml-5 d-flex flex-column">
-                    <div class="d-flex">
-                      <div>
-                        <p class="text_small">58 л/ 1082 кВт / дизель</p>
-                        <p class="text_small">масса 84 668 кг</p>
-                      </div>
-                      <div class="ml-3">
-                        <p class="text_small">что-то</p>
-                        <p class="text_small">что-то</p>
-                      </div>
-                    </div>
-                    <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
-                  </div>
-                  <div class="ml-auto">
-                    <p class="price">10 000 руб / сут.</p>
-                    <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
         </div>
 
-      </div>
-    </section>
+    </div>
+</section>
 
 
 
-    <footer class="nav_bg fixed-bottom">
+<footer class="nav_bg fixed-bottom">
 
-        <div class="container">
-          <div class="row justify-content-center">
+    <div class="container">
+        <div class="row justify-content-center">
             <div class="d-flex justify-content-around col-lg-3">
-              <a class="text_dark" href="#">Контакты</a>
-              <a class="text_dark" href="#">О сервисе</a>
-              <a class="text_dark" href="#"><i class="fab fa-instagram"></i></a>
-              <a class="text_dark" href="#"><i class="fab fa-facebook-square"></i></a>
-              <a class="text_dark" href="#"><i class="fab fa-vk"></i></a>
+                <a class="text_dark" href="#">Контакты</a>
+                <a class="text_dark" href="#">О сервисе</a>
+                <a class="text_dark" href="#"><i class="fab fa-instagram"></i></a>
+                <a class="text_dark" href="#"><i class="fab fa-facebook-square"></i></a>
+                <a class="text_dark" href="#"><i class="fab fa-vk"></i></a>
             </div>
 
-          </div>
-          <div class="row justify-content-center">
-            <div class="d-flex justify-content-around col-lg-3">
-              <p class="text-center">© GB PHP</p>
-            </div>
-          </div>
         </div>
-    </footer>
+        <div class="row justify-content-center">
+            <div class="d-flex justify-content-around col-lg-3">
+                <p class="text-center">© GB PHP</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
 </html>
