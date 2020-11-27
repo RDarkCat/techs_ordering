@@ -1,11 +1,11 @@
 <template>
-    <ul>
-        <li v-for="promo in promos">
+    <section class="search_section pb-5 bg-light">
+        <div class="container pt-3" v-for="promo in promos">
             <PromosListItem
                 :promo="promo"
             ></PromosListItem>
-        </li>
-    </ul>
+        </div>
+    </section>
 </template>
 
 <script>
