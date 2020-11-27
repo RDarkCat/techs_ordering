@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title></title>
+  </head>
+  <body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav_bg non-transparent-nav">
+      <div class="container">
+        <a class="navbar-brand" href="#">Brand</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+
+          </ul>
+          <li class="form-inline my-2 my-lg-0">
+            <a class="nav-link" href="#">Личный кабинет</a>
+          </li>
+
+            <a href="#" class="btn btn-primary login_btn">Вход</a>
+
+        </div>
+      </div>
+    </nav>
+
+    <section class="search_section pb-5 bg-light">
+      <div class="container mt-5">
+        <h3 class="mb-3">Название бренда (производитель)</h3>
+      <div class="row justify-content-center mb-3">
+
+        <div class="input-group col-lg-12">
+
+          <input type="text" class="form-control search bg-search" placeholder="Поиск по объявлениям">
+          <div class="input-group-append">
+            <button class="btn btn-secondary btn-search" type="button">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+        <form>
+          <div class=" card">
+            <div class="d-flex justify-content-between card-body">
+
+
+            <div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Категория</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Длина</label>
+                <div class="d-flex">
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="мин длина">
+                  <input type="email" class="form-control ml-3" id="exampleFormControlInput1" placeholder="макс длина">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Высота</label>
+                <div class="d-flex">
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="мин длина">
+                  <input type="email" class="form-control ml-3" id="exampleFormControlInput1" placeholder="макс длина">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Ширина</label>
+                <div class="d-flex">
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="мин длина">
+                  <input type="email" class="form-control ml-3" id="exampleFormControlInput1" placeholder="макс длина">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Страна производитель</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Масса</label>
+                <div class="d-flex">
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="мин длина">
+                  <input type="email" class="form-control ml-3" id="exampleFormControlInput1" placeholder="макс длина">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Мощность</label>
+                <div class="d-flex">
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="мин длина">
+                  <input type="email" class="form-control ml-3" id="exampleFormControlInput1" placeholder="макс длина">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Подъемная сила</label>
+                <div class="d-flex">
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="мин длина">
+                  <input type="email" class="form-control ml-3" id="exampleFormControlInput1" placeholder="макс длина">
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </form>
+        <h4 class="mt-3">Поиск по тегам</h4>
+        <div class="d-flex">
+          <div class="d-flex flex-column">
+            <h5>Сфера применения</h5>
+            <a href="#" class="text_light">Воздушная</a>
+            <a href="" class="text_light">Водная</a>
+            <a href="" class="text_light">Наземная</a>
+            <a href="" class="text_light">Подводная</a>
+            <a href="" class="text_light">Космическая</a>
+          </div>
+          <div class="d-flex flex-column ml-4">
+            <h5>Сфера применения</h5>
+            <a href="#" class="text_light">Воздушная</a>
+            <a href="" class="text_light">Водная</a>
+            <a href="" class="text_light">Наземная</a>
+            <a href="" class="text_light">Подводная</a>
+            <a href="" class="text_light">Космическая</a>
+          </div>
+          <div class="d-flex flex-column ml-4">
+            <h5>Сфера применения</h5>
+            <a href="#" class="text_light">Воздушная</a>
+            <a href="" class="text_light">Водная</a>
+            <a href="" class="text_light">Наземная</a>
+            <a href="" class="text_light">Подводная</a>
+            <a href="" class="text_light">Космическая</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="search_section pb-5 bg-light">
+      <div class="container pt-3">
+        <div class="card">
+          <h5 class="card-header">Caterpillar 785D</h5>
+          <div class="card-body d-flex">
+            <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
+            <div class="ml-5 d-flex flex-column">
+              <div class="d-flex">
+                <div>
+                  <p class="text_small">58 л/ 1082 кВт / дизель</p>
+                  <p class="text_small">масса 84 668 кг</p>
+                </div>
+                <div class="ml-3">
+                  <p class="text_small">что-то</p>
+                  <p class="text_small">что-то</p>
+                </div>
+              </div>
+              <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
+            </div>
+            <div class="ml-auto">
+              <p class="price">10 000 руб / сут.</p>
+              <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container pt-3">
+        <div class="card">
+          <h5 class="card-header">Caterpillar 785D</h5>
+          <div class="card-body d-flex">
+            <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
+            <div class="ml-5 d-flex flex-column">
+              <div class="d-flex">
+                <div>
+                  <p class="text_small">58 л/ 1082 кВт / дизель</p>
+                  <p class="text_small">масса 84 668 кг</p>
+                </div>
+                <div class="ml-3">
+                  <p class="text_small">что-то</p>
+                  <p class="text_small">что-то</p>
+                </div>
+              </div>
+              <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
+            </div>
+            <div class="ml-auto">
+              <p class="price">10 000 руб / сут.</p>
+              <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container pt-3">
+        <div class="card">
+          <h5 class="card-header">Caterpillar 785D</h5>
+          <div class="card-body d-flex">
+            <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
+            <div class="ml-5 d-flex flex-column">
+              <div class="d-flex">
+                <div>
+                  <p class="text_small">58 л/ 1082 кВт / дизель</p>
+                  <p class="text_small">масса 84 668 кг</p>
+                </div>
+                <div class="ml-3">
+                  <p class="text_small">что-то</p>
+                  <p class="text_small">что-то</p>
+                </div>
+              </div>
+              <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
+            </div>
+            <div class="ml-auto">
+              <p class="price">10 000 руб / сут.</p>
+              <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container pt-3">
+        <div class="card">
+          <h5 class="card-header">Caterpillar 785D</h5>
+          <div class="card-body d-flex">
+            <img src="css/img/cat785D.jpg" alt="Responsive image" width="200">
+            <div class="ml-5 d-flex flex-column">
+              <div class="d-flex">
+                <div>
+                  <p class="text_small">58 л/ 1082 кВт / дизель</p>
+                  <p class="text_small">масса 84 668 кг</p>
+                </div>
+                <div class="ml-3">
+                  <p class="text_small">что-то</p>
+                  <p class="text_small">что-то</p>
+                </div>
+              </div>
+              <p class="geo"><i class="fas fa-location-arrow"></i> Москва</p>
+            </div>
+            <div class="ml-auto">
+              <p class="price">10 000 руб / сут.</p>
+              <a href="#" class="btn_show btn btn-primary">Посмотреть</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <footer class="nav_bg fixed-bottom">
+
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="d-flex justify-content-around col-lg-3">
+              <a class="text_dark" href="#">Контакты</a>
+              <a class="text_dark" href="#">О сервисе</a>
+              <a class="text_dark" href="#"><i class="fab fa-instagram"></i></a>
+              <a class="text_dark" href="#"><i class="fab fa-facebook-square"></i></a>
+              <a class="text_dark" href="#"><i class="fab fa-vk"></i></a>
+            </div>
+
+          </div>
+          <div class="row justify-content-center">
+            <div class="d-flex justify-content-around col-lg-3">
+              <p class="text-center">© GB PHP</p>
+            </div>
+          </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
