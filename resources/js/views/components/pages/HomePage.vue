@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Tags from "../elements/Tags/Tags.vue";
-import Categories from "../elements/Categories/Categories.vue";
+import Tags from "../elements/Tags-tmp/Tags.vue";
+import Categories from "../elements/Categories-tmp/Categories.vue";
 
 export default {
     name: 'home',
