@@ -5,11 +5,11 @@
     margin-bottom: 0!important;
 }
 .bg-main{
-    height: 32rem;
-    background-color: #31312f;
+    height: 32rem!important;
+    background-color: #31312f!important;
 }
 .main_img{
-    opacity: 0.8;
+    opacity: 0.8!important;
 }
 .nav_bg{
     background-color: #ecb125!important;
@@ -22,99 +22,90 @@
     color: #4a4444!important;
 }
 .main_text{
-    font-weight: 400;
-    color: #cf9e1d;
-    font-size: 3rem;
+    font-weight: 400!important;
+    color: #cf9e1d!important;
+    font-size: 3rem!important;
     /* background: linear-gradient(to top, rgb(59 52 51) 30%, rgba(249,249,249,0.06626400560224088) 75%); */
 }
 .bg-search{
-    background-color: #ecb125eb;
-    color: #31312f;
+    background-color: #ecb125eb!important;
+    color: #31312f!important;
 }
 .bg-search:focus{
-    background-color: #ecb125eb;
+    background-color: #ecb125eb!important;
 }
 .btn-search{
-    background-color: #31312f;
-    border-color: #31312f;
+    background-color: #31312f!important;
+    border-color: #31312f!important;
 }
 .text_dark{
-    color: #31312f;
+    color: #31312f!important;
 }
 .text_dark:hover{
-    color: #ecb125eb;
+    color: #ecb125eb!important;
 }
 .text_light{
-    color: grey;
+    color: grey!important;
 }
 .text_light:hover{
-    color: #ecb125eb;
+    color: #ecb125eb!important;
 }
 .title_text{
-    font-weight: 300;
+    font-weight: 300!important;
 }
 .search_section{
     border-bottom: 1px solid #31312f;
 }
 .round {
-    border-radius: 100px; /* Радиус скругления */
-    border: 3px solid green; /* Параметры рамки */
-    box-shadow: 0 0 7px #666; /* Параметры тени */
-}
-.circle {
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 100px!important;
+    width: 200px;
+    height: 200px;
 }
 .text_adv{
-    margin-left: 8rem;
-    padding-top: 1rem;
+    margin-left: 8rem!important;
+    padding-top: 1rem!important;
 }
 .slider {
     /*background-image: url('img/375051.jpg');*/
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-size: cover!important;
+    background-position: center!important;
+    background-attachment: fixed!important;
 }
 .bcg_name{
-    background-color: black;
+    background-color: black!important;
 }
 .title_main{
-    margin-top: auto;
-    background-color: #40363c82;
+    margin-top: auto!important;
+    background-color: #40363c82!important;
     /* background: linear-gradient(to top, rgb(59 52 51) 17%, rgba(249,249,249,0.06626400560224088) 75%); */
 }
 .text_small{
-    margin-bottom: 0;
-    color: grey;
+    margin-bottom: 0!important;
+    color: grey!important;
 }
 .geo{
-    margin-top: 50%;
+    margin-top: 50%!important;
 }
 .btn_show{
     margin-top: 8rem;
-    background-color: #ecb125eb;
+    background-color: #ecb125eb!important;
     border-color: #ecb125eb!important;
-    color: #31312f;
+    color: #31312f!important;
 }
 .card-header{
-    background-color: #63635e;
-    color: white;
-    font-weight: 300;
+    background-color: #63635e!important;
+    color: white!important;
+    font-weight: 300!important;
 }
 .price{
-    font-weight: 600;
+    font-weight: 600!important;
 }
 .login_btn{
-    background-color: #63635e;
-    color: white;
-    font-weight: 300;
-    border-color: #63635e;
+    background-color: #63635e!important;
+    color: white!important;
+    font-weight: 300!important;
+    border-color: #63635e!important;
 }
 .carousel{
-    width: 30rem;
+    width: 30rem!important;
 }
