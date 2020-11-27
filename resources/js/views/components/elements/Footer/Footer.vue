@@ -1,5 +1,5 @@
 <template>
-    <footer class="nav_bg">
+    <footer class="nav_bg fixed-bottom">
 
         <div class="container">
             <div class="row justify-content-center">

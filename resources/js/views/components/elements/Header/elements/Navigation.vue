@@ -1,6 +1,6 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top nav_bg non-transparent-nav">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top nav_bg non-transparent-nav">
             <div class="container">
                 <router-link
                     to="/home"
