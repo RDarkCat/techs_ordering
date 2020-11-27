@@ -1,53 +1,38 @@
 <template>
-    <ul>
+    <div>
         <template v-if="authenticated">
-            <li>
+
+            <li class="form-inline my-2 my-lg-0">
                 <router-link
                     :to="{
                         name: 'account'
                     }"
                 >
-                    {{ user.name }}
+                    <a class="nav-link" href="#">Личный кабинет {{ user.name }}</a>
                 </router-link>
-                -
-                <a href="#" @click.prevents="logOut">Logout</a>
-            </li><!--Account-->
+            </li>
+
+                <a href="#" class="btn btn-primary login_btn" @click.prevents="logOut">
+                    Logout
+                </a>
+
+
         </template><!--Link to:account-->
 
-        <template v-else>
-            <li>
-                <a href="#" v-on:click.prevent="visionControl('login')">Login</a>
-            </li>
-            <li>
-                <a href="#" v-on:click.prevent="visionControl('registration')">Registration</a>
-            </li>
-            <div v-if="loginFormVisible">
-                <Login />
-            </div>
-            <div v-if="registrationFormVisible">
-                <Registration />
-            </div>
-        </template><!--Link to:login/registration-->
-    </ul>
+        <LoginRegistrationForm v-else/>
+
+    </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import {mapGetters, mapActions} from 'vuex';
 
-import Login from "./elemnts/Login.vue";
-import Registration from "./elemnts/Registration.vue";
+import LoginRegistrationForm from "./elemnts/LoginRegistrationForm";
 
 export default {
     name: "Auth",
-    data() {
-      return {
-          loginFormVisible: false,
-          registrationFormVisible: false
-      }
-    },
     components: {
-        Login,
-        Registration
+        LoginRegistrationForm
     },
     computed: {
         ...mapGetters({
@@ -62,20 +47,10 @@ export default {
 
         logOut() {
             this.logOutAction().then(() => {
-                // this.$router.replace({
-                //     name: 'home'
-                // })
+                this.$router.replace({
+                    name: 'home'
+                })
             })
-        },
-        visionControl(form) {
-            if (form === 'login') {
-                this.loginFormVisible = !this.loginFormVisible;
-                this.registrationFormVisible = false;
-            }
-            if (form === 'registration') {
-                this.registrationFormVisible = !this.registrationFormVisible;
-                this.loginFormVisible = false;
-            }
         }
     }
 }
