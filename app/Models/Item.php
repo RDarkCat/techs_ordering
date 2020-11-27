@@ -75,4 +75,9 @@ class Item extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+    
+    public function usersLikes()
+    {
+        return $this->belongsToMany(User::class, 'item_likes', 'item_id', 'user_id_from');
+    }
 }

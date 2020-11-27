@@ -21,9 +21,12 @@ const PromoByIdPage = () =>
 const AboutPage = () =>
     import(/* webpack-chunk-name: "AboutPage" */
         '../views/components/pages/About/AboutPage.vue');
+const AdminPage = () =>
+    import(/* webpack-chunk-name: "AdminPage" */
+        '../views/components/pages/Admin/AdminPage.vue');
 const PageNotFound = () =>
     import(/* webpack-chunk-name: "PageNotFound" */
-        '../views/components/pages/PageNotFound/PageNotFound.vue')
+        '../views/components/pages/PageNotFound/PageNotFound.vue');
 
 export default new VueRouter({
     mode: 'history',
@@ -69,6 +72,12 @@ export default new VueRouter({
             name: 'about',
             path: '/about',
             component: AboutPage,
+        }
+        ,
+        {
+            name: 'admin',
+            path: '/admin',
+            component: AdminPage,
         }
     ],
 });
