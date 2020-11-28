@@ -1,11 +1,14 @@
 <template>
     <div>
         <Header />
-        <hr>
-        <Breadcrumbs />
-        <hr>
-        <Search />
-        <hr>
+        <div v-if="$route.name==='home'">
+            // твой компонент
+        </div>
+        <div v-else>
+            <Breadcrumbs />
+            <hr>
+            <Search />
+        </div>
         <router-view />
         <hr>
         <Footer />
