@@ -36,12 +36,9 @@ export default new VueRouter({
             component: PageNotFound
         },
         {
-            path: '/',
-            component: HomePage,
-        },
-        {
             name: 'home',
-            path: '/home',
+            path: '/',
+            alias: '/home',
             component: HomePage,
         },
         {
