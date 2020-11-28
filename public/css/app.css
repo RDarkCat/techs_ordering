@@ -66,7 +66,7 @@
     padding-top: 1rem!important;
 }
 .slider {
-    /*background-image: url('img/375051.jpg');*/
+    background-image: url(/images/375051.jpg?557597fde132a0590c84fa7fb642f80c);
     background-size: cover!important;
     background-position: center!important;
     background-attachment: fixed!important;
@@ -108,4 +108,7 @@
 }
 .carousel{
     width: 30rem!important;
+}
+.text_bold {
+    font-weight: 700;
 }
