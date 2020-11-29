@@ -17,7 +17,12 @@ export default {
     name: "TagsListItem",
     props: [
         'tag'
-    ]
+    ],
+    data() {
+        return {
+            show: false
+        }
+    },
 }
 </script>
 

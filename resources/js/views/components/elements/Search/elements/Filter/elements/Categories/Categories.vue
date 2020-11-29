@@ -8,7 +8,7 @@
         </span>
         <CategoriesList
             v-if="vision"
-            v-bind:selected="selected.id"
+            v-bind:selected="selected"
             :categories="getCategories"
             @categoryChecked="categoryChecked"
         />

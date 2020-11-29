@@ -1,14 +1,14 @@
 <template>
     <li>
         <div v-if="category.children">
-            <div>
-                <a href="#" v-on:click.prevent="show=!show">{{ category.name }}</a>
-            </div>
+            <a href="#" v-on:click.prevent="show=!show">
+                {{ category.name }}
+            </a>
         </div>
 
         <div v-else v-on:click="categoryChecked(category)">
             {{ category.name }}
-            <span v-if="selected === category.id">X</span>
+            <span v-if="selected === category">X</span>
         </div>
 
         <div v-if="show">
@@ -34,19 +34,14 @@ export default {
         'category',
         'selected'
     ],
-    methods: {
-        categoryChecked(category) {
-            this.$emit('categoryChecked', category);
-        }
-    },
-    data () {
+    data() {
         return {
             show: false
         }
     },
-    computed: {
-        selectedCategory() {
-            return this.selected;
+    methods: {
+        categoryChecked(category) {
+            this.$emit('categoryChecked', category);
         }
     }
 }

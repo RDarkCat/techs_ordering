@@ -1,14 +1,11 @@
 <template>
     <div>
-        <hr>
         <Categories
             @categoryChecked="categoryChecked"
             v-bind:selected="selected"
         />
-        <hr>
-        <Tags @tags="tagsBy"/>
-        <hr>
-        <SortBy @sortBy="sortBy"/>
+        <Tags @tags="tagsBy" />
+        <SortBy @sortBy="sortBy" />
         <hr>
     </div>
 </template>
@@ -30,7 +27,7 @@ export default {
         return {
             selected: {},
             filterProps: {
-                category: null,
+                categoryId: null,
                 tags: {},
                 sort: {}
             }
@@ -40,13 +37,16 @@ export default {
     methods: {
         categoryChecked(category) {
             this.selected = category;
-            this.filterProps.category = category;
+            this.filterProps.category = category.id;
+            this.$emit('filterProps', this.filterProps);
         },
         sortBy (props) {
             this.filterProps.sort = props;
+            this.$emit('filterProps', this.filterProps);
         },
         tagsBy (tags) {
             this.filterProps.tags = tags;
+            this.$emit('filterProps', this.filterProps);
         }
     },
     computed: {
