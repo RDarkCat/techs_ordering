@@ -1,8 +1,15 @@
 <template>
-    <div>
-        Search <input type="text" v-model="search" >
-        {{ search }}
-    </div>
+    <label>
+        <input type="text"
+               v-model="query"
+               v-on:keyup="handleSearchClick"
+        >
+        <button
+            @click="handleSearchClick"
+        >
+            Поиск
+        </button>
+    </label>
 </template>
 
 <script>
@@ -10,8 +17,16 @@ export default {
     name: "SearchInput",
     data() {
         return {
-            search: null
+            query: ''
         }
+    },
+    methods: {
+        handleSearchClick() {
+            if (this.query.length > 1) {
+                this.$emit('queryString', this.query);
+            }
+        }
+
     }
 }
 </script>

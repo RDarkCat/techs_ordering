@@ -3,8 +3,10 @@
         <CategoriesListItem
             is="CategoriesListItem"
             v-for="category in categories"
+            v-bind:selected="selected"
             v-bind:category="category"
             v-bind:key='category.id'
+            @categoryChecked="categoryChecked"
         ></CategoriesListItem>
     </ul>
 </template>
@@ -18,8 +20,14 @@ export default {
       CategoriesListItem
     },
     props: [
-        'categories'
-    ]
+        'categories',
+        'selected'
+    ],
+    methods: {
+        categoryChecked(category) {
+            this.$emit('categoryChecked', category);
+        }
+    }
 }
 </script>
 

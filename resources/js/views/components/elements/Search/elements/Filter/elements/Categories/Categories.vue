@@ -1,9 +1,17 @@
 <template>
     <div v-if="getCategories">
-        <a href="#" v-on:click.prevent="vision=!vision">Categories:</a>
+        <a href="#" v-on:click.prevent="vision=!vision">
+            Categories:
+        </a>
+        <span v-if="selected">
+            {{ selected.name }}
+        </span>
         <CategoriesList
             v-if="vision"
-            :categories="getCategories" />
+            v-bind:selected="selected.id"
+            :categories="getCategories"
+            @categoryChecked="categoryChecked"
+        />
 <!--        <select v-model="selected">-->
 <!--            <option disabled value="">Выберите одну из категорий</option>-->
 <!--            <option-->
@@ -24,11 +32,12 @@ export default {
     components: {
         CategoriesList
     },
+    props: [
+        'selected'
+    ],
     data () {
         return {
-            selected: '',
-            vision: false,
-            category_id: null
+            vision: false
         }
     },
     computed: {
@@ -46,6 +55,9 @@ export default {
             }).catch(() => {
                 //console.log('failed');
             });
+        },
+        categoryChecked(category) {
+            this.$emit('categoryChecked', category);
         }
     },
     mounted() {

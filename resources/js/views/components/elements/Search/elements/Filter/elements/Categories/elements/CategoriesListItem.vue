@@ -6,8 +6,9 @@
             </div>
         </div>
 
-        <div v-else v-on:click="clicked(category.id)">
+        <div v-else v-on:click="categoryChecked(category)">
             {{ category.name }}
+            <span v-if="selected === category.id">X</span>
         </div>
 
         <div v-if="show">
@@ -15,8 +16,10 @@
                 <CategoriesListItem
                     is="CategoriesListItem"
                     v-for="item in category.children"
+                    v-bind:selected="selected"
                     v-bind:category="item"
                     v-bind:key='item.id'
+                    @categoryChecked="categoryChecked"
                 ></CategoriesListItem>
             </ul>
         </div>
@@ -28,18 +31,22 @@
 export default {
     name: "CategoriesListItem",
     props: [
-        'category'
+        'category',
+        'selected'
     ],
     methods: {
-        clicked(id) {
-            this.category_id = id;
-            console.log(this.category_id);
+        categoryChecked(category) {
+            this.$emit('categoryChecked', category);
         }
     },
     data () {
         return {
-            category_id: null,
             show: false
+        }
+    },
+    computed: {
+        selectedCategory() {
+            return this.selected;
         }
     }
 }
