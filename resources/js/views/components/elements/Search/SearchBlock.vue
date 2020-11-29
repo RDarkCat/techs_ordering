@@ -1,19 +1,19 @@
 <template>
     <div>
         <SearchInput
-            @queryString="queryString"
+            @queryString="query"
         />
         <br>
 
         <a href="#"
            v-on:click.prevent="filterBlockVision=!filterBlockVision"
         >
-            Расширенный поиск
+            Расширенный поиск:
         </a>
 
         <FilterBlock
             v-if="filterBlockVision"
-            @filterProps="filterProps"
+            @filter="filter"
         />
     </div>
 </template>
@@ -32,8 +32,9 @@ export default {
     },
     data() {
         return {
-            searchProps: {},
-            filterBlockVision: false
+            localStorageKey: 'filter',
+            filterProps: {},
+            filterBlockVision: true
         }
     },
     methods: {
@@ -44,18 +45,31 @@ export default {
         ...mapGetters({
             getFilterProps: 'promos/getFilterProps'
         }),
-        queryString(query) {
-            this.searchProps.query = query;
-            console.log(this.searchProps);
-            this.setFilterProps(this.searchProps);
+        query(query) {
+            this.filterProps.query = query;
+            console.log(this.filterProps);
+            this.setFilterProps(this.filterProps);
+            this.setFilterLocal();
             this.responsePromos();
         },
-        filterProps(filterProps) {
-            this.searchProps.filterProps = filterProps;
+        filter(filterProps) {
+            this.filterProps.filterProps = filterProps;
+            this.setFilterProps(this.filterProps);
+            this.setFilterLocal();
+            this.responsePromos();
+        },
+        setFilterLocal() {
+            localStorage.setItem(this.localStorageKey, JSON.stringify(this.filterProps));
+        },
+        clearLocalFilter() {
+            localStorage.removeItem('filter');
+        },
+        getLocalFilter () {
+            return JSON.parse(localStorage.getItem('filter') || "[]");
         }
     },
     mounted() {
-        //this.search({1: 1, 2: 2, 3: 3});
+        this.filterProps = this.getLocalFilter();
     }
 }
 </script>

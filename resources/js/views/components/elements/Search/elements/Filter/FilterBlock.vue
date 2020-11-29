@@ -37,15 +37,15 @@ export default {
         categoryChecked(category) {
             this.selected = category;
             this.filterProps.categoryId = category.id;
-            this.$emit('filterProps', this.filterProps);
+            this.$emit('filter', this.filterProps);
         },
         sortBy (props) {
             this.filterProps.sort = props;
-            this.$emit('filterProps', this.filterProps);
+            this.$emit('filter', this.filterProps);
         },
         tags (tags) {
             this.filterProps.tags = tags;
-            this.$emit('filterProps', this.filterProps);
+            this.$emit('filter', this.filterProps);
         }
     },
     computed: {

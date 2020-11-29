@@ -3,6 +3,7 @@ import axios from "axios";
 export default {
     namespaced: true,
     state: {
+        localStorageKey: 'filter',
         filterProps: {},
         promo: null,
         promos: [
@@ -42,7 +43,7 @@ export default {
     }
     ,
     actions: {
-        setFilterProps ({ commit }, filterProps) {
+        setFilterProps ({ commit, state }, filterProps) {
             commit('SET_FILER_PROPS', filterProps);
         },
 
@@ -61,3 +62,5 @@ export default {
         }
     }
 }
+
+

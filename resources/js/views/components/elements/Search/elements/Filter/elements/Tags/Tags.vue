@@ -41,9 +41,6 @@ export default {
             });
         },
         tagChecked(tag) {
-            // const cartItem = this.cart.find((cartItem) => +cartItem.id === +id);
-            // this.cart = this.cart.filter((item) => item.id !== id);
-
             const tagItem = this.tags.find((tagItem) => +tagItem.id === +tag.id);
 
             if (tagItem) {
