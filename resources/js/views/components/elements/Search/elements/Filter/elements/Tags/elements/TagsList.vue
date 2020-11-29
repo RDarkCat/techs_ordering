@@ -1,12 +1,12 @@
 <template>
-    <ul>
+    <div>
         <TagsListItem
             is="TagsListItem"
             v-for="tag in tags"
             v-bind:tag="tag"
             v-bind:key="tag.id"
         ></TagsListItem>
-    </ul>
+    </div>
 </template>
 
 <script>
