@@ -5,6 +5,7 @@
             v-for="tag in tags"
             v-bind:tag="tag"
             v-bind:key="tag.id"
+            @tagChecked="tagChecked"
         ></TagsListItem>
     </div>
 </template>
@@ -18,8 +19,14 @@ export default {
       TagsListItem
     },
     props: [
+        'tag',
         'tags'
-    ]
+    ],
+    methods: {
+        tagChecked(tag) {
+            this.$emit('tagChecked', tag);
+        }
+    }
 }
 </script>
 

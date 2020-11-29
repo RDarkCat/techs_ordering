@@ -8,13 +8,14 @@
             <!--            </a>-->
         </div>
 
-        <span
-            class="tag_item"
-            v-bind:class="{ active: isActive}"
-            v-on:click="isActive=!isActive"
-            v-else>
-            {{ tag.name }}
-            <span v-if="selected === tag">X</span>
+        <span v-else
+              class="tag_item"
+              v-bind:class="{ active: isActive}"
+              v-on:click="tagChecked(tag)"
+        >
+            <span v-on:click="isActive=!isActive">
+                {{ tag.name }}
+            </span>
         </span>
 
         <!--        <div v-if="show">-->
@@ -24,6 +25,7 @@
                     v-for="item in tag.children"
                     v-bind:tag="item"
                     v-bind:key="item.id"
+                    @tagChecked="tagChecked"
                 ></TagsListItem>
             </div>
         <!--        </div>-->
@@ -40,10 +42,14 @@ export default {
     ],
     data() {
         return {
-            isActive: false,
-            show: false
+            isActive: false
         }
     },
+    methods: {
+        tagChecked(tag) {
+            this.$emit('tagChecked', tag);
+        }
+    }
 }
 </script>
 

@@ -4,7 +4,7 @@
             @categoryChecked="categoryChecked"
             v-bind:selected="selected"
         />
-        <Tags @tags="tagsBy" />
+        <Tags @tags="tags" />
         <SortBy @sortBy="sortBy" />
         <hr>
     </div>
@@ -28,23 +28,22 @@ export default {
             selected: {},
             filterProps: {
                 categoryId: null,
-                tags: {},
-                sort: {}
+                tags: [],
+                sort: []
             }
-
         }
     },
     methods: {
         categoryChecked(category) {
             this.selected = category;
-            this.filterProps.category = category.id;
+            this.filterProps.categoryId = category.id;
             this.$emit('filterProps', this.filterProps);
         },
         sortBy (props) {
             this.filterProps.sort = props;
             this.$emit('filterProps', this.filterProps);
         },
-        tagsBy (tags) {
+        tags (tags) {
             this.filterProps.tags = tags;
             this.$emit('filterProps', this.filterProps);
         }
