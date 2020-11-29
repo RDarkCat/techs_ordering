@@ -1,6 +1,15 @@
 <template>
     <li>
-        {{ tag.name }}
+        <div v-if="tag.children">
+            <a href="#" v-on:click.prevent="show=!show">
+                {{ tag.name }}
+            </a>
+        </div>
+
+        <div v-else>
+            {{ tag.name }}
+            <span v-if="selected">X</span>
+        </div>
         <ul v-if="tag.children">
             <TagsListItem
                 is="TagsListItem"
@@ -16,7 +25,8 @@
 export default {
     name: "TagsListItem",
     props: [
-        'tag'
+        'tag',
+        'selected'
     ],
     data() {
         return {
