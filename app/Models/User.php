@@ -65,7 +65,7 @@ class User extends Authenticatable implements JWTSubject
 
     public function items()
     {
-        return $this->belongsToMany(Item::class);
+        return $this->belongsToMany(Item::class)->orderBy('name');
     }
 
     public function promos()
@@ -77,5 +77,10 @@ class User extends Authenticatable implements JWTSubject
             ->get();
 
         return $promos;
+    }
+
+    public function role()
+    {
+        return $this->belongsToMany(Role::class, 'user_role');
     }
 }
