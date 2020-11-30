@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import CreatePromo from "./elements/CreatePromo.vue";
+import CreatePromo from "./CreatePromo.vue";
 export default {
     name: "AccountPage",
     components: {
