@@ -1,6 +1,6 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-dark sticky-top nav_bg non-transparent-nav">
+        <nav class="navbar navbar-expand-md navbar-dark sticky-top nav_bg non-transparent-nav">
             <div class="container">
                 <router-link
                     to="/home"
@@ -19,7 +19,7 @@
                         name: 'promos'
                     }"
                             >
-                                <a class="nav-link" href="#">Promos <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="#" data-toggle="collapse" data-target=".navbar-collapse.show">Promos <span class="sr-only">(current)</span></a>
                             </router-link>
                         </li><!--Link to:promos-->
                         <li class="nav-item">
@@ -28,23 +28,14 @@
                         name: 'about'
                     }"
                             >
-                                <a class="nav-link" href="#">About</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" data-target=".navbar-collapse.show">About</a>
                             </router-link>
                         </li><!--Link to:about-->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-                    </ul>
 
+
+                    </ul>
                     <Auth />
+
                 </div>
             </div>
         </nav>
