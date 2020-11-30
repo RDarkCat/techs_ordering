@@ -32,8 +32,7 @@ export default {
         SET_PROMOS (state, promos) {
             state.promos = promos;
         }
-    }
-    ,
+    },
     actions: {
         async responsePromo ({ commit }, id) {
             let response = await axios.

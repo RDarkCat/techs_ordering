@@ -1,4 +1,6 @@
 <template>
+
+
     <form>
             <div class=" card">
                 <div class="d-flex justify-content-between card-body">
@@ -48,9 +50,17 @@
                 </div>
             </div>
         </form>
+        
+         <div class="container pt-2" v-for="promo in promos">
+            <PromosListItem
+                :promo="promo"
+            ></PromosListItem>
+        </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+import PromosList from "./elements/PromosList.vue";
 import { mapGetters } from "vuex";
 import axios from 'axios';
 export default {
@@ -81,17 +91,25 @@ export default {
    },
    methods: {
        async createPromo() {
-           axios.post('/api/promos/create', {
+           let response = await axios.post('/api/promos/create', {
            	    body: this.promo
            }).this(response => {
                console.log(response.data);
            });
        },
        async updatePromo(id) {
-         
+           let response = await axios.put('/api/promos/update/' + id, {
+               
+           })
+           .then(response => {
+               console.log(response.data);
+           });
        },
        async deletePromo(id) {
-         
+          let response = await axios.delete('/api/promos/delete/' + id)
+          .then(response => {
+               console.log(response.data);
+           });
        }
    }
 }
