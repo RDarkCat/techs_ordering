@@ -5,12 +5,6 @@
         />
         <br>
 
-        <a href="#"
-           v-on:click.prevent="filterBlockVision=!filterBlockVision"
-        >
-            Расширенный поиск
-        </a>
-
         <FilterBlock
             v-if="filterBlockVision"
             @handleFilterProps="handleFilterProps"

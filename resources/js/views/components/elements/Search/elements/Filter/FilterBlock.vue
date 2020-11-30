@@ -1,8 +1,6 @@
 <template>
     <div>
-        <Test />
-        <hr>
-        <Categories
+        <CategoriesDropdown
             @categoryChecked="categoryChecked"
             v-bind:selectedCategory="selectedCategory"
         />
@@ -13,19 +11,17 @@
 </template>
 
 <script>
-import Categories from "./elements/Categories/Categories.vue";
+import CategoriesDropdown from "./elements/CategoriesDropdown.vue";
 import SortBy from "./elements/SortBy.vue";
 import Tags from "./elements/Tags/Tags.vue";
-import Test from "./elements/Categories/Test";
 
 
 export default {
     name: "FilterBlock",
     components: {
-        Categories,
+        CategoriesDropdown,
         SortBy,
-        Tags,
-        Test
+        Tags
     },
     data () {
         return {

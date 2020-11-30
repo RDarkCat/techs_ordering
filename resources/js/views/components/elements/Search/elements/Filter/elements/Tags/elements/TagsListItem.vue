@@ -1,11 +1,7 @@
 <template>
     <span>
         <div v-if="tag.children">
-<!--            <a href="#" v-on:click.prevent="show=!show">-->
-                <b>
-                    {{ tag.name }}:
-                </b>
-            <!--            </a>-->
+            <b>{{ tag.name }}:</b>
         </div>
 
         <span v-else
@@ -18,7 +14,6 @@
             </span>
         </span>
 
-        <!--        <div v-if="show">-->
             <div v-if="tag.children">
                 <TagsListItem
                     is="TagsListItem"
@@ -28,7 +23,6 @@
                     @tagChecked="tagChecked"
                 ></TagsListItem>
             </div>
-        <!--        </div>-->
 
     </span>
 </template>
@@ -60,9 +54,11 @@ export default {
     border: 1px solid grey
     padding: 5px
     margin: 1px
+
     &:hover
         background-color: lightblue
         cursor: pointer
+
 .active
     background-color: cadetblue
 

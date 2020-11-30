@@ -71,24 +71,10 @@ INSERT INTO categories (id, parent_id, name, description) VALUES (58, 9, 'Сам
 INSERT INTO categories (id, parent_id, name, description) VALUES (59, 9, 'Корабли', '');
 INSERT INTO categories (id, parent_id, name, description) VALUES (60, 9, 'Ракетные установки', '');
 
-    INSERT INTO categories (id, parent_id, name, description) VALUES (61, 10, 'Пожарная спецтехника', '');
-        INSERT INTO categories (id, parent_id, name, description) VALUES (62, 61, 'Автоцистерны', '');
-        INSERT INTO categories (id, parent_id, name, description) VALUES (63, 61, 'Подъемники', '');
-        INSERT INTO categories (id, parent_id, name, description) VALUES (64, 61, 'Автомобили порошкового тушения пожаров', '');
-        INSERT INTO categories (id, parent_id, name, description) VALUES (65, 61, 'Насосные станции', '');
-        INSERT INTO categories (id, parent_id, name, description) VALUES (66, 61, 'Прицепы для пенообразователей', '');
-        INSERT INTO categories (id, parent_id, name, description) VALUES (67, 61, 'Воздушная техника', '');
-    INSERT INTO categories (id, parent_id, name, description) VALUES (68, 10, 'Спасательная техника', '');
-        INSERT INTO categories (id, parent_id, name, description) VALUES (69, 68, 'Автомобили', '');
-        INSERT INTO categories (id, parent_id, name, description) VALUES (70, 68, 'Лодки', '');
-        INSERT INTO categories (id, parent_id, name, description) VALUES (71, 68, 'Катера', '');
-    INSERT INTO categories (id, parent_id, name, description) VALUES (72, 10, 'Медицинская спецтехника', '');
-        INSERT INTO categories (id, parent_id, name, description) VALUES (73, 72, 'Автомобили скорой помощи', '');
-        INSERT INTO categories (id, parent_id, name, description) VALUES (74, 72, 'Вертолеты', '');
-        INSERT INTO categories (id, parent_id, name, description) VALUES (75, 72, 'Оборудованные для быстрой перевозки больных на дальние расстояния', '');
-    INSERT INTO categories (id, parent_id, name, description) VALUES (76, 10, 'Спецтехника МВД', '');
-        INSERT INTO categories (id, parent_id, name, description) VALUES (77, 76, 'Полицейские машины', '');
-        INSERT INTO categories (id, parent_id, name, description) VALUES (78, 76, 'Будки для транспортировки осужденных ', '');
+INSERT INTO categories (id, parent_id, name, description) VALUES (61, 10, 'Пожарная спецтехника', '');
+INSERT INTO categories (id, parent_id, name, description) VALUES (68, 10, 'Спасательная техника', '');
+INSERT INTO categories (id, parent_id, name, description) VALUES (72, 10, 'Медицинская спецтехника', '');
+INSERT INTO categories (id, parent_id, name, description) VALUES (76, 10, 'Спецтехника МВД', '');
 
 INSERT INTO categories (id, parent_id, name, description) VALUES (79, 11, 'Форвардеры', 'Специальные машины, выполняющие функцию погрузки, предварительной частичной сортировки и транспортировки леса.');
 INSERT INTO categories (id, parent_id, name, description) VALUES (80, 11, 'Харвестеры', 'Машины, используемые для валки леса. Их использование в разы ускоряет процесс заготовки древесины.');
