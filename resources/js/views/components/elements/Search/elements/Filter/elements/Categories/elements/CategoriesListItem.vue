@@ -8,7 +8,7 @@
 
         <div v-else v-on:click="categoryChecked(category)">
             {{ category.name }}
-            <span v-if="selected === category">X</span>
+            <span v-if="selectedCategory === category">X</span>
         </div>
 
         <div v-if="show">
@@ -16,7 +16,7 @@
                 <CategoriesListItem
                     is="CategoriesListItem"
                     v-for="item in category.children"
-                    v-bind:selected="selected"
+                    v-bind:selectedCategory="selectedCategory"
                     v-bind:category="item"
                     v-bind:key='item.id'
                     @categoryChecked="categoryChecked"
@@ -32,7 +32,7 @@ export default {
     name: "CategoriesListItem",
     props: [
         'category',
-        'selected'
+        'selectedCategory'
     ],
     data() {
         return {

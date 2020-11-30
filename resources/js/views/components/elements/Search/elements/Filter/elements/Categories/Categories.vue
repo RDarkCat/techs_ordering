@@ -3,12 +3,12 @@
         <a href="#" v-on:click.prevent="vision=!vision">
             Categories:
         </a>
-        <span v-if="selected">
-            {{ selected.name }}
+        <span v-if="selectedCategory">
+            {{ selectedCategory.name }}
         </span>
         <CategoriesList
             v-if="vision"
-            v-bind:selected="selected"
+            v-bind:selectedCategory="selectedCategory"
             :categories="getCategories"
             @categoryChecked="categoryChecked"
         />
@@ -33,7 +33,7 @@ export default {
         CategoriesList
     },
     props: [
-        'selected'
+        'selectedCategory'
     ],
     data () {
         return {
@@ -57,7 +57,7 @@ export default {
             });
         },
         categoryChecked(category) {
-            this.$emit('categoryChecked', category);
+            this.$emit('selectedCategory', category);
         }
     },
     mounted() {

@@ -1,8 +1,10 @@
 <template>
     <div>
+        <Test />
+        <hr>
         <Categories
             @categoryChecked="categoryChecked"
-            v-bind:selected="selected"
+            v-bind:selectedCategory="selectedCategory"
         />
         <Tags @tags="tags" />
         <SortBy @sortBy="sortBy" />
@@ -14,6 +16,7 @@
 import Categories from "./elements/Categories/Categories.vue";
 import SortBy from "./elements/SortBy.vue";
 import Tags from "./elements/Tags/Tags.vue";
+import Test from "./elements/Categories/Test";
 
 
 export default {
@@ -21,11 +24,12 @@ export default {
     components: {
         Categories,
         SortBy,
-        Tags
+        Tags,
+        Test
     },
     data () {
         return {
-            selected: {},
+            selectedCategory: this.getSelectedCategoryFromLocalStorage(),
             filterProps: {
                 categoryId: null,
                 tags: [],
@@ -34,22 +38,35 @@ export default {
         }
     },
     methods: {
+        getSelectedCategoryFromLocalStorage() {
+            return localStorage.getItem('selectedCategory');
+        },
+        setSelectedCategoryToLocalStorage(selectedCategory) {
+            localStorage.setItem('selectedCategory', JSON.stringify(selectedCategory));
+        },
         categoryChecked(category) {
-            this.selected = category;
+            this.selectedCategory = category;
+            this.setSelectedCategoryToLocalStorage(category);
             this.filterProps.categoryId = category.id;
-            this.$emit('filterProps', this.filterProps);
+            this.handleFilterProps();
         },
         sortBy (props) {
             this.filterProps.sort = props;
-            this.$emit('filterProps', this.filterProps);
+            this.handleFilterProps();
         },
         tags (tags) {
             this.filterProps.tags = tags;
-            this.$emit('filterProps', this.filterProps);
+            this.handleFilterProps();
+        },
+        handleFilterProps () {
+            this.$emit('handleFilterProps', this.filterProps);
         }
     },
     computed: {
 
+    },
+    created() {
+        //this.selectedCategory = this.getSelectedCategoryFromLocalStorage();
     }
 }
 </script>

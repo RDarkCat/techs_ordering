@@ -1,7 +1,7 @@
 <template>
     <label>
         <input type="text"
-               v-model="query"
+               v-model="queryString"
                v-on:keyup="handleSearchClick"
         >
         <button
@@ -17,16 +17,17 @@ export default {
     name: "SearchInput",
     data() {
         return {
-            query: ''
+            queryString: ''
         }
     },
     methods: {
         handleSearchClick() {
             if (this.query.length > 1) {
-                this.$emit('queryString', this.query);
+                this.$emit('handleSearch', this.queryString);
+            } else {
+                this.queryString = '';
             }
         }
-
     }
 }
 </script>

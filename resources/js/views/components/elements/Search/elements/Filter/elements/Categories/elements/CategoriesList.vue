@@ -3,7 +3,7 @@
         <CategoriesListItem
             is="CategoriesListItem"
             v-for="category in categories"
-            v-bind:selected="selected"
+            v-bind:selectedCategory="selectedCategory"
             v-bind:category="category"
             v-bind:key='category.id'
             @categoryChecked="categoryChecked"
@@ -21,7 +21,7 @@ export default {
     },
     props: [
         'categories',
-        'selected'
+        'selectedCategory'
     ],
     methods: {
         categoryChecked(category) {

@@ -1,7 +1,7 @@
 <template>
     <div>
         <SearchInput
-            @queryString="queryString"
+            @handleSearch="handleSearch"
         />
         <br>
 
@@ -13,7 +13,7 @@
 
         <FilterBlock
             v-if="filterBlockVision"
-            @filterProps="filterProps"
+            @handleFilterProps="handleFilterProps"
         />
     </div>
 </template>
@@ -33,8 +33,11 @@ export default {
     data() {
         return {
             searchProps: {},
-            filterBlockVision: false
+            filterBlockVision: true
         }
+    },
+    computed: {
+
     },
     methods: {
         ...mapActions({
@@ -44,13 +47,13 @@ export default {
         ...mapGetters({
             getFilterProps: 'promos/getFilterProps'
         }),
-        queryString(query) {
-            this.searchProps.query = query;
-            console.log(this.searchProps);
+        handleSearch(queryString) {
+            this.searchProps.queryString = queryString;
             this.setFilterProps(this.searchProps);
+            localStorage.setItem('filterProps', this.filterProps)
             this.responsePromos();
         },
-        filterProps(filterProps) {
+        handleFilterProps(filterProps) {
             this.searchProps.filterProps = filterProps;
         }
     },
