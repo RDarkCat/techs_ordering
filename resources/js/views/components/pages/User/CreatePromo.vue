@@ -32,18 +32,30 @@
                         </div>
                         <div class="form-group">
                             <label for="item-power-watt">Мощность (Вт):</label>
-                            <input type="text" id="item-power-watt" v-model="promo.pwrWatt" value=""/>
+                            <input type="text" id="item-power-watt" v-model="promo.power_watt" value=""/>
                         </div>
                         <div class="form-group">
                             <label for="item-power-horse-power">Мощность (л/с):</label>
-                            <input type="text" id="item-power-horse-power" v-model="promo.pwrHorsePwr" value=""/>
+                            <input type="text" id="item-power-horse-power" v-model="promo.power_horse" value=""/>
                         </div>                        
                         <div class="form-group">
                             <label for="item-lift">Грузоподъемность:</label>
                             <input type="text" id="item-lift" v-model="promo.lift" value="{ promo.lift }"/>
                         </div>
+                        <div class="form-group">
+                            <label for="item-lift">Цена за час(руб):</label>
+                            <input type="text" id="item-lift" v-model="promo.price_per_hour" value="{ promo.price_per_hour }"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-lift">Цена за день(руб):</label>
+                            <input type="text" id="item-lift" v-model="promo.price_per_day" value="{ promo.price_per_day }"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-lift">Грузоподъемность:</label>
+                            <input type="text" id="item-lift" v-model="promo.lift" value="{ promo.lift }"/>
+                        </div>
                         <div class="form-group">                            
-                            <input type="submit" id="item-submit" @click="createPromo" value="Добавить"/>
+                            <input type="submit" id="item-submit" @click.prevent="createPromo" value="Добавить"/>
                         </div>
                         
                     </div>
@@ -61,14 +73,17 @@ export default {
     data: () => {
         return {
 	          promo: {
+	                item_id: 100,
 	                username: null,
 		            name: '',
 		            description: '',
 		            length: 0,
 		            height: 0,
 		            mass: 0,
-		            pwrWatt: 0,
-		            pwrHorsePwr: 0,
+		            power_watt: 0,
+		            power_horse: 0,
+		            price_per_day: 0,
+		            price_per_hour: 0,
 		            lift: 0
 	            }         
         }
@@ -85,18 +100,15 @@ export default {
    methods: {
        async createPromo() {
            let response = await axios.post('/promos/store', this.promo);
+           console.log(response);
        },
        async updatePromo(id) {
            let response = await axios.put('/promos/update/' + id, {})
-           .then(response => {
-               console.log(response.data);
-           });
+           console.log(response.data);
        },
        async deletePromo(id) {
-          let response = await axios.delete('/promos/delete/' + id)
-          .then(response => {
-               console.log(response.data);
-           });
+          let response = await axios.delete('/promos/delete/' + id);
+          console.log(response.data);
        }
    }
 }

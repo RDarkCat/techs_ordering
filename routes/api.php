@@ -32,7 +32,9 @@ Route::prefix('auth')->as('auth.')->namespace('Auth')->group(function () {
     Route::get('user', [UserController::class, 'index']);
 });
 
-Route::resource('promos', PromoController::class)->except(['index', 'show']);
+//Route::resource('promos', PromoController::class)->except(['index', 'show']);
+
+
 Route::prefix('promos')->as('promos.')->group(function () {
     Route::post('/', [PromoController::class, 'index']);
     Route::get('/show/{id}', [PromoController::class, 'show']);
@@ -40,6 +42,7 @@ Route::prefix('promos')->as('promos.')->group(function () {
     Route::get('/categories/', [PromoController::class, 'categories']);
     Route::get('/tags/', [PromoController::class, 'tags']);
     Route::get('/delete/{id}', [PromoController::class, 'delete'])->name('delete');
+    Route::post('/store', [PromoController::class, 'store']);
 });
 
 Route::resource('orders', OrderController::class);
