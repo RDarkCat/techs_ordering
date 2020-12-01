@@ -4,14 +4,9 @@
             <b>{{ tag.name }}:</b>
         </div>
 
-        <span v-else
-              class="tag_item"
-              v-bind:class="{ active: isActive}"
-              v-on:click="tagChecked(tag)"
-        >
-            <span v-on:click="isActive=!isActive">
-                {{ tag.name }}
-            </span>
+        <span v-else class="tag_item">
+            <input type="checkbox" v-on:click="tagChecked(tag)">
+            {{ tag.name }}
         </span>
 
             <div v-if="tag.children">
@@ -50,14 +45,8 @@ export default {
 <style lang="sass" scoped>
 .tag_item
     display: inline-block
-    background-color: #edf2f7
-    border: 1px solid grey
-    padding: 5px
+    padding: 1px
     margin: 1px
-
-    &:hover
-        background-color: lightblue
-        cursor: pointer
 
 .active
     background-color: cadetblue

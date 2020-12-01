@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
     name: "SearchInput",
     data() {
@@ -21,12 +23,13 @@ export default {
         }
     },
     methods: {
+        ...mapActions({
+            setQueryString: 'promos/setQueryString',
+            responsePromos: 'promos/responsePromos'
+        }),
         handleSearchClick() {
-            if (this.query.length > 1) {
-                this.$emit('handleSearch', this.queryString);
-            } else {
-                this.queryString = '';
-            }
+            this.setQueryString(this.queryString);
+            this.responsePromos();
         }
     }
 }
