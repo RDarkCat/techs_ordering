@@ -37,14 +37,14 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $parameters = $request->input();
-        $user_id = $parameters['user_id'];
+        $user = $request->user();
 
-        if (!$user_id) {
-            redirect('home');
+        if (!$user) {
+            return response()->json([], 404);
         }
 
         $item = Item::create($parameters);
-        $item->saveRelations($parameters, $request->file(), $user_id);
+        $item->saveRelations($parameters, $request->file(), $user->id);
 
         return response()->json($item->id);
     }
@@ -56,9 +56,9 @@ class ItemController extends Controller
      */
     public function create(Request $request)
     {
-        $user_id = $request->input('user_id');
+        $user = $request->user();
 
-        if (!$user_id) {
+        if (!$user) {
             return response()->json([], 404);
         }
 
@@ -74,14 +74,12 @@ class ItemController extends Controller
 
     public function usersItems(Request $request)
     {
-        // $user_id = $request->input('user_id');
-        $user_id = 1;
+        $user = $request->user();
 
-        if (!$user_id) {
+        if (!$user) {
             return response()->json([], 404);
         }
 
-        $user = User::find($user_id);
         $items = $user->items()->simplePaginate(5);
         
         return response()->json($items);
@@ -111,7 +109,7 @@ class ItemController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  int  $id
+     * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Item $item)
@@ -124,8 +122,11 @@ class ItemController extends Controller
         return response()->json(['items' => $item->id]);
     }
 
-    public function delete(Item $item)
+    public function delete(int $id)
     {
+        $item = Item::find($id);
+        $item->delete();
+        return redirect()->route('items.usersItems');
     }
     
     public function likes(Request $request)

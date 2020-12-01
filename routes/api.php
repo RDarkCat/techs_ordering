@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\Auth\LogoutController;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\Auth\UserController;
 use App\Http\Controllers\Api\PromoController;
+use App\Http\Controllers\Api\SearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,10 +32,21 @@ Route::prefix('auth')->as('auth.')->namespace('Auth')->group(function () {
     Route::get('user', [UserController::class, 'index']);
 });
 
+//Route::resource('promos', PromoController::class)->except(['index', 'show']);
+
+
 Route::prefix('promos')->as('promos.')->group(function () {
-    Route::get('/', [PromoController::class, 'index']);
+    Route::post('/', [PromoController::class, 'index']);
     Route::get('/show/{id}', [PromoController::class, 'show']);
     Route::get('/category/{id}', [PromoController::class, 'byCategory']);
     Route::get('/categories/', [PromoController::class, 'categories']);
     Route::get('/tags/', [PromoController::class, 'tags']);
+    Route::get('/delete/{id}', [PromoController::class, 'delete'])->name('delete');
+    Route::post('/store', [PromoController::class, 'store']);
 });
+
+Route::resource('orders', OrderController::class);
+Route::prefix('orders')->as('orders.')->group(function () {
+    Route::get('/ordersOfLessor', [OrderController::class, 'ordersOfLessor'])->name('ordersOfLessor');
+});
+

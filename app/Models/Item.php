@@ -49,7 +49,7 @@ class Item extends Model
             $this->tags()->sync($parameters['tag_ids']);
         } else {
             $this->characteristic()->create($parameters);
-            
+
             foreach ($parameters['tag_ids'] as $tag_id) {
                 $this->tags()->attach($tag_id);
             }
@@ -71,13 +71,14 @@ class Item extends Model
             }
         }
     }
+
     public function category()
     {
         return $this->belongsToMany(Category::class);
     }
-    
-    public function usersLikes()
+
+    public function lessor()
     {
-        return $this->belongsToMany(User::class, 'item_likes', 'item_id', 'user_id_from');
+        return $this->belongsToMany(User::class);
     }
 }

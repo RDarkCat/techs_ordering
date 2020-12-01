@@ -10,22 +10,38 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
+        "@babel/core": "^7.12.9",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+        "@babel/preset-env": "^7.12.7",
+        "babel-loader": "^8.2.2",
         "bootstrap": "^4.0.0",
+        "browser-sync": "^2.26.13",
+        "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^7.0",
+        "html-webpack-plugin": "^4.5.0",
         "jquery": "^3.2",
         "laravel-mix": "^5.0.1",
+        "node-sass": "^5.0.0",
         "popper.js": "^1.12",
+        "resolve-url-loader": "^3.1.2",
         "sass": "^1.20.1",
         "sass-loader": "^8.0.0",
+        "vue-class-component": "^7.2.6",
+        "vue-hot-reload-api": "^2.3.4",
+        "vue-loader": "^15.9.5",
+        "vue-property-decorator": "^9.1.2",
+        "vue-style-loader": "^4.1.2",
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
         "axios": "^0.21.0",
+        "bootstrap-vue": "^2.19.0",
         "es6-promise": "^4.2.8",
         "lodash": "^4.17.19",
         "vue": "^2.6.12",
         "vue-axios": "^2.1.5",
+        "vue-material": "^1.0.0-beta-15",
         "vue-router": "^3.4.9",
-        "vuex": "^3.5.1"
+        "vuex": "^3.6.0"
     }
 }

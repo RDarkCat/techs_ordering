@@ -12,7 +12,20 @@ import axios from 'axios';
                     localStorage.removeItem('token');
                 }
 
-                break;
+                break
+
+            // case 'promos/SET_QUERY_STING':
+            //     //store.responsePromos();
+            //
+            //     break;
         }
     })
 
+    // store.subscribeAction((action, state) => {
+    //     console.log(action.type);
+    //     console.log(action.payload);
+    //
+    //     if (action.type === 'promos/setQueryString') {
+    //         state.responsePromos();
+    //     }
+    // });

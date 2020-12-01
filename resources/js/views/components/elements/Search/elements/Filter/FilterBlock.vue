@@ -1,39 +1,64 @@
 <template>
     <div>
-        <hr>
-        <Categories />
-        <hr>
+        <CategoriesDropdown />
         <Tags />
+        <SortBy />
         <hr>
-        <Characteristics />
-        <hr>
-        <Dates />
-        <hr>
-        <Prices />
-        <hr>
-        <test />
     </div>
 </template>
 
 <script>
-import Categories from "./elements/Categories/Categories.vue";
-import Characteristics from "./elements/Characteristics/Characteristics.vue";
-import Dates from "./elements/Dates.vue";
-import Prices from "./elements/Prices.vue";
+import CategoriesDropdown from "./elements/CategoriesDropdown.vue";
+import SortBy from "./elements/SortBy.vue";
 import Tags from "./elements/Tags/Tags.vue";
-
-import test from "./elements/test";
 
 export default {
     name: "FilterBlock",
     components: {
-        Categories,
-        Characteristics,
-        Dates,
-        Prices,
-        Tags,
+        CategoriesDropdown,
+        SortBy,
+        Tags
+    },
+    data () {
+        return {
+            selectedCategory: null,
+            filterProps: {
+                categoryId: null,
+                tags: [],
+                sort: []
+            }
+        }
+    },
+    methods: {
+        getSelectedCategoryFromLocalStorage() {
+            return localStorage.getItem('selectedCategory');
+        },
+        setSelectedCategoryToLocalStorage(selectedCategory) {
+            localStorage.setItem('selectedCategory', JSON.stringify(selectedCategory));
+        },
+        categoryChecked(category) {
+            this.selectedCategory = category;
+            this.setSelectedCategoryToLocalStorage(category);
+            this.filterProps.categoryId = category.id;
+            this.handleFilterProps();
+        },
+        sortBy (props) {
+            this.filterProps.sort = props;
+            this.handleFilterProps();
+        },
+        tags (tags) {
+            this.filterProps.tags = tags;
+            this.handleFilterProps();
+        },
+        handleFilterProps () {
+            this.$emit('handleFilterProps', this.filterProps);
+        }
+    },
+    computed: {
 
-        test
+    },
+    created() {
+        //this.selectedCategory = this.getSelectedCategoryFromLocalStorage();
     }
 }
 </script>

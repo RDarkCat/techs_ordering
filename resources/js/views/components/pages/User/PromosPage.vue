@@ -1,12 +1,10 @@
 <template>
-    <div>
-        Date: up / dwn
-    </div>
+
 </template>
 
 <script>
 export default {
-    name: "Dates"
+    name: "PromosPage"
 }
 </script>
 

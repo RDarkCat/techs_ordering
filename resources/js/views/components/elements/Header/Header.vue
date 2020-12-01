@@ -1,26 +1,16 @@
 <template>
     <div>
-        <Logo />
-        <Location />
-        <hr>
-        <Auth />
-        <hr>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <Navigation />
     </div>
 </template>
 
 <script>
-import Logo from "./elements/Logo.vue";
-import Location from "./elements/Location.vue";
 import Navigation from "./elements/Navigation.vue";
-import Auth from "../Auth/Auth.vue";
 
 export default {
     name: "Header",
     components: {
-        Logo,
-        Location,
-        Auth,
         Navigation
     }
 }

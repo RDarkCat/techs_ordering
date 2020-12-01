@@ -1,9 +1,9 @@
 <template>
     <div v-if="getTags">
-        <a href="#" v-on:click.prevent="vision=!vision">Tags:</a>
         <TagsList
-            v-if="vision"
-            :tags="getTags" />
+            :tags="getTags"
+            @tagChecked="tagChecked"
+        />
     </div>
 </template>
 
@@ -16,10 +16,10 @@ export default {
     components: {
         TagsList
     },
-    data () {
+    data() {
         return {
-            tag_id: null,
-            vision: false
+            tags: [],
+            vision: false,
         }
     },
     computed: {
@@ -29,19 +29,23 @@ export default {
     },
     methods: {
         ...mapActions({
-            responseTags: 'tags/responseTags'
+            responseTags: 'tags/responseTags',
+            setTagsStore: 'promos/setTags'
         }),
-        tags() {
-            this.responseTags().then(() => {
-                //console.log(this.getTags);
-            }).catch(() => {
-                //console.log('failed');
-            });
+        tagChecked(tag) {
+            const tagItem = this.tags.find((tagItem) => +tagItem.id === +tag.id);
+
+            if (tagItem) {
+                this.tags = this.tags.filter((item) => item.id !== tag.id);
+                this.setTagsStore(this.tags);
+            } else {
+                this.tags.push({...tag});
+                this.setTagsStore(this.tags);
+            }
         }
     },
     mounted() {
-        this.tags();
-        //console.log(this.getCategories);
+        this.responseTags();
     }
 }
 </script>

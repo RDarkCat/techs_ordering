@@ -1,3 +1,5 @@
-@include('admin.menu')
+@include('admin.mainLayout')
 
-admin index
+
+
+

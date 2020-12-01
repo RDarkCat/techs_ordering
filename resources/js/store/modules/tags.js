@@ -14,8 +14,7 @@ export default {
         SET_TAGS (state, tags) {
             state.tags = tags;
         }
-    }
-    ,
+    },
     actions: {
         async responseTags ({ commit }) {
             let response = await axios.

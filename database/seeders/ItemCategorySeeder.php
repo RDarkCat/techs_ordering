@@ -17,7 +17,7 @@ class ItemCategorySeeder extends Seeder
     {
         $categories_ids = [];
 
-        for ($i = 14; $i <= 83; $i++) {
+        for ($i = 14; $i <= 71; $i++) {
             $categories_ids[] = $i;
         }
 
