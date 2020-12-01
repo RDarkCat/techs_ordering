@@ -15,8 +15,7 @@ export default {
         SET_CATEGORIES (state, categories) {
             state.categories = categories;
         }
-    }
-    ,
+    },
     actions: {
         async responseCategories ({ commit }) {
             let response = await axios.

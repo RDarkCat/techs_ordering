@@ -80,6 +80,8 @@ class PromoController extends Controller
         }
     }
 
+
+
     public function categories()
     {
         $categories = Category::all()

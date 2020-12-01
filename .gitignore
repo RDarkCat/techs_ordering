@@ -4,6 +4,9 @@
 /public/storage
 /public/*.js
 /public/js/*.js
+public/css/*.css.map
+techs.iml
+
 /storage/*.key
 /vendor
 .env
@@ -17,7 +20,7 @@ yarn-error.log
 storage/*.key
 /.vagrant
 
-public/css/*.css.map
+
 .DS_Store
 package-lock.json
 

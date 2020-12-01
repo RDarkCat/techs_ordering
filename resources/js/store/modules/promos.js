@@ -3,6 +3,7 @@ import axios from "axios";
 export default {
     namespaced: true,
     state: {
+        filterProps: {},
         promo: null,
         promos: [
             // current_page: int
@@ -17,6 +18,9 @@ export default {
         ]
     },
     getters: {
+        getFilterProps (state) {
+            return state.filterProps;
+        },
         getPromo (state) {
             return state.promo
         },
@@ -26,6 +30,9 @@ export default {
         }
     },
     mutations: {
+        SET_FILER_PROPS (state, filterProps) {
+            state.filterProps = filterProps;
+        },
         SET_PROMO (state, promo) {
             state.promo = promo;
         },
@@ -34,6 +41,10 @@ export default {
         }
     },
     actions: {
+        setFilterProps ({ commit }, filterProps) {
+            commit('SET_FILER_PROPS', filterProps);
+        },
+
         async responsePromo ({ commit }, id) {
             let response = await axios.
             get('/promos/show/' + id);
@@ -41,9 +52,9 @@ export default {
             commit('SET_PROMO', response.data);
         },
 
-        async responsePromos ({ commit }) {
+        async responsePromos ({ commit, state }) {
             let response = await axios.
-                get('/promos');
+                post('/promos', state.filterProps);
 
             commit('SET_PROMOS', response.data);
         }

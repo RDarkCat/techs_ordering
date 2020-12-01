@@ -16,7 +16,6 @@
                     Logout
                 </a>
 
-
         </template><!--Link to:account-->
 
         <LoginRegistrationForm v-else/>
