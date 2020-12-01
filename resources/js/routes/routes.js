@@ -24,7 +24,9 @@ const AboutPage = () =>
 const PageNotFound = () =>
     import(/* webpack-chunk-name: "PageNotFound" */
         '../views/components/pages/PageNotFound/PageNotFound.vue');
-
+const AdminPage = () =>
+    import(/* webpack-chunk-name: "AdminPage" */
+        '../views/components/pages/Admin/AdminPage.vue');
 
 export default new VueRouter({
     mode: 'history',
