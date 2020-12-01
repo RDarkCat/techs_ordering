@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PromoController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\UsersController;
+use App\Http\Middleware\CheckIsAdmin;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,10 +23,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::middleware([CheckIsAdmin::class])->group(function () {
+    Route::prefix('adminPanel')->as('adminPanel.')->group(function () {
+        Route::get('/', [AdminPanelController::class, 'index'])->name('index');
+        Route::get('/tagsByParent/{parent_id?}', [AdminPanelController::class, 'tagsByParent'])->name('tagsByParent');
+        Route::get('/promosIndex', [AdminPanelController::class, 'promosIndex'])->name('promosIndex');
+        Route::get('/itemsIndex', [AdminPanelController::class, 'itemsIndex'])->name('itemsIndex');
+
+        Route::resource('users', UsersController::class);
+
+        Route::resource('tags', TagController::class);
+        Route::post('tags/delete/{tag}', [TagController::class, 'delete'])->name('tags.delete');
+
+        Route::resource('promos', PromoController::class);
+        Route::post('promos/delete/{promo}', [PromoController::class, 'delete'])->name('promos.delete');
+
+        Route::resource('items', ItemsController::class);
+        Route::post('items/delete/{item}', [ItemsController::class, 'delete'])->name('items.delete');
+    });
+});
 
 Route::get('{any}', function () {
     return view('api');
-})->where('any' , ".*");
+})->where('any', ".*");
 //
 //Route::get('api_test', function () {
 //    return view('api');

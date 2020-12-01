@@ -25,7 +25,8 @@ class PromoFactory extends Factory
             'item_id' => rand(1, 100),
             'status' => $this->faker->boolean,
             'price_per_hour' => $this->faker->randomDigitNotNull,
-            'price_per_day' => $this->faker->randomDigitNotNull
+            'price_per_day' => $this->faker->randomDigitNotNull,
+            'description' => $this->faker->text()
         ];
     }
 }

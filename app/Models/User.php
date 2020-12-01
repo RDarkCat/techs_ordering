@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
@@ -64,6 +65,22 @@ class User extends Authenticatable implements JWTSubject
 
     public function items()
     {
-        return $this->belongsToMany(Item::class);
+        return $this->belongsToMany(Item::class)->orderBy('name');
+    }
+
+    public function promos()
+    {
+        $user_id = $this->id;
+        $promos = DB::table('item_user')
+            ->join('promos', 'item_user.item_id', '=', 'promos.item_id')
+            ->where('item_user.user_id', '=', $user_id)
+            ->get();
+
+        return $promos;
+    }
+
+    public function role()
+    {
+        return $this->belongsToMany(Role::class, 'user_role');
     }
 }
