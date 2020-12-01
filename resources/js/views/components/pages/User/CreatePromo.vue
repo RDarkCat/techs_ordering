@@ -51,17 +51,10 @@
             </div>
         </form>
         
-         <div class="container pt-2" v-for="promo in promos">
-            <PromosListItem
-                :promo="promo"
-            ></PromosListItem>
-        </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import PromosList from "./elements/PromosList.vue";
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 import axios from 'axios';
 export default {
     name: "CreatePromo",
@@ -91,22 +84,16 @@ export default {
    },
    methods: {
        async createPromo() {
-           let response = await axios.post('/api/promos/create', {
-           	    body: this.promo
-           }).this(response => {
-               console.log(response.data);
-           });
+           let response = await axios.post('/promos/store', this.promo);
        },
        async updatePromo(id) {
-           let response = await axios.put('/api/promos/update/' + id, {
-               
-           })
+           let response = await axios.put('/promos/update/' + id, {})
            .then(response => {
                console.log(response.data);
            });
        },
        async deletePromo(id) {
-          let response = await axios.delete('/api/promos/delete/' + id)
+          let response = await axios.delete('/promos/delete/' + id)
           .then(response => {
                console.log(response.data);
            });
