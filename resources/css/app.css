@@ -41,7 +41,7 @@
     border-color: #31312f;
 }
 .text_dark{
-    color: #31312f;
+    color: #31312f!important;
 }
 .text_dark:hover{
     color: white!important;
