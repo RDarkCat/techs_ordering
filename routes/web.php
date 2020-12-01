@@ -46,6 +46,7 @@ Route::middleware([CheckIsAdmin::class])->group(function () {
 Route::get('{any}', function () {
     return view('api');
 })->where('any', ".*");
+
 //
 //Route::get('api_test', function () {
 //    return view('api');
