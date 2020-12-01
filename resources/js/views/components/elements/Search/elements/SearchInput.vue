@@ -28,8 +28,10 @@ export default {
             responsePromos: 'promos/responsePromos'
         }),
         handleSearchClick() {
-            this.setQueryString(this.queryString);
-            this.responsePromos();
+            if (this.queryString.length > 2) {
+                this.setQueryString(this.queryString);
+                this.responsePromos();
+            }
         }
     }
 }
