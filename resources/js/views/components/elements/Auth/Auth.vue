@@ -1,6 +1,6 @@
 <template>
     <div>
-        <template v-if="authenticated">
+        <div class="d-flex" v-if="authenticated">
 
             <li class="form-inline my-2 my-lg-0">
                 <router-link
@@ -16,7 +16,8 @@
                     Logout
                 </a>
 
-        </template><!--Link to:account-->
+
+        </div><!--Link to:account-->
 
         <LoginRegistrationForm v-else/>
 

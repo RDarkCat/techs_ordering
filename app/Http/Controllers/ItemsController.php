@@ -55,7 +55,7 @@ class ItemsController extends Controller
         $item = Item::create($parameters);
         $item->saveRelations($parameters, $request->file(), $user_id);
 
-        return redirect(route('items.show', ['items' => $item->id]));
+        return redirect(route('adminPanel.items.show', ['items' => $item->id]));
     }
 
     /**
@@ -106,12 +106,15 @@ class ItemsController extends Controller
      */
     public function edit(int $id)
     {
-        $item = Item::with('characteristic')->find($id);
+        $item = Item::with('characteristic')
+            ->with('settlement')
+            ->find($id);
+
         $settlements = Settlement::orderBy('name')->get();
         $tags = Tag::all();
         $tags->groupBy('parent_id');
 
-        return view('items.edit', [
+        return view('items.itemUnit', [
             'item' => $item,
             'settlements' => $settlements,
             'tags' => $tags
@@ -132,13 +135,15 @@ class ItemsController extends Controller
         $item->save();
         $item->saveRelations($parameters, $request->file());
 
-        return redirect(route('items.show', ['items' => $item->id]));
+        return redirect(route('adminPanel.items.edit', ['item' => $item->id]))
+            ->with('success_text', 'Техника обновлена');
     }
 
     public function delete(int $id)
     {
         $item = Item::find($id);
         $item->delete();
-        return redirect()->route('items.usersItems');
+        return redirect()->route('adminPanel.itemsIndex')
+            ->with('success_text', 'Техника помечена как неактивная');;
     }
 }

@@ -1,11 +1,8 @@
 <template>
     <div>
-        <CategoriesDropdown
-            @categoryChecked="categoryChecked"
-            v-bind:selectedCategory="selectedCategory"
-        />
-        <Tags @tags="tags" />
-        <SortBy @sortBy="sortBy" />
+        <CategoriesDropdown />
+        <Tags />
+        <SortBy />
         <hr>
     </div>
 </template>
@@ -14,7 +11,6 @@
 import CategoriesDropdown from "./elements/CategoriesDropdown.vue";
 import SortBy from "./elements/SortBy.vue";
 import Tags from "./elements/Tags/Tags.vue";
-
 
 export default {
     name: "FilterBlock",
@@ -25,7 +21,7 @@ export default {
     },
     data () {
         return {
-            selectedCategory: this.getSelectedCategoryFromLocalStorage(),
+            selectedCategory: null,
             filterProps: {
                 categoryId: null,
                 tags: [],

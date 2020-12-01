@@ -1,5 +1,4 @@
 import store from '../store';
-import promos from "./modules/promos";
 import axios from 'axios';
 
     store.subscribe((mutation) => {
@@ -15,9 +14,9 @@ import axios from 'axios';
 
                 break
 
-            // case 'promos/SET_FILER_PROPS':
-            //     // this.promos.actions.responsePromos;
-            //     //this.promos.responsePromos();
+            // case 'promos/SET_QUERY_STING':
+            //     //store.responsePromos();
+            //
             //     break;
         }
     })
@@ -26,7 +25,7 @@ import axios from 'axios';
     //     console.log(action.type);
     //     console.log(action.payload);
     //
-    //     if (action.type === 'promos/setFilterPromos') {
-    //         // do what you want there
+    //     if (action.type === 'promos/setQueryString') {
+    //         state.responsePromos();
     //     }
     // });

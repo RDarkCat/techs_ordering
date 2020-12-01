@@ -3,7 +3,12 @@ import axios from "axios";
 export default {
     namespaced: true,
     state: {
-        filterProps: {},
+        filterProps: {
+            'queryString': null,
+            'categoryId': null,
+            'tags': null,
+            'sort': null
+        },
         promo: null,
         promos: [
             // current_page: int
@@ -30,8 +35,17 @@ export default {
         }
     },
     mutations: {
-        SET_FILER_PROPS (state, filterProps) {
-            state.filterProps = filterProps;
+        SET_QUERY_STING (state, queryString) {
+            state.filterProps.queryString = queryString;
+        },
+        SET_CATEGORY_ID (state, categoryId) {
+            state.filterProps.categoryId = categoryId;
+        },
+        SET_TAGS (state, tags) {
+            state.filterProps.tags = tags;
+        },
+        SET_SORT (state, sort) {
+            state.filterProps.sort = sort;
         },
         SET_PROMO (state, promo) {
             state.promo = promo;
@@ -41,8 +55,17 @@ export default {
         }
     },
     actions: {
-        setFilterProps ({ commit }, filterProps) {
-            commit('SET_FILER_PROPS', filterProps);
+        setQueryString ({ commit }, queryString) {
+            commit('SET_QUERY_STING', queryString);
+        },
+        setCategoryId ({ commit }, categoryId) {
+            commit('SET_CATEGORY_ID', categoryId);
+        },
+        setTags ({ commit }, tags) {
+            commit('SET_TAGS', tags);
+        },
+        setSort ({ commit }, sort) {
+            commit('SET_SORT', sort);
         },
 
         async responsePromo ({ commit }, id) {

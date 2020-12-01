@@ -1,58 +1,25 @@
 <template>
     <div>
-        <SearchInput
-            @handleSearch="handleSearch"
-        />
-        <br>
-
-        <FilterBlock
-            v-if="filterBlockVision"
-            @handleFilterProps="handleFilterProps"
-        />
+        <SearchInput />
+        <CategoriesDropdown />
+        <Tags />
+        <SortBy />
     </div>
 </template>
 
 <script>
 import SearchInput from "./elements/SearchInput.vue";
-import FilterBlock from "./elements/Filter/FilterBlock.vue";
-
-import { mapActions, mapGetters } from "vuex";
+import CategoriesDropdown from "./elements/Filter/elements/CategoriesDropdown";
+import Tags from "./elements/Filter/elements/Tags/Tags";
+import SortBy from "./elements/Filter/elements/SortBy";
 
 export default {
     name: "SearchBlock",
     components: {
         SearchInput,
-        FilterBlock
-    },
-    data() {
-        return {
-            searchProps: {},
-            filterBlockVision: true
-        }
-    },
-    computed: {
-
-    },
-    methods: {
-        ...mapActions({
-            setFilterProps: 'promos/setFilterProps',
-            responsePromos: 'promos/responsePromos'
-        }),
-        ...mapGetters({
-            getFilterProps: 'promos/getFilterProps'
-        }),
-        handleSearch(queryString) {
-            this.searchProps.queryString = queryString;
-            this.setFilterProps(this.searchProps);
-            localStorage.setItem('filterProps', this.filterProps)
-            this.responsePromos();
-        },
-        handleFilterProps(filterProps) {
-            this.searchProps.filterProps = filterProps;
-        }
-    },
-    mounted() {
-        //this.search({1: 1, 2: 2, 3: 3});
+        CategoriesDropdown,
+        Tags,
+        SortBy
     }
 }
 </script>

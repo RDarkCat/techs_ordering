@@ -35,10 +35,9 @@ export default {
         }),
         promos() {
             this.responsePromos().then(() => {
-                //console.log (this.getPromos);
                 this.filteredItems = this.getPromos;
             }).catch(() => {
-                //console.log('failed');
+
             });
         }
     },
