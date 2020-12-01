@@ -2,7 +2,7 @@
     <label>
         <input type="text"
                v-model="queryString"
-               v-on:keyup="handleSearchClick"
+               v-on:keyup="handleSearchKeyUP"
         >
         <button
             @click="handleSearchClick"
@@ -28,6 +28,10 @@ export default {
             responsePromos: 'promos/responsePromos'
         }),
         handleSearchClick() {
+            this.setQueryString(this.queryString);
+            this.responsePromos();
+        },
+        handleSearchKeyUP() {
             if (this.queryString.length > 2) {
                 this.setQueryString(this.queryString);
                 this.responsePromos();
