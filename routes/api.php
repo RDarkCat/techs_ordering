@@ -32,9 +32,6 @@ Route::prefix('auth')->as('auth.')->namespace('Auth')->group(function () {
     Route::get('user', [UserController::class, 'index']);
 });
 
-//Route::resource('promos', PromoController::class)->except(['index', 'show']);
-
-
 Route::prefix('promos')->as('promos.')->group(function () {
     Route::post('/', [PromoController::class, 'index']);
     Route::get('/show/{id}', [PromoController::class, 'show']);
