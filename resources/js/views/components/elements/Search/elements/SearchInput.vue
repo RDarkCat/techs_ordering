@@ -2,18 +2,13 @@
     <label>
         <input type="text"
                v-model="queryString"
-               v-on:keyup="handleSearchKeyUP"
-        >
-        <button
-            @click="handleSearchClick"
-        >
-            Поиск
-        </button>
+               v-on:keyup="handleSearchKeyUP" />
+        <button @click="handleSearchClick">Поиск</button>
     </label>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
     name: "SearchInput",
@@ -22,13 +17,20 @@ export default {
             queryString: ''
         }
     },
+    computed: {
+        ...mapGetters({
+            getFilterProps: 'promos/getFilterProps'
+        })
+    },
     methods: {
         ...mapActions({
             setQueryString: 'promos/setQueryString',
-            responsePromos: 'promos/responsePromos'
+            responsePromos: 'promos/responsePromos',
+            sortBy: 'promos/setSort',
         }),
         handleSearchClick() {
             this.setQueryString(this.queryString);
+            this.sortBy(this.getFilterProps.sort);
             this.responsePromos();
         },
         handleSearchKeyUP() {

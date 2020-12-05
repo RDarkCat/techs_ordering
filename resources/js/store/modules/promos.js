@@ -4,10 +4,10 @@ export default {
     namespaced: true,
     state: {
         filterProps: {
-            'queryString': null,
-            'categoryId': null,
-            'tags': null,
-            'sort': null
+            queryString: null,
+            categoryId: null,
+            tags: null,
+            sort: null
         },
         promo: null,
         promos: [
@@ -29,7 +29,6 @@ export default {
         getPromo (state) {
             return state.promo
         },
-
         getPromos (state) {
             return state.promos
         }

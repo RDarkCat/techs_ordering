@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import TagsListItem from "./TagsListItem.vue";
+import TagsListItem from "../../Search/elements/Filter/elements/Tags/elements/TagsListItem";
 
 export default {
     name: "TagsList",

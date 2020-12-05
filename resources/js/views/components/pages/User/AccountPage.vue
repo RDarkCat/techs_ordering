@@ -3,9 +3,7 @@
         Account:
         <div>
             <button id="show-modal" @click="showModal = true">Create promo</button>
-            <CreatePromo v-if="showModal" @close="showModal = false">
-                <h3 slot="header">PLS fill the form</h3>
-            </CreatePromo>
+            <CreatePromo/>
         </div>
     </div>
 </template>
