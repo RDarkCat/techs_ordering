@@ -131,9 +131,9 @@
                             <label for="exampleFormControlSelect1">Длина</label>
                             <div class="d-flex">
                                 <input type="email" class="form-control" id="exampleFormControlInput7" placeholder="мин длина"
-                                v-model="props.minLength">
+                                v-model="props.minLength" v-on:focusout="handleSortBy">
                                 <input type="email" class="form-control ml-3" id="exampleFormControlInput8" placeholder="макс длина"
-                                v-model="props.maxLength">
+                                v-model="props.maxLength" v-on:focusout="handleSortBy">
                             </div>
                         </div>
 
@@ -141,9 +141,9 @@
                             <label for="exampleFormControlSelect1">Высота</label>
                             <div class="d-flex">
                                 <input type="email" class="form-control" id="exampleFormControlInput9" placeholder="мин высота"
-                                v-model="props.minHeight">
+                                v-model="props.minHeight" v-on:focusout="handleSortBy">
                                 <input type="email" class="form-control ml-3" id="exampleFormControlInput10" placeholder="макс высота"
-                                v-model="props.maxHeight">
+                                v-model="props.maxHeight" v-on:focusout="handleSortBy">
                             </div>
                         </div>
 
@@ -151,9 +151,9 @@
                             <label for="exampleFormControlSelect1">Ширина</label>
                             <div class="d-flex">
                                 <input type="email" class="form-control" id="exampleFormControlInput12" placeholder="мин ширина"
-                                v-model="props.minWidth">
+                                v-model="props.minWidth" v-on:focusout="handleSortBy">
                                 <input type="email" class="form-control ml-3" id="exampleFormControlInput13" placeholder="макс ширина"
-                                v-model="props.maxWidth">
+                                v-model="props.maxWidth" v-on:focusout="handleSortBy">
                             </div>
                         </div>
                     </div>
@@ -169,9 +169,9 @@
                             <label for="exampleFormControlSelect1">Масса</label>
                             <div class="d-flex">
                                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="мин масса"
-                                v-model="props.minMass">
+                                v-model="props.minMass" v-on:focusout="handleSortBy">
                                 <input type="email" class="form-control ml-3" id="exampleFormControlInput2" placeholder="макс масса"
-                                v-model="props.maxMass">
+                                v-model="props.maxMass" v-on:focusout="handleSortBy">
                             </div>
                         </div>
 
@@ -179,9 +179,9 @@
                             <label for="exampleFormControlSelect1">Мощность</label>
                             <div class="d-flex">
                                 <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="мин длина"
-                                v-model="props.minHorsePower">
+                                v-model="props.minHorsePower" v-on:focusout="handleSortBy">
                                 <input type="email" class="form-control ml-3" id="exampleFormControlInput4" placeholder="макс длина"
-                                v-model="props.maxHorsePower">
+                                v-model="props.maxHorsePower" v-on:focusout="handleSortBy">
                             </div>
                         </div>
 
@@ -189,9 +189,9 @@
                             <label for="exampleFormControlSelect1">Подъемная сила</label>
                             <div class="d-flex">
                                 <input type="email" class="form-control" id="exampleFormControlInput5" placeholder="мин подъемная сила"
-                                v-model="props.minLiftPower">
+                                v-model="props.minLiftPower" v-on:focusout="handleSortBy">
                                 <input type="email" class="form-control ml-3" id="exampleFormControlInput6" placeholder="макс подъемная сила"
-                                v-model="props.maxLiftPower">
+                                v-model="props.maxLiftPower" v-on:focusout="handleSortBy">
                             </div>
                         </div>
                     </div>
